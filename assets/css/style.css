@@ -790,13 +790,8 @@ RESPONSIVE
 }
 
 /*==================================================
-TESTIMONI
+HARGA
 ==================================================*/
-
-.testimoni {
-    padding: 110px 0;
-    background: #ffffff;
-}
 
 .page-header {
     padding: 160px 0 60px;
@@ -815,42 +810,124 @@ TESTIMONI
     font-size: 17px;
 }
 
-.testimoni-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+.harga {
+    padding: 110px 0;
+    background: #ffffff;
 }
 
-.testimoni-card {
+.harga-list {
+    max-width: 800px;
+    margin: 0 auto 60px;
     background: #fff;
-    border: 1px dashed #CBD5E1;
-    border-radius: 26px;
-    min-height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #64748B;
-    font-size: 16px;
-    transition: .35s;
+    border: 1px solid #E5E7EB;
+    border-radius: 24px;
+    padding: 10px 36px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, .05);
 }
 
-.testimoni-card:hover {
-    transform: translateY(-10px);
-    border-color: #2563EB;
-    box-shadow: 0 30px 60px rgba(37, 99, 235, .18);
+.harga-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid #E5E7EB;
+    transition: .3s;
 }
 
-@media (max-width: 1100px) {
-    .testimoni-grid {
-        grid-template-columns: repeat(2, 1fr);
+.harga-row:last-child {
+    border-bottom: none;
+}
+
+.harga-row:hover {
+    padding-left: 8px;
+}
+
+.harga-row-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.harga-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    background: #EFF6FF;
+    color: #2563EB;
+    font-size: 19px;
+    transition: .3s;
+}
+
+.harga-row:hover .harga-icon {
+    background: #DBEAFE;
+}
+
+.harga-row-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0F172A;
+}
+
+.harga-row-price {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2563EB;
+    white-space: nowrap;
+}
+
+.harga-note {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #F8FAFC;
+    border: 1px solid #E5E7EB;
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.harga-note ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.harga-note li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: #334155;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.harga-note li i {
+    color: #22C55E;
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+@media (max-width: 600px) {
+    .harga-list {
+        padding: 6px 20px;
     }
-}
 
-@media (max-width: 700px) {
-    .testimoni-grid {
-        grid-template-columns: 1fr;
+    .harga-row {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 18px 0;
+    }
+
+    .harga-row-price {
+        margin-left: 66px;
+    }
+
+    .harga-note {
+        padding: 28px 22px;
     }
 }
 
