@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KerjainTugas.Aja | Layanan Kami</title>
+    <title>KerjainTugas.Aja | Katalog Layanan Detail</title>
     
-    <!-- Google Font: Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
-    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -60,114 +55,218 @@
     </nav>
 
     <!-- ================= HEADER LAYANAN ================= -->
-    <header class="pt-40 pb-16 px-6 text-center max-w-3xl mx-auto relative">
+    <header class="pt-40 pb-16 px-6 text-center max-w-4xl mx-auto relative">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
         
-        <span class="text-blue-400 font-semibold tracking-wider uppercase text-sm mb-4 block">Katalog Layanan</span>
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
-            Pilih Layanan Sesuai <br class="hidden md:block">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">Kebutuhanmu</span>
+        <span class="text-blue-400 font-semibold tracking-wider uppercase text-sm mb-4 block">Katalog Layanan Detail</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+            Tugas Selesai, <br class="hidden md:block">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">Nilai Maksimal.</span>
         </h1>
-        <p class="text-slate-400 text-lg">
-            Semua dikerjakan secara profesional, tepat waktu, dan dengan kualitas terbaik. Fokus pada prioritasmu, sisanya serahkan pada kami.
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+            Setiap layanan dikerjakan spesifik sesuai format kampusmu. Harga transparan, kualitas profesional, dan bergaransi revisi.
         </p>
     </header>
 
-    <!-- ================= SERVICES GRID ================= -->
+    <!-- ================= SERVICES GRID DETAIL ================= -->
     <section class="pb-24 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <!-- 1. SKRIPSI (VIP / FULL WIDTH) -->
-            <div class="md:col-span-2 lg:col-span-3 group relative p-8 md:p-10 rounded-[2rem] bg-gradient-to-br from-blue-900/30 to-slate-900/80 backdrop-blur-sm border border-blue-500/30 hover:border-blue-400 transition-all duration-500 overflow-hidden shadow-[0_0_30px_rgba(37,99,235,0.05)]">
+            <div class="md:col-span-2 lg:col-span-3 group relative p-8 md:p-10 rounded-[2rem] bg-gradient-to-br from-blue-900/30 to-slate-900/80 backdrop-blur-md border border-blue-500/30 hover:border-blue-400 transition-all duration-500 overflow-hidden">
                 <div class="absolute top-0 right-0 mt-6 mr-6 md:mt-8 md:mr-8">
                     <span class="px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-500/30 flex items-center gap-2">
-                        <i class="fa-solid fa-star text-yellow-400"></i> Layanan Prioritas
+                        <i class="fa-solid fa-crown text-yellow-400"></i> Best Seller
                     </span>
                 </div>
                 
-                <div class="flex flex-col md:flex-row gap-8 items-start md:items-center relative z-10">
-                    <div class="w-20 h-20 shrink-0 rounded-3xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-4xl shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                <div class="flex flex-col lg:flex-row gap-10 items-start relative z-10 w-full">
+                    <div class="w-20 h-20 shrink-0 rounded-3xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-4xl shadow-[0_0_15px_rgba(59,130,246,0.3)]">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
-                    <div class="flex-grow">
-                        <h3 class="text-3xl font-bold mb-3">Pendampingan Skripsi</h3>
+                    
+                    <div class="flex-grow w-full">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                            <h3 class="text-3xl font-bold">Skripsi & Proposal</h3>
+                            <div class="bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-xl text-blue-300 font-semibold">
+                                Mulai Rp 300.000 / BAB
+                            </div>
+                        </div>
+                        
                         <p class="text-slate-300 leading-relaxed max-w-3xl mb-6">
-                            Layanan eksklusif bimbingan skripsi dari awal hingga akhir. Membantu penyusunan judul, BAB 1-5, metodologi, olah data, hingga revisi dosen pembimbing. Lulus tepat waktu bukan lagi sekadar wacana.
+                            Layanan pendampingan penuh atau parsial untuk Tugas Akhir. Kami membantu dari penyusunan judul, kerangka proposal, hingga BAB akhir dengan standar akademis tinggi.
                         </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <ul class="space-y-3 text-slate-400 text-sm">
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-blue-400"></i> Bimbingan Penentuan Judul</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-blue-400"></i> Pengerjaan Proposal & BAB 1-5</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-blue-400"></i> Garansi Revisi Dosen Pembimbing</li>
+                            </ul>
+                            <ul class="space-y-3 text-slate-400 text-sm">
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-blue-400"></i> Sitasi Otomatis (Mendeley/Zotero)</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-blue-400"></i> Jaminan Lolos Uji Turnitin</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-blue-400"></i> Format Sesuai Pedoman Kampus</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 bg-slate-800 text-xs text-slate-300 rounded-lg">Kuantitatif</span>
+                            <span class="px-3 py-1 bg-slate-800 text-xs text-slate-300 rounded-lg">Kualitatif</span>
+                            <span class="px-3 py-1 bg-slate-800 text-xs text-slate-300 rounded-lg">R&D</span>
+                            <span class="px-3 py-1 bg-slate-800 text-xs text-slate-300 rounded-lg">Tugas Akhir (D3)</span>
+                        </div>
+                        
                         <a href="kontak.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-500 transition-all shadow-lg shadow-blue-500/25">
-                            Konsultasi Skripsi <i class="fa-solid fa-arrow-right text-sm"></i>
+                            Konsultasi Skripsi Gratis <i class="fa-solid fa-arrow-right text-sm"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. PROGRAMMING -->
+            <!-- 2. PROGRAMMING & WEB -->
             <div class="flex flex-col group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-cyan-500/50 transition-all duration-500">
-                <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
-                    <i class="fa-solid fa-laptop-code"></i>
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <span class="text-cyan-400 font-semibold text-sm bg-cyan-500/10 px-3 py-1 rounded-lg">Mulai Rp 300rb</span>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Programming</h3>
-                <p class="text-slate-400 leading-relaxed text-sm mb-8 flex-grow">
-                    Pembuatan program, website, atau aplikasi Android. Mendukung berbagai bahasa pemrograman seperti Java, Python, C++, dan Web Development.
-                </p>
+                
+                <h3 class="text-xl font-bold mb-3">Programming & Web</h3>
+                <p class="text-slate-400 text-sm mb-6">Penyelesaian tugas coding, pembuatan website responsif, hingga aplikasi berbasis database.</p>
+                
+                <ul class="space-y-2 text-slate-400 text-sm mb-6 flex-grow">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400 text-xs"></i> Clean Code & Dokumentasi</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400 text-xs"></i> Setup Database (MySQL, dll)</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400 text-xs"></i> File Source Code Lengkap</li>
+                </ul>
+                
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">HTML/CSS</span>
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">PHP</span>
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">Python</span>
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">Java</span>
+                </div>
+                
                 <a href="kontak.html" class="w-full inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 text-white font-medium hover:bg-cyan-600 transition-all">
-                    Pesan Sekarang
+                    Order Coding
                 </a>
             </div>
 
-            <!-- 3. MAKALAH -->
+            <!-- 3. KARYA TULIS -->
             <div class="flex flex-col group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-purple-500/50 transition-all duration-500">
-                <div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
-                    <i class="fa-solid fa-file-lines"></i>
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <span class="text-purple-400 font-semibold text-sm bg-purple-500/10 px-3 py-1 rounded-lg">Mulai Rp 50rb</span>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Makalah & Karya Tulis</h3>
-                <p class="text-slate-400 leading-relaxed text-sm mb-8 flex-grow">
-                    Pembuatan makalah berbagai jurusan, essay, resume, dan jurnal. Disusun dengan format rapi, bahasa akademis, dan anti-plagiasi.
-                </p>
+                
+                <h3 class="text-xl font-bold mb-3">Karya Tulis Ilmiah</h3>
+                <p class="text-slate-400 text-sm mb-6">Pembuatan Makalah, Essay, Analisis Jurnal, dan Resume dengan riset literatur mendalam.</p>
+                
+                <ul class="space-y-2 text-slate-400 text-sm mb-6 flex-grow">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400 text-xs"></i> Riset Referensi Terbaru</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400 text-xs"></i> Bebas Plagiarisme</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400 text-xs"></i> Penulisan EYD & Rapi</li>
+                </ul>
+                
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">Makalah</span>
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">Essay</span>
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">Review Jurnal</span>
+                </div>
+                
                 <a href="kontak.html" class="w-full inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 text-white font-medium hover:bg-purple-600 transition-all">
-                    Pesan Sekarang
+                    Order Tulisan
                 </a>
             </div>
 
-            <!-- 4. MICROSOFT EXCEL -->
+            <!-- 4. OLAH DATA (SPSS & EXCEL) -->
             <div class="flex flex-col group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-green-500/50 transition-all duration-500">
-                <div class="w-14 h-14 rounded-2xl bg-green-500/10 text-green-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
-                    <i class="fa-solid fa-chart-column"></i>
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-14 h-14 rounded-2xl bg-green-500/10 text-green-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <span class="text-green-400 font-semibold text-sm bg-green-500/10 px-3 py-1 rounded-lg">Mulai Rp 150rb</span>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Microsoft Excel & Data</h3>
-                <p class="text-slate-400 leading-relaxed text-sm mb-8 flex-grow">
-                    Pengerjaan tugas yang membutuhkan rumus kompleks, pembuatan dashboard, otomatisasi, serta analisis data statistik.
-                </p>
+                
+                <h3 class="text-xl font-bold mb-3">Olah Data & Statistik</h3>
+                <p class="text-slate-400 text-sm mb-6">Analisis data penelitian menggunakan SPSS atau pengolahan formula kompleks di Microsoft Excel.</p>
+                
+                <ul class="space-y-2 text-slate-400 text-sm mb-6 flex-grow">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400 text-xs"></i> Uji Validitas & Reliabilitas</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400 text-xs"></i> Regresi & Analisis Deskriptif</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400 text-xs"></i> Termasuk Bab Interpretasi Data</li>
+                </ul>
+                
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">SPSS</span>
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">Ms. Excel</span>
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">Statistika</span>
+                </div>
+                
                 <a href="kontak.html" class="w-full inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 text-white font-medium hover:bg-green-600 transition-all">
-                    Pesan Sekarang
+                    Order Olah Data
                 </a>
             </div>
 
-            <!-- 5. POWERPOINT -->
+            <!-- 5. DESAIN & PRESENTASI -->
             <div class="flex flex-col group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-orange-500/50 transition-all duration-500">
-                <div class="w-14 h-14 rounded-2xl bg-orange-500/10 text-orange-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
-                    <i class="fa-solid fa-file-powerpoint"></i>
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 text-orange-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <span class="text-orange-400 font-semibold text-sm bg-orange-500/10 px-3 py-1 rounded-lg">Mulai Rp 75rb</span>
                 </div>
-                <h3 class="text-xl font-bold mb-3">PowerPoint Presentasi</h3>
-                <p class="text-slate-400 leading-relaxed text-sm mb-8 flex-grow">
-                    Ubah materi mentah menjadi slide presentasi (PPT) yang modern, menarik, dan terlihat sangat profesional di depan dosen.
-                </p>
+                
+                <h3 class="text-xl font-bold mb-3">Desain & Presentasi</h3>
+                <p class="text-slate-400 text-sm mb-6">Pembuatan CV ATS Friendly, desain Canva, dan Slide PowerPoint estetik untuk sidang/presentasi.</p>
+                
+                <ul class="space-y-2 text-slate-400 text-sm mb-6 flex-grow">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-400 text-xs"></i> Desain Custom & Modern</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-400 text-xs"></i> Animasi Transisi (PPT)</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-400 text-xs"></i> Format File Mentah (Editable)</li>
+                </ul>
+                
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">PPT</span>
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">CV ATS Friendly</span>
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">Canva</span>
+                </div>
+                
                 <a href="kontak.html" class="w-full inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 text-white font-medium hover:bg-orange-600 transition-all">
-                    Pesan Sekarang
+                    Order Desain
                 </a>
             </div>
 
-            <!-- 6. KONSULTASI -->
+            <!-- 6. TUGAS PRAKTIKUM & SKS -->
             <div class="flex flex-col group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-pink-500/50 transition-all duration-500">
-                <div class="w-14 h-14 rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
-                    <i class="fa-solid fa-user-graduate"></i>
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <span class="text-pink-400 font-semibold text-sm bg-pink-500/10 px-3 py-1 rounded-lg">Harga Custom</span>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Konsultasi Akademik</h3>
-                <p class="text-slate-400 leading-relaxed text-sm mb-8 flex-grow">
-                    Butuh teman diskusi untuk membedah tugas, revisi yang membingungkan, atau sekadar bimbingan alur pengerjaan tugas akhir? Kami siap.
-                </p>
+                
+                <h3 class="text-xl font-bold mb-3">Tugas Praktikum & SKS</h3>
+                <p class="text-slate-400 text-sm mb-6">Laporan praktikum, tugas harian, dan sistem kebut semalam (SKS) dengan deadline mepet.</p>
+                
+                <ul class="space-y-2 text-slate-400 text-sm mb-6 flex-grow">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-400 text-xs"></i> Bisa Deadline < 24 Jam</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-400 text-xs"></i> Semua Jurusan Tersedia</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pink-400 text-xs"></i> Konsultasi 24/7</li>
+                </ul>
+                
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">Laporan</span>
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">Tugas Harian</span>
+                    <span class="px-2 py-1 bg-slate-800 text-[10px] text-slate-300 rounded-md">Fast Track</span>
+                </div>
+                
                 <a href="kontak.html" class="w-full inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 text-white font-medium hover:bg-pink-600 transition-all">
-                    Mulai Diskusi
+                    Order Tugas Darurat
                 </a>
             </div>
 
