@@ -1,355 +1,142 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="id" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>KerjainTugas.Aja | Dashboard</title>
-
+    <title>KerjainTugas.Aja | Modern Dashboard</title>
+    
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Tailwind CSS (CDN untuk testing cepat) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                fontFamily: {
+                    sans: ['Plus Jakarta Sans', 'sans-serif'],
+                }
+            }
+        }
+    </script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Custom subtle grid background */
+        body {
+            background-color: #020617; /* Slate 950 */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: #f8fafc;
+        }
+    </style>
 </head>
+<body class="antialiased overflow-x-hidden selection:bg-blue-500 selection:text-white">
 
-<body>
-
-    <!-- ================= NAVBAR ================= -->
-    <nav class="navbar">
-        <div class="container nav-wrapper">
-
-            <!-- Logo -->
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.png" alt="KerjainTugas.Aja">
-                <span>KerjainTugas.Aja</span>
+    <!-- NAVBAR (Glassmorphism) -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-slate-950/70 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] group-hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition-all">
+                    K
+                </div>
+                <span class="font-bold text-xl tracking-tight">KerjainTugas.Aja</span>
             </a>
-
-            <!-- Menu -->
-            <ul class="nav-menu">
-                <li>
-                    <a href="index.html">
-                        <i class="fa-solid fa-house"></i>
-                        Dashboard
-                    </a>
-                </li>
-
-                <li>
-                    <a href="kontak.html">
-                        <i class="fa-solid fa-envelope"></i>
-                        Kontak
-                    </a>
-                </li>
-
-                <li>
-                    <a href="layanan.html">
-                        <i class="fa-solid fa-briefcase"></i>
-                        Layanan
-                    </a>
-                </li>
-
-                <li>
-                     <a href="harga.html">
-                        <i class="fa-solid fa-tags"></i>
-                        Harga
-                    </a>
-                </li>
-
-                <li>
-                    <a href="faq.html">
-                        <i class="fa-solid fa-circle-question"></i>
-                        FAQ
-                    </a>
-                </li>
+            
+            <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
+                <li><a href="index.html" class="text-white">Dashboard</a></li>
+                <li><a href="layanan.html" class="hover:text-white transition-colors">Layanan</a></li>
+                <li><a href="harga.html" class="hover:text-white transition-colors">Harga</a></li>
+                <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
             </ul>
 
-            <!-- Hamburger (Mobile) -->
-            <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
+            <a href="kontak.html" class="hidden md:inline-flex px-5 py-2.5 rounded-full bg-white text-slate-900 font-semibold text-sm hover:bg-blue-50 transition-colors">
+                Konsultasi
+            </a>
         </div>
     </nav>
 
-    <!-- ================= HERO ================= -->
-    <section class="hero">
+    <!-- HERO SECTION (Center Aligned, Gradient Text) -->
+    <section class="relative pt-40 pb-20 px-6 flex flex-col items-center text-center max-w-4xl mx-auto min-h-[85vh] justify-center">
+        <!-- Glow effect behind hero -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div class="hero-bg hero-bg-1"></div>
-        <div class="hero-bg hero-bg-2"></div>
-
-        <div class="container hero-wrapper">
-
-            <!-- LEFT -->
-            <div class="hero-content">
-
-                <span class="hero-badge">
-                    🚀 Solusi Tugas Mahasiswa Terpercaya
-                </span>
-
-                <h1>
-                    Kerjakan Tugas
-                    <span>Tanpa Stress.</span>
-                </h1>
-
-                <p>
-                    Fokus pada kuliah dan pekerjaan.
-                    Kami membantu menyelesaikan Makalah,
-                    PowerPoint, Coding, Olah Data, hingga Skripsi
-                    dengan hasil profesional, revisi, dan tepat waktu.
-                </p>
-
-                <div class="hero-button">
-
-                    <a href="kontak.html" class="btn-primary">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        Konsultasi Sekarang
-                    </a>
-
-                    <a href="layanan.html" class="btn-outline">
-                        <i class="fa-solid fa-briefcase"></i>
-                        Lihat Layanan
-                    </a>
-
-                </div>
-
-                <div class="hero-stat">
-
-                    <div class="stat-box">
-                        <i class="fa-solid fa-folder-open"></i>
-                        <div>
-                            <h2>500+</h2>
-                            <span>Project Selesai</span>
-                        </div>
-                    </div>
-
-                    <div class="stat-box">
-                        <i class="fa-solid fa-star"></i>
-                        <div>
-                            <h2>98%</h2>
-                            <span>Client Puas</span>
-                        </div>
-                    </div>
-
-                    <div class="stat-box">
-                        <i class="fa-solid fa-clock"></i>
-                        <div>
-                            <h2>24/7</h2>
-                            <span>Support</span>
-                        </div>
-                    </div>
-
-                    <div class="stat-box">
-                        <i class="fa-solid fa-user-graduate"></i>
-                        <div>
-                            <h2>3+</h2>
-                            <span>Tahun Pengalaman</span>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- RIGHT -->
-            <div class="hero-image">
-
-                <div class="hero-card">
-
-                    <div class="hero-card-logo">
-                        <img src="assets/img/logo.png" alt="KerjainTugas.Aja">
-                    </div>
-
-                    <div class="hero-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-
-                    <h3>KerjainTugas.Aja</h3>
-
-                    <p>
-                        Dipercaya oleh ratusan mahasiswa
-                        dari berbagai kampus di Indonesia.
-                    </p>
-
-                    <div class="hero-card-info">
-
-                        <div class="info-item">
-                            <strong>500+</strong>
-                            <span>Project</span>
-                        </div>
-
-                        <div class="info-item">
-                            <strong>98%</strong>
-                            <span>Kepuasan</span>
-                        </div>
-
-                        <div class="info-item">
-                            <strong>24/7</strong>
-                            <span>Support</span>
-                        </div>
-
-                    </div>
-
-                    <a href="kontak.html" class="btn-primary hero-card-btn">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        Hubungi Sekarang
-                    </a>
-
-                    <div class="hero-card-footer">
-
-                        <div class="hero-online">
-                            <span class="online-dot"></span>
-                            <span>Admin Online</span>
-                        </div>
-
-                        <div class="hero-response">
-                            <i class="fa-solid fa-clock"></i>
-                            <span>Respon ±5 Menit</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+        <span class="px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-8 backdrop-blur-sm">
+            🚀 Solusi Tugas Mahasiswa Terpercaya
+        </span>
+        
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
+            Kerjakan Tugas <br>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">Tanpa Stress.</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl leading-relaxed">
+            Fokus pada prioritasmu. Kami menyelesaikan Makalah, presentasi, Coding, hingga Skripsi dengan hasil rapi, cepat, dan bergaransi.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <a href="kontak.html" class="px-8 py-4 rounded-2xl bg-blue-600 text-white font-semibold hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-all duration-300 flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                Pesan Sekarang
+            </a>
+            <a href="#bento" class="px-8 py-4 rounded-2xl bg-slate-900 border border-slate-800 text-white font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-2">
+                Lihat Layanan
+            </a>
         </div>
-
     </section>
 
-    <!-- ================= WHY US ================= -->
-    <section class="why-us">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <span class="section-badge">
-                    ⭐ Kenapa Memilih Kami
-                </span>
-
-                <h2>
-                    Alasan Mahasiswa Memilih
-                    KerjainTugas.Aja
-                </h2>
-
-                <p>
-                    Kualitas, ketepatan waktu, dan pelayanan terbaik
-                    menjadi prioritas kami.
-                </p>
-
-            </div>
-
-            <div class="why-grid">
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3>Data Aman</h3>
-                    <p>Seluruh file pelanggan dijamin aman dan rahasia.</p>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <h3>Fast Response</h3>
-                    <p>Admin siap membantu dengan respon cepat setiap hari.</p>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-                    <h3>Tepat Waktu</h3>
-                    <p>Deadline menjadi prioritas utama dalam setiap project.</p>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fa-solid fa-wallet"></i>
-                    </div>
-                    <h3>Harga Terjangkau</h3>
-                    <p>Harga ramah mahasiswa dengan kualitas profesional.</p>
-                </div>
-
-            </div>
-
+    <!-- BENTO GRID SECTION (Layanan) -->
+    <section id="bento" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Layanan Unggulan</h2>
+            <p class="text-slate-400 text-lg">Didesain khusus untuk menyelamatkan nilaimu.</p>
         </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1 (Besar/Lebar) -->
+            <div class="md:col-span-2 group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-blue-500/50 transition-all duration-500 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">IT & Programming</h3>
+                    <p class="text-slate-400 leading-relaxed max-w-md">Bantuan pembuatan website, aplikasi Android, analisis data kompleks, hingga debugging kode (Python, Java, C++, dll).</p>
+                </div>
+            </div>
+
+            <!-- Card 2 (Kecil) -->
+            <div class="group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-cyan-500/50 transition-all duration-500">
+                <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Karya Tulis</h3>
+                <p class="text-slate-400 leading-relaxed">Makalah, Essay, Jurnal, dan Bab Skripsi dengan format rapi dan anti-plagiasi.</p>
+            </div>
+
+            <!-- Card 3 (Kecil) -->
+            <div class="group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-purple-500/50 transition-all duration-500">
+                <div class="w-14 h-14 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-file-powerpoint"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Desain Presentasi</h3>
+                <p class="text-slate-400 leading-relaxed">Ubah materi mentah menjadi PowerPoint estetik yang memukau dosen.</p>
+            </div>
+
+            <!-- Card 4 (Besar/Lebar) -->
+            <div class="md:col-span-2 group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-green-500/50 transition-all duration-500">
+                <div class="w-14 h-14 rounded-2xl bg-green-500/20 text-green-400 flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Sistem Kebut Semalam (SKS)</h3>
+                <p class="text-slate-400 leading-relaxed max-w-md">Deadline besok pagi? Jangan panik. Tim kami siap mengeksekusi tugas darurat dengan waktu pengerjaan kilat tanpa mengorbankan kualitas.</p>
+            </div>
+        </div>
     </section>
 
-
-     <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <div class="container">
-
-            <div class="footer-wrapper">
-
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="assets/img/logo.png" alt="KerjainTugas.Aja">
-                        <h2>KerjainTugas.Aja</h2>
-                    </div>
-                    <p>
-                        Solusi terpercaya untuk membantu tugas mahasiswa —
-                        Makalah, Jurnal, PowerPoint, Coding, Olah Data, Hingga Skripsi.
-                        Dikerjakan profesional, tepat waktu, dan bisa revisi.
-                    </p>
-                </div>
-
-                <div class="footer-menu">
-                    <h3 class="footer-title">Menu</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Dashboard</a></li>
-                        <li><a href="layanan.html">Layanan</a></li>
-                        <li><a href="harga.html">Harga</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="kontak.html">Kontak</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-contact">
-                    <h3 class="footer-title">Ikuti Kami</h3>
-                    <div class="footer-social">
-                         <a href="https://api.whatsapp.com/send/?phone=6285179851446&text=Halo+KerjainTugas.Aja%2C+saya+ingin+konsultasi+tugas&type=phone_number&app_absent=0" target="_blank" aria-label="WhatsApp">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                        <a href="https://www.instagram.com/kerjaintugas.aja?igsh=MzEzbTc5MnpyejAx" target="_blank" aria-label="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@kerjaintugas.aja?_r=1&_t=ZS-99O4Jkt2krc" target="_blank" aria-label="TikTok">
-                            <i class="fa-brands fa-tiktok"></i>
-                        </a>
-                        <a href="https://youtube.com/@kerjaiantugas_aja?si=W11X9TNtFULTnACS" target="_blank" aria-label="YouTube">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a href="https://www.facebook.com/share/19CMsgS3EV/" target="_blank" aria-label="Facebook">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 KerjainTugas.Aja. Semua hak cipta dilindungi.</p>
-            </div>
-
-        </div>
-    </footer>
-
-    <script src="assets/js/main.js"></script>
 </body>
 </html>
-
