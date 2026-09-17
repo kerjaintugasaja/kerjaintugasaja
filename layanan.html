@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KerjainTugas.Aja | Katalog Layanan Detail</title>
+    <title>KerjainTugas.Aja | Katalog Layanan</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -32,26 +32,53 @@
 <body class="antialiased overflow-x-hidden selection:bg-blue-500 selection:text-white">
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-slate-950/70 backdrop-blur-md border-b border-white/10">
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-slate-950/80 backdrop-blur-md border-b border-white/10 shadow-lg">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            
+            <!-- 1. Logo & Brand -->
             <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] group-hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition-all">
-                    K
+                <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover:scale-105 transition-all">
+                    <img src="assets/img/logo.png" alt="KerjainTugas.Aja" class="w-full h-full object-contain">
                 </div>
-                <span class="font-bold text-xl tracking-tight hidden sm:block">KerjainTugas.Aja</span>
+                <span class="font-bold text-lg tracking-tight text-white hidden sm:block">KerjainTugas.Aja</span>
             </a>
             
-            <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
-                <li><a href="index.html" class="hover:text-white transition-colors">Dashboard</a></li>
-                <li><a href="layanan.html" class="text-white">Layanan</a></li>
-                <li><a href="harga.html" class="hover:text-white transition-colors">Harga</a></li>
-                <li><a href="testimoni.html" class="hover:text-white transition-colors">Testimoni</a></li>
-                <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+            <!-- 2. Menu Tengah (Desktop) -->
+            <ul class="hidden md:flex items-center gap-2 text-sm font-medium text-slate-300">
+                <li><a href="index.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">Dashboard</a></li>
+                <li><a href="layanan.html" class="px-4 py-2 rounded-xl bg-blue-600 text-white shadow-md shadow-blue-600/30 transition-all">Layanan</a></li>
+                <li><a href="harga.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">Harga</a></li>
+                <li><a href="testimoni.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">Testimoni</a></li>
+                <li><a href="faq.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">FAQ</a></li>
             </ul>
 
-            <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." target="_blank" class="inline-flex px-5 py-2.5 rounded-full bg-white text-slate-900 font-semibold text-sm hover:bg-blue-50 hover:scale-105 transition-all">
-                Konsultasi
-            </a>
+            <!-- 3. CTA Kanan (Desktop) -->
+            <div class="hidden md:flex items-center">
+                <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." target="_blank" class="inline-flex px-5 py-2.5 rounded-full bg-white text-slate-900 font-semibold text-sm hover:bg-blue-50 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all active:scale-95">
+                    Konsultasi
+                </a>
+            </div>
+
+            <!-- 4. Tombol Hamburger (Mobile) -->
+            <button id="hamburgerBtn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-lg" id="hamburgerIcon"></i>
+            </button>
+        </div>
+
+        <!-- Menu Dropdown (Mobile View) -->
+        <div id="mobileMenu" class="hidden md:hidden px-6 pt-4 pb-6 bg-slate-950/95 border-b border-slate-800 backdrop-blur-xl transition-all">
+            <ul class="flex flex-col gap-2 text-slate-300 font-medium">
+                <li><a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">Dashboard</a></li>
+                <li><a href="layanan.html" class="block px-4 py-3 rounded-xl bg-blue-600/20 text-blue-400 font-semibold">Layanan</a></li>
+                <li><a href="harga.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">Harga</a></li>
+                <li><a href="testimoni.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">Testimoni</a></li>
+                <li><a href="faq.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">FAQ</a></li>
+                <li class="pt-2">
+                    <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." target="_blank" class="w-full flex justify-center items-center gap-2 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-lg">
+                        <i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -285,8 +312,10 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div class="md:col-span-1">
                 <div class="flex items-center gap-3 mb-6">
-                    <div class="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center text-white font-bold">K</div>
-                    <h2 class="font-bold text-xl">KerjainTugas.Aja</h2>
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                        <img src="assets/img/logo.png" alt="KerjainTugas.Aja" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="font-bold text-xl text-white">KerjainTugas.Aja</h2>
                 </div>
                 <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
                     Solusi terpercaya untuk membantu tugas mahasiswa. Dikerjakan profesional, tepat waktu, dan bergaransi revisi.
@@ -324,6 +353,24 @@
             <p>&copy; 2026 KerjainTugas.Aja. Semua hak cipta dilindungi.</p>
         </div>
     </footer>
+
+    <!-- ================= JAVASCRIPT UNTUK MOBILE MENU ================= -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburgerIcon = document.getElementById('hamburgerIcon');
+
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                hamburgerIcon.classList.remove('fa-xmark');
+                hamburgerIcon.classList.add('fa-bars');
+            } else {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-xmark');
+            }
+        });
+    </script>
 
 </body>
 </html>
