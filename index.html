@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KerjainTugas.Aja | Modern Dashboard</title>
+    <title>KerjainTugas.Aja | Dashboard</title>
     
-    <!-- Google Font: Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
-    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -25,9 +20,8 @@
     </script>
 
     <style>
-        /* Background Jaring (Mesh Grid) Estetik */
         body {
-            background-color: #020617; /* Slate 950 */
+            background-color: #020617;
             background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 30px 30px;
@@ -40,7 +34,6 @@
     <!-- ================= NAVBAR ================= -->
     <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-slate-950/70 backdrop-blur-md border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Logo -->
             <a href="index.html" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] group-hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition-all">
                     K
@@ -48,16 +41,15 @@
                 <span class="font-bold text-xl tracking-tight hidden sm:block">KerjainTugas.Aja</span>
             </a>
             
-            <!-- Menu Tengah (Desktop) -->
             <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
                 <li><a href="index.html" class="text-white">Dashboard</a></li>
                 <li><a href="layanan.html" class="hover:text-white transition-colors">Layanan</a></li>
                 <li><a href="harga.html" class="hover:text-white transition-colors">Harga</a></li>
+                <li><a href="testimoni.html" class="hover:text-white transition-colors">Testimoni</a></li>
                 <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
             </ul>
 
-            <!-- CTA Kanan -->
-            <a href="kontak.html" class="inline-flex px-5 py-2.5 rounded-full bg-white text-slate-900 font-semibold text-sm hover:bg-blue-50 hover:scale-105 transition-all">
+            <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." target="_blank" class="inline-flex px-5 py-2.5 rounded-full bg-white text-slate-900 font-semibold text-sm hover:bg-blue-50 hover:scale-105 transition-all">
                 Konsultasi
             </a>
         </div>
@@ -65,7 +57,6 @@
 
     <!-- ================= HERO SECTION ================= -->
     <section class="relative pt-40 pb-20 px-6 flex flex-col items-center text-center max-w-4xl mx-auto min-h-[85vh] justify-center">
-        <!-- Glow effect di belakang teks -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-600/20 rounded-full blur-[100px] md:blur-[120px] pointer-events-none"></div>
 
         <span class="px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-8 backdrop-blur-sm">
@@ -82,11 +73,11 @@
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto z-10">
-            <a href="kontak.html" class="px-8 py-4 rounded-2xl bg-blue-600 text-white font-semibold hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-all duration-300 flex items-center justify-center gap-2">
+            <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20order%20bantuan%20tugas." target="_blank" class="px-8 py-4 rounded-2xl bg-blue-600 text-white font-semibold hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-all duration-300 flex items-center justify-center gap-2">
                 <i class="fa-brands fa-whatsapp text-lg"></i>
                 Pesan Sekarang
             </a>
-            <a href="#bento" class="px-8 py-4 rounded-2xl bg-slate-900 border border-slate-800 text-white font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-2">
+            <a href="layanan.html" class="px-8 py-4 rounded-2xl bg-slate-900 border border-slate-800 text-white font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-2">
                 Lihat Layanan
             </a>
         </div>
@@ -102,7 +93,6 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Card 1: SKRIPSI (Paling Besar & Menonjol) -->
             <div class="md:col-span-2 group relative p-8 md:p-10 rounded-[2rem] bg-gradient-to-br from-blue-900/40 to-slate-900 backdrop-blur-sm border border-blue-500/30 hover:border-blue-400 transition-all duration-500 overflow-hidden shadow-[0_0_30px_rgba(37,99,235,0.1)] hover:shadow-[0_0_40px_rgba(37,99,235,0.2)]">
-                <!-- Label Layanan Utama -->
                 <div class="absolute top-0 right-0 mt-6 mr-6 md:mt-8 md:mr-8">
                     <span class="px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-500/30 flex items-center gap-2 backdrop-blur-md">
                         <i class="fa-solid fa-star text-yellow-400"></i> Prioritas Utama
@@ -117,37 +107,52 @@
                     <p class="text-slate-300 leading-relaxed max-w-lg mb-6">
                         Layanan pendampingan penuh sampai wisuda. Kami membantu dari penyusunan judul, proposal (BAB 1-3), pengolahan data penelitian, hingga penyelesaian akhir (BAB 4-5) dan revisi dosen penguji.
                     </p>
-                    <a href="kontak.html" class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors">
+                    <a href="https://wa.me/6285179851446?text=Halo%20Admin,%20saya%20mau%20konsultasi%20judul%20skripsi." target="_blank" class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors">
                         Konsultasi Judul Sekarang <i class="fa-solid fa-arrow-right text-sm"></i>
                     </a>
                 </div>
             </div>
 
             <!-- Card 2: IT & Programming -->
-            <div class="group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-cyan-500/50 transition-all duration-500">
-                <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
-                    <i class="fa-solid fa-laptop-code"></i>
+            <div class="group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-cyan-500/50 transition-all duration-500 flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">IT & Pemrograman</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm mb-6">Pembuatan website, aplikasi Android, dan debugging kode program untuk tugas kuliah atau praktikum.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-3">IT & Pemrograman</h3>
-                <p class="text-slate-400 leading-relaxed text-sm">Pembuatan website, aplikasi Android, dan debugging kode program (Python, Java, PHP) untuk tugas kuliah atau praktikum.</p>
+                <a href="https://wa.me/6285179851446?text=Halo%20Admin,%20saya%20mau%20order%20tugas%20coding/IT." target="_blank" class="inline-flex items-center gap-2 text-cyan-400 font-semibold text-sm hover:text-cyan-300 transition-colors">
+                    Pesan Coding <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
             </div>
 
             <!-- Card 3: Karya Tulis -->
-            <div class="group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-purple-500/50 transition-all duration-500">
-                <div class="w-14 h-14 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
-                    <i class="fa-solid fa-file-lines"></i>
+            <div class="group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-purple-500/50 transition-all duration-500 flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Karya Tulis & Presentasi</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm mb-6">Pembuatan Makalah, Essay, Resume, Analisis Jurnal, hingga desain PowerPoint estetik dengan jaminan originalitas.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Karya Tulis & Presentasi</h3>
-                <p class="text-slate-400 leading-relaxed text-sm">Pembuatan Makalah, Essay, Resume, Analisis Jurnal, hingga desain PowerPoint estetik dengan jaminan originalitas.</p>
+                <a href="https://wa.me/6285179851446?text=Halo%20Admin,%20saya%20mau%20order%20makalah/PPT." target="_blank" class="inline-flex items-center gap-2 text-purple-400 font-semibold text-sm hover:text-purple-300 transition-colors">
+                    Pesan Makalah <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
             </div>
 
             <!-- Card 4: SKS / Olah Data -->
-            <div class="md:col-span-2 group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-green-500/50 transition-all duration-500">
-                <div class="w-14 h-14 rounded-2xl bg-green-500/20 text-green-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
-                    <i class="fa-solid fa-chart-column"></i>
+            <div class="md:col-span-2 group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-green-500/50 transition-all duration-500 flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-green-500/20 text-green-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Olah Data & Sistem Kebut Semalam</h3>
+                    <p class="text-slate-400 leading-relaxed max-w-md mb-6">Bantuan pengolahan data statistik (SPSS/Excel) dan eksekusi tugas darurat. Tim kami siap bekerja kilat menyelamatkan tugas dengan *deadline* mepet.</p>
                 </div>
-                <h3 class="text-2xl font-bold mb-3">Olah Data & Sistem Kebut Semalam</h3>
-                <p class="text-slate-400 leading-relaxed max-w-md">Bantuan pengolahan data statistik (SPSS/Excel) dan eksekusi tugas darurat. Tim kami siap bekerja kilat menyelamatkan tugas dengan *deadline* mepet.</p>
+                <a href="https://wa.me/6285179851446?text=Halo%20Admin,%20saya%20mau%20konsultasi%20tugas%20darurat/SKS." target="_blank" class="inline-flex items-center gap-2 text-green-400 font-semibold text-sm hover:text-green-300 transition-colors">
+                    Konsultasi Tugas Kilat <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -162,7 +167,6 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Why 1 -->
                 <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-blue-500/40 transition-colors text-center group">
                     <div class="w-16 h-16 mx-auto rounded-full bg-slate-800 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:bg-blue-500/20 transition-colors">
                         <i class="fa-solid fa-shield-halved"></i>
@@ -170,7 +174,6 @@
                     <h3 class="font-bold text-lg mb-2">Data Aman 100%</h3>
                     <p class="text-slate-400 text-sm">Privasi terjaga. Seluruh identitas dan file pelanggan dijamin aman dan rahasia.</p>
                 </div>
-                <!-- Why 2 -->
                 <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-blue-500/40 transition-colors text-center group">
                     <div class="w-16 h-16 mx-auto rounded-full bg-slate-800 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:bg-blue-500/20 transition-colors">
                         <i class="fa-solid fa-bolt"></i>
@@ -178,7 +181,6 @@
                     <h3 class="font-bold text-lg mb-2">Fast Response</h3>
                     <p class="text-slate-400 text-sm">Admin siap membantu dengan respon cepat. Solusi langsung diberikan tanpa basa-basi.</p>
                 </div>
-                <!-- Why 3 -->
                 <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-blue-500/40 transition-colors text-center group">
                     <div class="w-16 h-16 mx-auto rounded-full bg-slate-800 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:bg-blue-500/20 transition-colors">
                         <i class="fa-solid fa-clock"></i>
@@ -186,7 +188,6 @@
                     <h3 class="font-bold text-lg mb-2">Tepat Waktu</h3>
                     <p class="text-slate-400 text-sm">Deadline adalah nyawa. Kami pastikan tugas selesai sebelum batas waktu yang disepakati.</p>
                 </div>
-                <!-- Why 4 -->
                 <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-blue-500/40 transition-colors text-center group">
                     <div class="w-16 h-16 mx-auto rounded-full bg-slate-800 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:bg-blue-500/20 transition-colors">
                         <i class="fa-solid fa-wallet"></i>
@@ -201,7 +202,6 @@
     <!-- ================= FOOTER ================= -->
     <footer class="border-t border-slate-800 bg-slate-950 pt-16 pb-8 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <!-- Brand -->
             <div class="md:col-span-1">
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center text-white font-bold">K</div>
@@ -212,18 +212,17 @@
                 </p>
             </div>
             
-            <!-- Menu -->
             <div>
                 <h3 class="font-bold text-white mb-6">Menu Navigasi</h3>
                 <ul class="flex flex-col gap-3 text-slate-400 text-sm">
                     <li><a href="index.html" class="hover:text-blue-400 transition-colors">Dashboard</a></li>
                     <li><a href="layanan.html" class="hover:text-blue-400 transition-colors">Daftar Layanan</a></li>
                     <li><a href="harga.html" class="hover:text-blue-400 transition-colors">Estimasi Harga</a></li>
+                    <li><a href="testimoni.html" class="hover:text-blue-400 transition-colors">Testimoni</a></li>
                     <li><a href="faq.html" class="hover:text-blue-400 transition-colors">FAQ</a></li>
                 </ul>
             </div>
 
-            <!-- Social / Contact -->
             <div>
                 <h3 class="font-bold text-white mb-6">Hubungi Kami</h3>
                 <div class="flex gap-4">
