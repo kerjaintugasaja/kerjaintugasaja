@@ -1,6 +1,100 @@
-<!-- BENTO GRID SECTION (Layanan Utama Skripsi) -->
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KerjainTugas.Aja | Modern Dashboard</title>
+    
+    <!-- Google Font: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                fontFamily: {
+                    sans: ['Plus Jakarta Sans', 'sans-serif'],
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Background Jaring (Mesh Grid) Estetik */
+        body {
+            background-color: #020617; /* Slate 950 */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-blue-500 selection:text-white">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-slate-950/70 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] group-hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition-all">
+                    K
+                </div>
+                <span class="font-bold text-xl tracking-tight hidden sm:block">KerjainTugas.Aja</span>
+            </a>
+            
+            <!-- Menu Tengah (Desktop) -->
+            <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
+                <li><a href="index.html" class="text-white">Dashboard</a></li>
+                <li><a href="layanan.html" class="hover:text-white transition-colors">Layanan</a></li>
+                <li><a href="harga.html" class="hover:text-white transition-colors">Harga</a></li>
+                <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+
+            <!-- CTA Kanan -->
+            <a href="kontak.html" class="inline-flex px-5 py-2.5 rounded-full bg-white text-slate-900 font-semibold text-sm hover:bg-blue-50 hover:scale-105 transition-all">
+                Konsultasi
+            </a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative pt-40 pb-20 px-6 flex flex-col items-center text-center max-w-4xl mx-auto min-h-[85vh] justify-center">
+        <!-- Glow effect di belakang teks -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-600/20 rounded-full blur-[100px] md:blur-[120px] pointer-events-none"></div>
+
+        <span class="px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-8 backdrop-blur-sm">
+            🚀 Solusi Tugas Mahasiswa Terpercaya
+        </span>
+        
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
+            Kerjakan Tugas <br>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">Tanpa Stress.</span>
+        </h1>
+        
+        <p class="text-base md:text-xl text-slate-400 mb-10 max-w-2xl leading-relaxed">
+            Fokus pada prioritasmu. Kami membantu menyelesaikan Makalah, PowerPoint, Coding, hingga Skripsi dengan hasil profesional, tepat waktu, dan bergaransi.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto z-10">
+            <a href="kontak.html" class="px-8 py-4 rounded-2xl bg-blue-600 text-white font-semibold hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-all duration-300 flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                Pesan Sekarang
+            </a>
+            <a href="#bento" class="px-8 py-4 rounded-2xl bg-slate-900 border border-slate-800 text-white font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-2">
+                Lihat Layanan
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= BENTO GRID (LAYANAN) ================= -->
     <section id="bento" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="mb-16">
+        <div class="mb-16 text-center md:text-left">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Layanan Unggulan</h2>
             <p class="text-slate-400 text-lg">Didesain khusus untuk menyelamatkan nilaimu dan meluluskanmu.</p>
         </div>
@@ -9,7 +103,7 @@
             <!-- Card 1: SKRIPSI (Paling Besar & Menonjol) -->
             <div class="md:col-span-2 group relative p-8 md:p-10 rounded-[2rem] bg-gradient-to-br from-blue-900/40 to-slate-900 backdrop-blur-sm border border-blue-500/30 hover:border-blue-400 transition-all duration-500 overflow-hidden shadow-[0_0_30px_rgba(37,99,235,0.1)] hover:shadow-[0_0_40px_rgba(37,99,235,0.2)]">
                 <!-- Label Layanan Utama -->
-                <div class="absolute top-0 right-0 mt-8 mr-8">
+                <div class="absolute top-0 right-0 mt-6 mr-6 md:mt-8 md:mr-8">
                     <span class="px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-500/30 flex items-center gap-2 backdrop-blur-md">
                         <i class="fa-solid fa-star text-yellow-400"></i> Prioritas Utama
                     </span>
@@ -29,31 +123,127 @@
                 </div>
             </div>
 
-            <!-- Card 2: IT & Programming (Sedang) -->
+            <!-- Card 2: IT & Programming -->
             <div class="group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-cyan-500/50 transition-all duration-500">
                 <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
                     <i class="fa-solid fa-laptop-code"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">IT & Pemrograman</h3>
-                <p class="text-slate-400 leading-relaxed text-sm">Pembuatan website, aplikasi Android, dan debugging kode program untuk tugas akhir maupun praktikum.</p>
+                <p class="text-slate-400 leading-relaxed text-sm">Pembuatan website, aplikasi Android, dan debugging kode program (Python, Java, PHP) untuk tugas kuliah atau praktikum.</p>
             </div>
 
-            <!-- Card 3: Karya Tulis (Sedang) -->
+            <!-- Card 3: Karya Tulis -->
             <div class="group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-purple-500/50 transition-all duration-500">
                 <div class="w-14 h-14 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
                     <i class="fa-solid fa-file-lines"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Karya Tulis & Jurnal</h3>
-                <p class="text-slate-400 leading-relaxed text-sm">Pembuatan Makalah, Essay, Resume, dan Analisis Jurnal dengan format rapi dan jaminan anti-plagiasi.</p>
+                <h3 class="text-xl font-bold mb-3">Karya Tulis & Presentasi</h3>
+                <p class="text-slate-400 leading-relaxed text-sm">Pembuatan Makalah, Essay, Resume, Analisis Jurnal, hingga desain PowerPoint estetik dengan jaminan originalitas.</p>
             </div>
 
-            <!-- Card 4: SKS / Olah Data (Besar) -->
+            <!-- Card 4: SKS / Olah Data -->
             <div class="md:col-span-2 group relative p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-green-500/50 transition-all duration-500">
                 <div class="w-14 h-14 rounded-2xl bg-green-500/20 text-green-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-500">
                     <i class="fa-solid fa-chart-column"></i>
                 </div>
                 <h3 class="text-2xl font-bold mb-3">Olah Data & Sistem Kebut Semalam</h3>
-                <p class="text-slate-400 leading-relaxed max-w-md">Bantuan pengolahan data SPSS/Excel dan eksekusi tugas darurat dengan *deadline* mepet. Tim kami siap bekerja kilat 24 jam untuk menyelamatkan tugasmu.</p>
+                <p class="text-slate-400 leading-relaxed max-w-md">Bantuan pengolahan data statistik (SPSS/Excel) dan eksekusi tugas darurat. Tim kami siap bekerja kilat menyelamatkan tugas dengan *deadline* mepet.</p>
             </div>
         </div>
     </section>
+
+    <!-- ================= WHY US ================= -->
+    <section class="py-20 px-6 border-t border-slate-800/50 bg-slate-900/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <span class="px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium border border-blue-500/20 mb-4 inline-block">Kenapa Memilih Kami</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Alasan Mahasiswa Percaya Pada Kami</h2>
+                <p class="text-slate-400">Kualitas, ketepatan waktu, dan pelayanan terbaik adalah prioritas utama kami untuk kelancaran studimu.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Why 1 -->
+                <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-blue-500/40 transition-colors text-center group">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-slate-800 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:bg-blue-500/20 transition-colors">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Data Aman 100%</h3>
+                    <p class="text-slate-400 text-sm">Privasi terjaga. Seluruh identitas dan file pelanggan dijamin aman dan rahasia.</p>
+                </div>
+                <!-- Why 2 -->
+                <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-blue-500/40 transition-colors text-center group">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-slate-800 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:bg-blue-500/20 transition-colors">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Fast Response</h3>
+                    <p class="text-slate-400 text-sm">Admin siap membantu dengan respon cepat. Solusi langsung diberikan tanpa basa-basi.</p>
+                </div>
+                <!-- Why 3 -->
+                <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-blue-500/40 transition-colors text-center group">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-slate-800 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:bg-blue-500/20 transition-colors">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Tepat Waktu</h3>
+                    <p class="text-slate-400 text-sm">Deadline adalah nyawa. Kami pastikan tugas selesai sebelum batas waktu yang disepakati.</p>
+                </div>
+                <!-- Why 4 -->
+                <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-blue-500/40 transition-colors text-center group">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-slate-800 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:bg-blue-500/20 transition-colors">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Harga Terjangkau</h3>
+                    <p class="text-slate-400 text-sm">Tarif bersahabat untuk kantong mahasiswa dengan hasil sekelas profesional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-slate-800 bg-slate-950 pt-16 pb-8 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <!-- Brand -->
+            <div class="md:col-span-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center text-white font-bold">K</div>
+                    <h2 class="font-bold text-xl">KerjainTugas.Aja</h2>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+                    Solusi terpercaya untuk membantu tugas mahasiswa. Dikerjakan profesional, tepat waktu, dan bergaransi revisi.
+                </p>
+            </div>
+            
+            <!-- Menu -->
+            <div>
+                <h3 class="font-bold text-white mb-6">Menu Navigasi</h3>
+                <ul class="flex flex-col gap-3 text-slate-400 text-sm">
+                    <li><a href="index.html" class="hover:text-blue-400 transition-colors">Dashboard</a></li>
+                    <li><a href="layanan.html" class="hover:text-blue-400 transition-colors">Daftar Layanan</a></li>
+                    <li><a href="harga.html" class="hover:text-blue-400 transition-colors">Estimasi Harga</a></li>
+                    <li><a href="faq.html" class="hover:text-blue-400 transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Social / Contact -->
+            <div>
+                <h3 class="font-bold text-white mb-6">Hubungi Kami</h3>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/6285179851446" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-green-500 hover:text-white transition-all">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/kerjaintugas.aja" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-pink-500 hover:text-white transition-all">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@kerjaintugas.aja" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-slate-700 hover:text-white transition-all">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+            <p>&copy; 2026 KerjainTugas.Aja. Semua hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
