@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KerjainTugas.Aja | Wall of Love & Testimoni</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                fontFamily: {
+                    sans: ['Plus Jakarta Sans', 'sans-serif'],
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #020617; 
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-blue-500 selection:text-white">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-slate-950/70 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-xl shadow-[0_0_15px_rgba(59,130,246,0.5)] group-hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition-all">
+                    K
+                </div>
+                <span class="font-bold text-xl tracking-tight hidden sm:block">KerjainTugas.Aja</span>
+            </a>
+            
+            <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
+                <li><a href="index.html" class="hover:text-white transition-colors">Dashboard</a></li>
+                <li><a href="layanan.html" class="hover:text-white transition-colors">Layanan</a></li>
+                <li><a href="harga.html" class="hover:text-white transition-colors">Harga</a></li>
+                <li><a href="testimoni.html" class="text-white">Testimoni</a></li>
+                <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+
+            <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." target="_blank" class="inline-flex px-5 py-2.5 rounded-full bg-white text-slate-900 font-semibold text-sm hover:bg-blue-50 hover:scale-105 transition-all">
+                Konsultasi
+            </a>
+        </div>
+    </nav>
+
+    <!-- ================= HEADER TESTIMONI ================= -->
+    <header class="pt-40 pb-12 px-6 text-center max-w-4xl mx-auto relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <span class="px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-4 inline-block">
+            ⭐ Wall of Love & Kepercayaan
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+            Cerita Sukses & Apresiasi <br>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">Dari Para Mahasiswa</span>
+        </h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10">
+            Ribuan tugas dan skripsi telah tuntas tepat waktu. Simak langsung apa kata mereka yang sudah mempercayakan masa kuliahnya kepada kami.
+        </p>
+
+        <!-- Social Proof Stats Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto p-4 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-md">
+            <div class="text-center p-2">
+                <div class="text-2xl md:text-3xl font-extrabold text-blue-400">500+</div>
+                <div class="text-xs text-slate-400 mt-1">Project Selesai</div>
+            </div>
+            <div class="text-center p-2">
+                <div class="text-2xl md:text-3xl font-extrabold text-cyan-400">98%</div>
+                <div class="text-xs text-slate-400 mt-1">Tingkat Kepuasan</div>
+            </div>
+            <div class="col-span-2 md:col-span-1 text-center p-2">
+                <div class="text-2xl md:text-3xl font-extrabold text-yellow-400 flex items-center justify-center gap-1">
+                    5.0 <i class="fa-solid fa-star text-base"></i>
+                </div>
+                <div class="text-xs text-slate-400 mt-1">Rating Rata-rata</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= TESTIMONI GRID (MODERN MASONRY STYLE) ================= -->
+    <section class="pb-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Testi 1 (Highlight Skripsi) -->
+            <div class="p-8 rounded-[2rem] bg-gradient-to-br from-blue-950/40 to-slate-900/60 backdrop-blur-md border border-blue-500/30 hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex gap-1 text-yellow-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-300 text-[10px] font-semibold">Layanan Skripsi</span>
+                    </div>
+                    <p class="text-slate-200 text-sm leading-relaxed mb-6">
+                        "Sumpah penyelamat banget! Deadline skripsi BAB 3 mepet banget karena revisi numpuk, dibantuin di sini hasilnya rapi dan lolos uji turnitin. Makasih banyak min udah sabar banget!"
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center text-sm shadow-inner">
+                            AN
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                                A. Nabila <i class="fa-solid fa-circle-check text-blue-400 text-xs" title="Klien Terverifikasi"></i>
+                            </h4>
+                            <span class="text-xs text-slate-500">Mahasiswa Univ. Swasta, Jakarta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testi 2 (Programming) -->
+            <div class="p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex gap-1 text-yellow-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-300 text-[10px] font-semibold">Programming</span>
+                    </div>
+                    <p class="text-slate-200 text-sm leading-relaxed mb-6">
+                        "Order buat coding website PHP & MySQL. Pengerjaannya cepat, kodenya bersih gampang dibaca, struktur database rapi, dan dijelasin pula pas nanya-nanya. Recommended banget buat anak IT!"
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 font-bold flex items-center justify-center text-sm shadow-inner">
+                            RD
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                                Rian D. <i class="fa-solid fa-circle-check text-cyan-400 text-xs" title="Klien Terverifikasi"></i>
+                            </h4>
+                            <span class="text-xs text-slate-500">Mahasiswa Teknik Informatika</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testi 3 (PPT / Presentasi) -->
+            <div class="p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-purple-500/40 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex gap-1 text-yellow-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-300 text-[10px] font-semibold">PowerPoint</span>
+                    </div>
+                    <p class="text-slate-200 text-sm leading-relaxed mb-6">
+                        "PPT untuk sidang hasil penelitian dibikin estetik dan interaktif banget. Dosen penguji sampai muji slide presentasi saya bersih dan profesional. Mantap jiwa!"
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 font-bold flex items-center justify-center text-sm shadow-inner">
+                            SP
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                                Siti P. <i class="fa-solid fa-circle-check text-purple-400 text-xs" title="Klien Terverifikasi"></i>
+                            </h4>
+                            <span class="text-xs text-slate-500">Mahasiswa Fikom, Yogyakarta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testi 4 (Olah Data SPSS) -->
+            <div class="p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-green-500/40 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex gap-1 text-yellow-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-md bg-green-500/10 text-green-300 text-[10px] font-semibold">Olah Data SPSS</span>
+                    </div>
+                    <p class="text-slate-200 text-sm leading-relaxed mb-6">
+                        "Tugas analisis data SPSS sempat bikin stres karena datanya berantakan dan uji asumsi klasik banyak yang error. Dibantu olah data di sini langsung clear dan lengkap dengan interpretasinya."
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-green-500/20 text-green-400 font-bold flex items-center justify-center text-sm shadow-inner">
+                            MF
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                                M. Fikri <i class="fa-solid fa-circle-check text-green-400 text-xs" title="Klien Terverifikasi"></i>
+                            </h4>
+                            <span class="text-xs text-slate-500">Mahasiswa Ekonomi, Surabaya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testi 5 (Fast Response / SKS) -->
+            <div class="p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-orange-500/40 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex gap-1 text-yellow-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-md bg-orange-500/10 text-orange-300 text-[10px] font-semibold">Tugas Kilat (SKS)</span>
+                    </div>
+                    <p class="text-slate-200 text-sm leading-relaxed mb-6">
+                        "Pelayanannya ramah banget walau ngechat pas tengah malem buta karena deadline pagi-pagi. Respon super cepat, gak pake lama, dan tugas selesai tepat sebelum dikumpul. Juara!"
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500/20 text-orange-400 font-bold flex items-center justify-center text-sm shadow-inner">
+                            DL
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                                Dinda L. <i class="fa-solid fa-circle-check text-orange-400 text-xs" title="Klien Terverifikasi"></i>
+                            </h4>
+                            <span class="text-xs text-slate-500">Mahasiswa Hukum, Semarang</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testi 6 (Makalah & Essay) -->
+            <div class="p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-pink-500/40 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex gap-1 text-yellow-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-md bg-pink-500/10 text-pink-300 text-[10px] font-semibold">Makalah & Essay</span>
+                    </div>
+                    <p class="text-slate-200 text-sm leading-relaxed mb-6">
+                        "Makalah dan essay dikerjakan kilat tapi kualitas isinya tidak asal-asalan. Referensi jurnalnya juga up-to-date dan pakai kaidah penulisan yang bener. Bakal langganan terus nih."
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 font-bold flex items-center justify-center text-sm shadow-inner">
+                            AK
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                                Ahmad K. <i class="fa-solid fa-circle-check text-pink-400 text-xs" title="Klien Terverifikasi"></i>
+                            </h4>
+                            <span class="text-xs text-slate-500">Mahasiswa FISIP, Malang</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= CALL TO ACTION (CTA) SECTION ================= -->
+    <section class="pb-24 px-6 max-w-5xl mx-auto text-center">
+        <div class="p-10 md:p-14 rounded-[2.5rem] bg-gradient-to-r from-blue-900/40 via-slate-900 to-cyan-950/40 border border-blue-500/30 backdrop-blur-md relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4 relative z-10">
+                Tugasmu Menumpuk dan Bikin Stres?
+            </h2>
+            <p class="text-slate-300 max-w-xl mx-auto mb-8 relative z-10">
+                Jangan biarkan deadline merusak waktu istirahatmu. Konsultasikan detail tugasmu sekarang secara gratis dengan tim kami.
+            </p>
+            <a href="https://wa.me/6285179851446?text=Halo%20Admin,%20saya%20mau%20konsultasi%20tugas%20setelah%20melihat%20halaman%20testimoni." target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-blue-600 text-white font-semibold hover:bg-blue-500 hover:shadow-[0_0_35px_rgba(37,99,235,0.5)] transition-all relative z-10">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                Konsultasi Tugas Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-slate-800 bg-slate-950 pt-16 pb-8 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div class="md:col-span-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center text-white font-bold">K</div>
+                    <h2 class="font-bold text-xl">KerjainTugas.Aja</h2>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+                    Solusi terpercaya untuk membantu tugas mahasiswa. Dikerjakan profesional, tepat waktu, dan bergaransi revisi.
+                </p>
+            </div>
+            
+            <div>
+                <h3 class="font-bold text-white mb-6">Menu Navigasi</h3>
+                <ul class="flex flex-col gap-3 text-slate-400 text-sm">
+                    <li><a href="index.html" class="hover:text-blue-400 transition-colors">Dashboard</a></li>
+                    <li><a href="layanan.html" class="hover:text-blue-400 transition-colors">Daftar Layanan</a></li>
+                    <li><a href="harga.html" class="hover:text-blue-400 transition-colors">Estimasi Harga</a></li>
+                    <li><a href="testimoni.html" class="hover:text-blue-400 transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="hover:text-blue-400 transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-white mb-6">Hubungi Kami</h3>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/6285179851446" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-green-500 hover:text-white transition-all">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/kerjaintugas.aja" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-pink-500 hover:text-white transition-all">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@kerjaintugas.aja" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-slate-700 hover:text-white transition-all">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+            <p>&copy; 2026 KerjainTugas.Aja. Semua hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
