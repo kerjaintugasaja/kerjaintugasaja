@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id" class="light scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KerjainTugas.Aja | FAQ (Pertanyaan Umum)</title>
+    <title>KerjainTugas.Aja | FAQ & Pusat Informasi</title>
+    <meta name="description" content="Pertanyaan umum seputar layanan pendampingan tugas, skripsi, olah data, pemrograman, alur pemesanan, estimasi pengerjaan, dan ketentuan revisi di KerjainTugas.Aja.">
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Tailwind CSS CDN dengan Konfigurasi Warna Light Premium -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
-                fontFamily: {
-                    sans: ['Plus Jakarta Sans', 'sans-serif'],
+                extend: {
+                    colors: {
+                        'dark-blue': '#172338',
+                        'warm-white': '#FAF8F2',
+                        'warm-yellow': '#FFC629',
+                        'dark-yellow': '#D99A00',
+                        'royal-blue': '#3B82F6',
+                        'slate-gray': '#475569',
+                        'soft-border': '#E8E2D6',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
                 }
             }
         }
@@ -21,211 +37,413 @@
 
     <style>
         body {
-            background-color: #020617; 
-            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-            color: #f8fafc;
+            background-color: #FAF8F2;
+            color: #172338;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .logo-fallback {
+            display: none;
+        }
+        img:failed + .logo-fallback {
+            display: flex;
         }
     </style>
 </head>
-<body class="antialiased overflow-x-hidden selection:bg-blue-500 selection:text-white">
+<body class="antialiased overflow-x-hidden selection:bg-warm-yellow selection:text-dark-blue flex flex-col min-h-screen">
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-slate-950/80 backdrop-blur-md border-b border-white/10 shadow-lg">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <header class="fixed w-full z-50 top-0 transition-all duration-300 bg-dark-blue border-b border-white/10 shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between" aria-label="Navigasi Utama">
             
             <!-- Logo & Brand -->
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover:scale-105 transition-all">
-                    <img src="assets/img/logo.png" alt="KerjainTugas.Aja" class="w-full h-full object-contain">
+            <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-warm-yellow rounded-xl p-1" aria-label="KerjainTugas.Aja Beranda">
+                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center p-1.5 transition-transform group-hover:scale-105">
+                    <img src="assets/img/logo.png" alt="Logo KerjainTugas.Aja" class="w-full h-full object-contain" onError="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback hidden w-full h-full items-center justify-center text-warm-yellow font-bold text-lg">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
                 </div>
-                <span class="font-bold text-lg tracking-tight text-white hidden sm:block">KerjainTugas.Aja</span>
+                <span class="font-bold text-lg tracking-tight text-white">KerjainTugas.Aja</span>
             </a>
             
-            <!-- Menu Tengah (Desktop) -->
-            <ul class="hidden md:flex items-center gap-2 text-sm font-medium text-slate-300">
-                <li><a href="index.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">Dashboard</a></li>
-                <li><a href="layanan.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">Layanan</a></li>
-                <li><a href="harga.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">Harga</a></li>
-                <li><a href="testimoni.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">Testimoni</a></li>
-                <li><a href="faq.html" class="px-4 py-2 rounded-xl bg-blue-600 text-white shadow-md shadow-blue-600/30 transition-all">FAQ</a></li>
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
+                <li><a href="index.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">Dashboard</a></li>
+                <li><a href="layanan.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">Layanan</a></li>
+                <li><a href="harga.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">Harga</a></li>
+                <li><a href="testimoni.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">Testimoni</a></li>
+                <li><a href="faq.html" class="px-4 py-2 rounded-xl bg-warm-yellow text-dark-blue font-semibold shadow-sm transition-all" aria-current="page">FAQ</a></li>
             </ul>
 
-            <!-- CTA Kanan (Desktop) -->
+            <!-- CTA Konsultasi Desktop -->
             <div class="hidden md:flex items-center">
-                <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." target="_blank" class="inline-flex px-5 py-2.5 rounded-full bg-white text-slate-900 font-semibold text-sm hover:bg-blue-50 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all active:scale-95">
-                    Konsultasi
+                <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-warm-yellow text-dark-blue font-bold text-sm hover:bg-yellow-400 hover:shadow-md transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warm-yellow">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Konsultasi</span>
                 </a>
             </div>
 
             <!-- Tombol Hamburger (Mobile) -->
-            <button id="hamburgerBtn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 text-white focus:outline-none">
-                <i class="fa-solid fa-bars text-lg" id="hamburgerIcon"></i>
+            <button id="hamburgerBtn" type="button" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-warm-yellow transition-all" aria-controls="mobileMenu" aria-expanded="false" aria-label="Buka Menu Navigasi">
+                <i class="fa-solid fa-bars text-lg" id="hamburgerIcon" aria-hidden="true"></i>
             </button>
-        </div>
+        </nav>
 
-        <!-- Menu Dropdown (Mobile View - Fix WhatsApp Link) -->
-        <div id="mobileMenu" class="hidden md:hidden px-6 pt-4 pb-6 bg-slate-950/95 border-b border-slate-800 backdrop-blur-xl transition-all">
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden px-6 pt-4 pb-6 bg-dark-blue border-b border-white/10 transition-all">
             <ul class="flex flex-col gap-2 text-slate-300 font-medium">
-                <li><a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">Dashboard</a></li>
-                <li><a href="layanan.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">Layanan</a></li>
-                <li><a href="harga.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">Harga</a></li>
-                <li><a href="testimoni.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">Testimoni</a></li>
-                <li><a href="faq.html" class="block px-4 py-3 rounded-xl bg-blue-600/20 text-blue-400 font-semibold">FAQ</a></li>
+                <li><a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">Dashboard</a></li>
+                <li><a href="layanan.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">Layanan</a></li>
+                <li><a href="harga.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">Harga</a></li>
+                <li><a href="testimoni.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">Testimoni</a></li>
+                <li><a href="faq.html" class="block px-4 py-3 rounded-xl bg-warm-yellow text-dark-blue font-bold" aria-current="page">FAQ</a></li>
                 <li class="pt-2">
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." class="w-full flex justify-center items-center gap-2 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-lg">
-                        <i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp
+                    <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." class="w-full flex justify-center items-center gap-2 py-3 rounded-xl bg-warm-yellow text-dark-blue font-bold shadow-md hover:bg-yellow-400 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Konsultasi WhatsApp
                     </a>
                 </li>
             </ul>
         </div>
-    </nav>
-
-    <!-- ================= HEADER FAQ ================= -->
-    <header class="pt-40 pb-12 px-6 text-center max-w-4xl mx-auto relative">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
-        
-        <span class="px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-4 inline-block">
-            ❓ Pusat Bantuan & Informasi
-        </span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-            Pertanyaan yang Sering <br>
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">Diajukan Mahasiswa</span>
-        </h1>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-            Punya keraguan sebelum memesan? Temukan jawaban lengkap seputar alur pengerjaan, sistem revisi, hingga keamanan data di bawah ini.
-        </p>
     </header>
 
-    <!-- ================= FAQ ACCORDION / BOX ================= -->
-    <section class="pb-24 px-6 max-w-4xl mx-auto">
-        <div class="space-y-4">
+    <main class="flex-grow pt-20">
+        
+        <!-- ================= HERO SECTION ================= -->
+        <section class="relative pt-12 pb-12 md:pt-16 md:pb-16 px-4 sm:px-6 bg-warm-white border-b border-soft-border">
+            <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+                <span class="text-dark-yellow font-extrabold text-sm tracking-wider uppercase mb-3 block">Pusat Informasi & Jawaban</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-dark-blue leading-tight mb-4">
+                    Pertanyaan yang Sering <br class="hidden sm:block">
+                    <span class="relative inline-block text-dark-blue">
+                        Diajukan Mahasiswa
+                        <span class="absolute bottom-1 left-0 w-full h-3 bg-warm-yellow/40 -z-10 rounded"></span>
+                    </span>
+                </h1>
+                <p class="text-base sm:text-lg text-slate-gray max-w-2xl leading-relaxed">
+                    Temukan jawaban lengkap dan transparan seputar alur pemesanan, ketentuan pengerjaan, skema estimasi biaya, serta perlakuan privasi dokumen Anda.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= FAQ ACCORDION SECTION ================= -->
+        <section class="py-12 md:py-16 px-4 sm:px-6 max-w-4xl mx-auto space-y-10">
             
-            <div class="p-6 md:p-8 rounded-2xl bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-blue-500/40 transition-all">
-                <h3 class="text-lg md:text-xl font-bold mb-3 text-white flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm shrink-0">01</span>
-                    Apa itu KerjainTugas.Aja?
-                </h3>
-                <p class="text-slate-400 text-sm md:text-base leading-relaxed pl-11">
-                    KerjainTugas.Aja adalah platform jasa bantuan pengerjaan tugas akademik mahasiswa secara cepat, rapi, dan profesional. Kami membantu berbagai jenis tugas mulai dari makalah, PowerPoint, pemrograman, hingga skripsi.
-                </p>
+            <!-- KELOMPOK 1: INFORMASI LAYANAN -->
+            <div>
+                <h2 class="text-xs font-extrabold uppercase tracking-wider text-dark-yellow mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info text-royal-blue"></i>
+                    <span>1. Informasi Layanan Utama</span>
+                </h2>
+                <div class="space-y-4">
+                    
+                    <!-- Q1 -->
+                    <div class="rounded-2xl bg-white border border-soft-border overflow-hidden transition-all shadow-sm">
+                        <button type="button" class="faq-toggle w-full p-5 text-left font-bold text-dark-blue text-base sm:text-lg flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50" aria-expanded="false" aria-controls="faq-ans-1">
+                            <span>Apa itu KerjainTugas.Aja?</span>
+                            <i class="fa-solid fa-chevron-down text-royal-blue text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq-ans-1" class="faq-content hidden p-5 pt-0 text-slate-gray text-xs sm:text-sm leading-relaxed border-t border-soft-border/50 bg-warm-white/40">
+                            KerjainTugas.Aja adalah platform penyedia pendampingan akademik dan teknis untuk membantu mahasiswa menyelesaikan berbagai kebutuhan studi. Layanan mencakup bimbingan skripsi, pengolahan data statistik, penulisan karya ilmiah, tugas pemrograman, administrasi Linux, hingga pembuatan slide presentasi.
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="rounded-2xl bg-white border border-soft-border overflow-hidden transition-all shadow-sm">
+                        <button type="button" class="faq-toggle w-full p-5 text-left font-bold text-dark-blue text-base sm:text-lg flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50" aria-expanded="false" aria-controls="faq-ans-2">
+                            <span>Layanan apa saja yang tersedia?</span>
+                            <i class="fa-solid fa-chevron-down text-royal-blue text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq-ans-2" class="faq-content hidden p-5 pt-0 text-slate-gray text-xs sm:text-sm leading-relaxed border-t border-soft-border/50 bg-warm-white/40">
+                            Layanan kami terbagi menjadi beberapa kategori teknis utama:
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li><strong>Akademik & Skripsi:</strong> Pendampingan judul, proposal, BAB 1-5, dan format pedoman kampus.</li>
+                                <li><strong>Olah Data Statistik:</strong> Analisis menggunakan SPSS, SmartPLS, Jamovi, AMOS, dan Ms. Excel.</li>
+                                <li><strong>IT & Sistem:</strong> Bantuan pemrograman web/aplikasi serta administrasi & troubleshooting Linux.</li>
+                                <li><strong>Karya Tulis & Presentasi:</strong> Makalah, esai, review jurnal, laporan praktikum, PPT, dan CV ATS.</li>
+                            </ul>
+                            Rincian lengkap cakupan setiap modul dapat dilihat di halaman <a href="layanan.html" class="text-royal-blue font-bold hover:underline">Katalog Layanan</a>.
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="p-6 md:p-8 rounded-2xl bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-blue-500/40 transition-all">
-                <h3 class="text-lg md:text-xl font-bold mb-3 text-white flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm shrink-0">02</span>
-                    Bagaimana cara memesan (order) layanan di sini?
-                </h3>
-                <p class="text-slate-400 text-sm md:text-base leading-relaxed pl-11">
-                    Sangat mudah! Cukup klik tombol WhatsApp yang ada di setiap halaman website. Kirimkan detail tugas, dokumen pendukung, serta tenggat waktu (*deadline*)-nya. Admin kami akan langsung merespons dan memberikan estimasi harga.
-                </p>
+            <!-- KELOMPOK 2: PEMESANAN DAN HARGA -->
+            <div>
+                <h2 class="text-xs font-extrabold uppercase tracking-wider text-dark-yellow mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-calculator text-royal-blue"></i>
+                    <span>2. Pemesanan & Estimasi Biaya</span>
+                </h2>
+                <div class="space-y-4">
+                    
+                    <!-- Q3 -->
+                    <div class="rounded-2xl bg-white border border-soft-border overflow-hidden transition-all shadow-sm">
+                        <button type="button" class="faq-toggle w-full p-5 text-left font-bold text-dark-blue text-base sm:text-lg flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50" aria-expanded="false" aria-controls="faq-ans-3">
+                            <span>Bagaimana cara memesan layanan?</span>
+                            <i class="fa-solid fa-chevron-down text-royal-blue text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq-ans-3" class="faq-content hidden p-5 pt-0 text-slate-gray text-xs sm:text-sm leading-relaxed border-t border-soft-border/50 bg-warm-white/40">
+                            Prosedur pemesanan sangat sederhana:
+                            <ol class="list-decimal list-inside mt-2 space-y-1">
+                                <li>Hubungi admin kami melalui WhatsApp.</li>
+                                <li>Sampaikan jenis layanan, instruksi/brief tugas, file pendukung, dan tenggat waktu (*deadline*).</li>
+                                <li>Tim kami akan menganalisis ruang lingkup dan memberikan estimasi biaya rasional.</li>
+                                <li>Lakukan konfirmasi kesepakatan awal sebelum proses pendampingan dimulai.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="rounded-2xl bg-white border border-soft-border overflow-hidden transition-all shadow-sm">
+                        <button type="button" class="faq-toggle w-full p-5 text-left font-bold text-dark-blue text-base sm:text-lg flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50" aria-expanded="false" aria-controls="faq-ans-4">
+                            <span>Bagaimana sistem penetapan harga di KerjainTugas.Aja?</span>
+                            <i class="fa-solid fa-chevron-down text-royal-blue text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq-ans-4" class="faq-content hidden p-5 pt-0 text-slate-gray text-xs sm:text-sm leading-relaxed border-t border-soft-border/50 bg-warm-white/40">
+                            Seluruh nominal di halaman <a href="harga.html" class="text-royal-blue font-bold hover:underline">Estimasi Harga</a> merupakan patokan harga awal dengan format "Mulai dari". Biaya akhir ditentukan secara objektif berdasarkan tingkat kesulitan materi, volume data, kelengkapan berkas, serta kecepatan pengerjaan yang dibutuhkan.
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="p-6 md:p-8 rounded-2xl bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-blue-500/40 transition-all">
-                <h3 class="text-lg md:text-xl font-bold mb-3 text-white flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm shrink-0">03</span>
-                    Berapa lama waktu pengerjaan tugas?
-                </h3>
-                <p class="text-slate-400 text-sm md:text-base leading-relaxed pl-11">
-                    Waktu pengerjaan bervariasi tergantung tingkat kesulitan dan jenis tugasnya. Bisa mulai dari beberapa jam untuk tugas kilat (SKS) hingga beberapa hari untuk proyek besar seperti skripsi dan pemrograman.
-                </p>
+            <!-- KELOMPOK 3: DOKUMEN DAN PENGERJAAN -->
+            <div>
+                <h2 class="text-xs font-extrabold uppercase tracking-wider text-dark-yellow mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-file-lines text-royal-blue"></i>
+                    <span>3. Dokumen, Waktu & Revisi</span>
+                </h2>
+                <div class="space-y-4">
+                    
+                    <!-- Q5 -->
+                    <div class="rounded-2xl bg-white border border-soft-border overflow-hidden transition-all shadow-sm">
+                        <button type="button" class="faq-toggle w-full p-5 text-left font-bold text-dark-blue text-base sm:text-lg flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50" aria-expanded="false" aria-controls="faq-ans-5">
+                            <span>Apa saja yang perlu disiapkan sebelum konsultasi?</span>
+                            <i class="fa-solid fa-chevron-down text-royal-blue text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq-ans-5" class="faq-content hidden p-5 pt-0 text-slate-gray text-xs sm:text-sm leading-relaxed border-t border-soft-border/50 bg-warm-white/40">
+                            Anda dapat menyiapkan dokumen panduan tugas dari dosen, lembar instruksi/soal, modul praktikum, dataset (untuk olah data), tangkapan layar eror (untuk tugas IT/Linux), serta catatan khusus mengenai tenggat waktu pengerjaan.
+                        </div>
+                    </div>
+
+                    <!-- Q6 -->
+                    <div class="rounded-2xl bg-white border border-soft-border overflow-hidden transition-all shadow-sm">
+                        <button type="button" class="faq-toggle w-full p-5 text-left font-bold text-dark-blue text-base sm:text-lg flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50" aria-expanded="false" aria-controls="faq-ans-6">
+                            <span>Berapa lama estimasi waktu pengerjaan?</span>
+                            <i class="fa-solid fa-chevron-down text-royal-blue text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq-ans-6" class="faq-content hidden p-5 pt-0 text-slate-gray text-xs sm:text-sm leading-relaxed border-t border-soft-border/50 bg-warm-white/40">
+                            Durasi waktu pengerjaan disesuaikan dengan kompleksitas tugas dan jadwal yang disepakati bersama. Untuk tugas harian atau pengolahan data sederhana dapat diselesaikan dalam hitungan jam/hari, sedangkan tugas besar seperti skripsi memerlukan tahap penyelesaian bertahap.
+                        </div>
+                    </div>
+
+                    <!-- Q7 -->
+                    <div class="rounded-2xl bg-white border border-soft-border overflow-hidden transition-all shadow-sm">
+                        <button type="button" class="faq-toggle w-full p-5 text-left font-bold text-dark-blue text-base sm:text-lg flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50" aria-expanded="false" aria-controls="faq-ans-7">
+                            <span>Apakah bisa mengajukan pendampingan revisi?</span>
+                            <i class="fa-solid fa-chevron-down text-royal-blue text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq-ans-7" class="faq-content hidden p-5 pt-0 text-slate-gray text-xs sm:text-sm leading-relaxed border-t border-soft-border/50 bg-warm-white/40">
+                            Ya, pendampingan revisi diberikan sesuai dengan ruang lingkup instruksi awal yang telah disepakati. Jika terdapat penambahan materi baru atau perubahan topik di luar kesepakatan awal, akan dilakukan evaluasi ruang lingkup ulang bersama admin.
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="p-6 md:p-8 rounded-2xl bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-blue-500/40 transition-all">
-                <h3 class="text-lg md:text-xl font-bold mb-3 text-white flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm shrink-0">04</span>
-                    Apakah bisa mengajukan revisi jika ada yang kurang?
-                </h3>
-                <p class="text-slate-400 text-sm md:text-base leading-relaxed pl-11">
-                    Tentu saja! Kami menyediakan garansi revisi sesuai dengan kesepakatan awal agar hasil tugas benar-benar sesuai dengan kebutuhan dan instruksi dosenmu.
-                </p>
+            <!-- KELOMPOK 4: PRIVASI DAN KEBUTUHAN KHUSUS -->
+            <div>
+                <h2 class="text-xs font-extrabold uppercase tracking-wider text-dark-yellow mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-user-shield text-royal-blue"></i>
+                    <span>4. Privasi & Kebutuhan Khusus</span>
+                </h2>
+                <div class="space-y-4">
+                    
+                    <!-- Q8 -->
+                    <div class="rounded-2xl bg-white border border-soft-border overflow-hidden transition-all shadow-sm">
+                        <button type="button" class="faq-toggle w-full p-5 text-left font-bold text-dark-blue text-base sm:text-lg flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50" aria-expanded="false" aria-controls="faq-ans-8">
+                            <span>Bagaimana dokumen dan informasi pelanggan ditangani?</span>
+                            <i class="fa-solid fa-chevron-down text-royal-blue text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq-ans-8" class="faq-content hidden p-5 pt-0 text-slate-gray text-xs sm:text-sm leading-relaxed border-t border-soft-border/50 bg-warm-white/40">
+                            Seluruh berkas, data penelitian, dan riwayat percakapan digunakan khusus untuk keperluan penyelesaian tugas Anda. Kami tidak mempublikasikan identitas pribadi atau file pelanggan sebagai bahan promosi publik tanpa persetujuan eksplisit.
+                        </div>
+                    </div>
+
+                    <!-- Q9 -->
+                    <div class="rounded-2xl bg-white border border-soft-border overflow-hidden transition-all shadow-sm">
+                        <button type="button" class="faq-toggle w-full p-5 text-left font-bold text-dark-blue text-base sm:text-lg flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50" aria-expanded="false" aria-controls="faq-ans-9">
+                            <span>Apakah tersedia konsultasi Linux, programming, dan software statistik?</span>
+                            <i class="fa-solid fa-chevron-down text-royal-blue text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq-ans-9" class="faq-content hidden p-5 pt-0 text-slate-gray text-xs sm:text-sm leading-relaxed border-t border-soft-border/50 bg-warm-white/40">
+                            Ya, kami melayani konsultasi teknis terkait perintah dasar/troubleshooting Linux, pembuatan program web/aplikasi, serta olah data menggunakan SPSS, SmartPLS, Jamovi, AMOS, dan Excel. Penanganan disesuaikan dengan ketersediaan tim teknis dan modul tugas Anda.
+                        </div>
+                    </div>
+
+                    <!-- Q10 -->
+                    <div class="rounded-2xl bg-white border border-soft-border overflow-hidden transition-all shadow-sm">
+                        <button type="button" class="faq-toggle w-full p-5 text-left font-bold text-dark-blue text-base sm:text-lg flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors focus:outline-none focus:bg-slate-50" aria-expanded="false" aria-controls="faq-ans-10">
+                            <span>Bagaimana jika kebutuhan tugas saya belum tercantum di website?</span>
+                            <i class="fa-solid fa-chevron-down text-royal-blue text-sm transition-transform duration-300"></i>
+                        </button>
+                        <div id="faq-ans-10" class="faq-content hidden p-5 pt-0 text-slate-gray text-xs sm:text-sm leading-relaxed border-t border-soft-border/50 bg-warm-white/40">
+                            Silakan langsung menghubungi admin melalui WhatsApp untuk menyampaikan detail tugas Anda. Tim kami akan melakukan konfirmasi ketersediaan pengerjaan secara langsung berdasarkan spesifikasi tugas yang Anda kirimkan.
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="p-6 md:p-8 rounded-2xl bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-blue-500/40 transition-all">
-                <h3 class="text-lg md:text-xl font-bold mb-3 text-white flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm shrink-0">05</span>
-                    Apakah data dan identitas saya dijamin aman?
-                </h3>
-                <p class="text-slate-400 text-sm md:text-base leading-relaxed pl-11">
-                    100% aman dan terjaga kerahasiaannya. Seluruh file, dokumen, dan privasi pelanggan tidak akan pernah kami bagikan kepada pihak manapun.
+        </section>
+
+        <!-- ================= CTA BANTUAN LAIN ================= -->
+        <section class="py-12 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto rounded-3xl bg-dark-blue p-8 sm:p-12 text-center relative overflow-hidden shadow-xl border border-soft-border">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3 relative z-10">
+                    Masih Memiliki Pertanyaan Lain?
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base mb-8 max-w-2xl mx-auto relative z-10 leading-relaxed">
+                    Jangan ragu untuk berkonsultasi langsung dengan tim admin kami via WhatsApp. Kami siap membantu memeriksa kebutuhan tugas Anda.
                 </p>
+                <div class="flex justify-center relative z-10">
+                    <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20tanya%20terkait%20tugas%20kuliah." target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-2xl bg-warm-yellow text-dark-blue font-bold text-base hover:bg-yellow-400 shadow-md transition-all inline-flex items-center gap-3 active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Chat Admin via WhatsApp</span>
+                    </a>
+                </div>
             </div>
+        </section>
 
-        </div>
-
-        <!-- Bantuan Lain / Banner Bawah -->
-        <div class="mt-12 p-8 rounded-[2rem] bg-gradient-to-r from-blue-900/30 via-slate-900 to-cyan-950/30 border border-blue-500/30 text-center backdrop-blur-md">
-            <h3 class="text-xl font-bold mb-2 text-white">Masih punya pertanyaan lain?</h3>
-            <p class="text-slate-400 text-sm mb-6">Jangan ragu untuk langsung bertanya kepada admin kami via WhatsApp.</p>
-            <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20terkait%20tugas%20kuliah." target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-lg shadow-blue-500/20">
-                <i class="fa-brands fa-whatsapp text-lg"></i> Chat Admin Sekarang
-            </a>
-        </div>
-    </section>
+    </main>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="border-t border-slate-800 bg-slate-950 pt-16 pb-8 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+    <footer class="bg-dark-blue border-t border-white/10 text-slate-300 pt-16 pb-8 px-4 sm:px-6 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            
+            <!-- Branding -->
             <div class="md:col-span-1">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-                        <img src="assets/img/logo.png" alt="KerjainTugas.Aja" class="w-full h-full object-contain">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center p-1.5">
+                        <img src="assets/img/logo.png" alt="Logo KerjainTugas.Aja" class="w-full h-full object-contain" onError="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="logo-fallback hidden w-full h-full items-center justify-center text-warm-yellow font-bold text-base">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
                     </div>
-                    <h2 class="font-bold text-xl text-white">KerjainTugas.Aja</h2>
+                    <span class="font-bold text-xl text-white tracking-tight">KerjainTugas.Aja</span>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
-                    Solusi terpercaya untuk membantu tugas mahasiswa. Dikerjakan profesional, tepat waktu, dan bergaransi revisi.
+                <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                    Layanan pendampingan akademik terpercaya untuk membantu penyelesaian tugas, karya tulis, dan bimbingan skripsi mahasiswa.
                 </p>
             </div>
             
+            <!-- Navigasi -->
             <div>
-                <h3 class="font-bold text-white mb-6">Menu Navigasi</h3>
-                <ul class="flex flex-col gap-3 text-slate-400 text-sm">
-                    <li><a href="index.html" class="hover:text-blue-400 transition-colors">Dashboard</a></li>
-                    <li><a href="layanan.html" class="hover:text-blue-400 transition-colors">Daftar Layanan</a></li>
-                    <li><a href="harga.html" class="hover:text-blue-400 transition-colors">Estimasi Harga</a></li>
-                    <li><a href="testimoni.html" class="hover:text-blue-400 transition-colors">Testimoni</a></li>
-                    <li><a href="faq.html" class="hover:text-blue-400 transition-colors">FAQ</a></li>
+                <h3 class="font-bold text-white text-base mb-4">Navigasi Halaman</h3>
+                <ul class="flex flex-col gap-2.5 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Dashboard</a></li>
+                    <li><a href="layanan.html" class="hover:text-white transition-colors">Daftar Layanan</a></li>
+                    <li><a href="harga.html" class="hover:text-white transition-colors">Estimasi Harga</a></li>
+                    <li><a href="testimoni.html" class="hover:text-white transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="text-warm-yellow font-semibold hover:underline">FAQ</a></li>
                 </ul>
             </div>
 
+            <!-- Kontak & Sosial Media -->
             <div>
-                <h3 class="font-bold text-white mb-6">Hubungi Kami</h3>
-                <div class="flex gap-4">
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-green-500 hover:text-white transition-all">
-                        <i class="fa-brands fa-whatsapp"></i>
+                <h3 class="font-bold text-white text-base mb-4">Hubungi Kami</h3>
+                <p class="text-slate-400 text-sm mb-4">Layanan konsultasi melalui platform resmi berikut:</p>
+                <div class="flex gap-3">
+                    <a href="https://wa.me/6285179851446" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-warm-yellow hover:text-dark-blue transition-all" aria-label="WhatsApp KerjainTugas.Aja">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
                     </a>
-                    <a href="https://www.instagram.com/kerjaintugas.aja" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-pink-500 hover:text-white transition-all">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.instagram.com/kerjaintugas.aja" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-warm-yellow hover:text-dark-blue transition-all" aria-label="Instagram KerjainTugas.Aja">
+                        <i class="fa-brands fa-instagram text-lg"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@kerjaintugas.aja" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-slate-700 hover:text-white transition-all">
-                        <i class="fa-brands fa-tiktok"></i>
+                    <a href="https://www.tiktok.com/@kerjaintugas.aja" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-warm-yellow hover:text-dark-blue transition-all" aria-label="TikTok KerjainTugas.Aja">
+                        <i class="fa-brands fa-tiktok text-lg"></i>
                     </a>
                 </div>
             </div>
         </div>
         
-        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-            <p>&copy; 2026 KerjainTugas.Aja. Semua hak cipta dilindungi.</p>
+        <!-- Hak Cipta -->
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 text-center text-slate-400 text-sm">
+            <p>&copy; 2026 KerjainTugas.Aja. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- ================= JAVASCRIPT UNTUK MOBILE MENU ================= -->
+    <!-- ================= JAVASCRIPT NAVIGASI & ACCORDION ================= -->
     <script>
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Logic
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburgerIcon = document.getElementById('hamburgerIcon');
 
-        hamburgerBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                hamburgerIcon.classList.remove('fa-xmark');
-                hamburgerIcon.classList.add('fa-bars');
-            } else {
-                hamburgerIcon.classList.remove('fa-bars');
-                hamburgerIcon.classList.add('fa-xmark');
+            if (hamburgerBtn && mobileMenu && hamburgerIcon) {
+                const toggleMenu = () => {
+                    const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+                    hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    if (mobileMenu.classList.contains('hidden')) {
+                        hamburgerIcon.classList.remove('fa-xmark');
+                        hamburgerIcon.classList.add('fa-bars');
+                    } else {
+                        hamburgerIcon.classList.remove('fa-bars');
+                        hamburgerIcon.classList.add('fa-xmark');
+                    }
+                };
+
+                hamburgerBtn.addEventListener('click', toggleMenu);
+
+                const mobileNavLinks = mobileMenu.querySelectorAll('a');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            toggleMenu();
+                        }
+                    });
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
             }
+
+            // Accordion Logic
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('i');
+                    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+                    // Close all other accordions for clean single view
+                    faqToggles.forEach(otherToggle => {
+                        if (otherToggle !== toggle) {
+                            otherToggle.setAttribute('aria-expanded', 'false');
+                            otherToggle.nextElementSibling.classList.add('hidden');
+                            const otherIcon = otherToggle.querySelector('i');
+                            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Toggle current item
+                    if (isExpanded) {
+                        toggle.setAttribute('aria-expanded', 'false');
+                        content.classList.add('hidden');
+                        if (icon) icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        toggle.setAttribute('aria-expanded', 'true');
+                        content.classList.remove('hidden');
+                        if (icon) icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
         });
     </script>
 </body>
