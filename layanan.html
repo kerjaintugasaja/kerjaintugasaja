@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KerjainTugas.Aja | Katalog Layanan Detail</title>
-    <meta name="description" content="Detail katalog layanan pendampingan akademik KerjainTugas.Aja: bimbingan skripsi, IT & pemrograman, karya tulis, olah data statistik, hingga tugas praktikum.">
+    <title>KerjainTugas.Aja | Katalog Layanan Pendampingan Akademik</title>
+    <meta name="description" content="Katalog layanan lengkap pendampingan skripsi, olah data statistik (SPSS, SmartPLS, Jamovi, AMOS, Excel), pemrograman, administrasi Linux, dan karya tulis ilmiah.">
     
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +41,6 @@
             color: #172338;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        /* Fallback saat logo lokal tidak ditemukan */
         .logo-fallback {
             display: none;
         }
@@ -108,233 +107,328 @@
     </header>
 
     <main class="flex-grow pt-20">
-        <!-- ================= HEADER LAYANAN ================= -->
-        <header class="pt-12 pb-12 md:pt-16 md:pb-16 px-4 sm:px-6 text-center max-w-4xl mx-auto">
-            <span class="text-dark-yellow font-extrabold text-sm tracking-wider uppercase mb-3 block">Katalog Layanan Detail</span>
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-dark-blue leading-tight mb-4">
-                Tugas Selesai, <br class="hidden sm:block">
-                <span class="relative inline-block text-dark-blue">
-                    Hasil Maksimal.
-                    <span class="absolute bottom-1 left-0 w-full h-3 bg-warm-yellow/40 -z-10 rounded"></span>
-                </span>
-            </h1>
-            <p class="text-slate-gray text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-                Setiap layanan dikerjakan spesifik sesuai format kampusmu. Estimasi biaya rasional, kualitas profesional, dan bergaransi revisi.
-            </p>
-        </header>
+        
+        <!-- ================= HERO LAYANAN ================= -->
+        <section class="relative pt-12 pb-12 md:pt-16 md:pb-16 px-4 sm:px-6 bg-warm-white border-b border-soft-border">
+            <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+                <span class="text-dark-yellow font-extrabold text-sm tracking-wider uppercase mb-3 block">Katalog Layanan Akademik</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-dark-blue leading-tight mb-4">
+                    Solusi Pendampingan Studi <br class="hidden sm:block">
+                    <span class="relative inline-block text-dark-blue">
+                        Lengkap & Terstruktur
+                        <span class="absolute bottom-1 left-0 w-full h-3 bg-warm-yellow/40 -z-10 rounded"></span>
+                    </span>
+                </h1>
+                <p class="text-base sm:text-lg text-slate-gray max-w-2xl leading-relaxed mb-6">
+                    Temukan pendampingan teknis dan konsultasi akademik yang disesuaikan secara khusus dengan petunjuk praktikum dan pedoman kampus Anda.
+                </p>
+                <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-soft-border text-xs sm:text-sm font-semibold text-slate-gray">
+                    <i class="fa-solid fa-circle-info text-royal-blue"></i>
+                    <span>Ingin mengetahui skema estimasi biaya? <a href="harga.html" class="text-royal-blue font-bold hover:underline ml-1">Lihat Halaman Estimasi Harga &rarr;</a></span>
+                </div>
+            </div>
+        </section>
 
-        <!-- ================= SERVICES GRID DETAIL ================= -->
-        <section class="pb-20 px-4 sm:px-6 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- ================= SERVICES CATALOG GRID ================= -->
+        <section class="py-12 md:py-16 px-4 sm:px-6 max-w-7xl mx-auto space-y-10">
+            
+            <!-- SECTION 1: SKRIPSI DAN PROPOSAL -->
+            <div class="p-6 sm:p-10 rounded-3xl bg-white border border-soft-border shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-soft-border">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-warm-yellow/20 text-dark-blue flex items-center justify-center text-2xl font-bold shrink-0">
+                            <i class="fa-solid fa-graduation-cap text-royal-blue"></i>
+                        </div>
+                        <div>
+                            <span class="px-3 py-0.5 rounded-full bg-warm-yellow text-dark-blue text-xs font-bold mb-1 inline-block">Fokus Utama</span>
+                            <h2 class="text-2xl font-extrabold text-dark-blue">Skripsi & Proposal Penelitian</h2>
+                        </div>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20konsultasi%20skripsi%20dan%20proposal." target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-warm-yellow text-dark-blue font-bold text-sm hover:bg-yellow-400 transition-all inline-flex items-center gap-2 self-start md:self-auto">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Konsultasi Skripsi
+                    </a>
+                </div>
+
+                <p class="text-slate-gray text-base leading-relaxed mb-6">
+                    Pendampingan dan konsultasi terstruktur untuk membantu mahasiswa menyelesaikan tugas akhir. Layanan mencakup penyusunan logika penelitian, arahan metodologi, pengelolaan pustaka, hingga penyesuaian revisi berdasarkan saran dosen penguji.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div class="p-4 rounded-xl bg-warm-white border border-soft-border/80">
+                        <h3 class="font-bold text-dark-blue text-sm mb-1"><i class="fa-solid fa-check text-royal-blue mr-2"></i>Judul & Kerangka</h3>
+                        <p class="text-xs text-slate-gray">Pendampingan pencarian gagasan judul, latar belakang masalah, dan pemetaan matriks penelitian.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-warm-white border border-soft-border/80">
+                        <h3 class="font-bold text-dark-blue text-sm mb-1"><i class="fa-solid fa-check text-royal-blue mr-2"></i>Proposal & BAB Utama</h3>
+                        <p class="text-xs text-slate-gray">Bimbingan penyusunan Bab Proposal (BAB 1-3) serta Bab Hasil & Pembahasan (BAB 4-5).</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-warm-white border border-soft-border/80">
+                        <h3 class="font-bold text-dark-blue text-sm mb-1"><i class="fa-solid fa-check text-royal-blue mr-2"></i>Format & Pedoman Kampus</h3>
+                        <p class="text-xs text-slate-gray">Penyesuaian tata letak, margin, penomoran, dan gaya selingkung petunjuk penulisan kampus.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-warm-white border border-soft-border/80">
+                        <h3 class="font-bold text-dark-blue text-sm mb-1"><i class="fa-solid fa-check text-royal-blue mr-2"></i>Referensi & Sitasi</h3>
+                        <p class="text-xs text-slate-gray">Pengelolaan sitasi otomatis menggunakan perangkat manajer referensi seperti Mendeley atau Zotero.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-warm-white border border-soft-border/80">
+                        <h3 class="font-bold text-dark-blue text-sm mb-1"><i class="fa-solid fa-check text-royal-blue mr-2"></i>Metodologi Penelitian</h3>
+                        <p class="text-xs text-slate-gray">Diskusi rancangan pendekatan kuantitatif, kualitatif, korelasi, eksperimen, maupun R&D.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-warm-white border border-soft-border/80">
+                        <h3 class="font-bold text-dark-blue text-sm mb-1"><i class="fa-solid fa-check text-royal-blue mr-2"></i>Pendampingan Revisi</h3>
+                        <p class="text-xs text-slate-gray">Diskusi dan arahan teknis dalam merespons catatan masukan dari dosen pembimbing.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-soft-border">
+                    <span class="text-xs font-bold text-dark-blue mr-2 self-center">Cakupan Penelitian:</span>
+                    <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-xs text-slate-gray rounded-md">Kuantitatif</span>
+                    <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-xs text-slate-gray rounded-md">Kualitatif</span>
+                    <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-xs text-slate-gray rounded-md">Mixed Methods</span>
+                    <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-xs text-slate-gray rounded-md">R&D</span>
+                    <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-xs text-slate-gray rounded-md">Studi Kasus</span>
+                </div>
+            </div>
+
+            <!-- SECTION 2: IT, LINUX, PROGRAMMING, DAN WEB -->
+            <div class="p-6 sm:p-10 rounded-3xl bg-white border border-soft-border shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-soft-border">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-2xl font-bold shrink-0">
+                            <i class="fa-solid fa-terminal"></i>
+                        </div>
+                        <div>
+                            <span class="px-3 py-0.5 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold mb-1 inline-block">Sistem & Pemrograman</span>
+                            <h2 class="text-2xl font-extrabold text-dark-blue">IT, Linux, Programming & Web Development</h2>
+                        </div>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20konsultasi%20tugas%20IT,%20Linux,%20atau%20Programming." target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-warm-yellow text-dark-blue font-bold text-sm hover:bg-yellow-400 transition-all inline-flex items-center gap-2 self-start md:self-auto">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Konsultasi Tugas IT
+                    </a>
+                </div>
+
+                <p class="text-slate-gray text-base leading-relaxed mb-6">
+                    Bantuan pemahaman teknis dan pengerjaan tugas praktikum IT. Layanan mencakup pengelolaan sistem operasi Linux secara rinci serta pengembangan perangkat lunak berbasis kode yang bersih.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    
+                    <!-- Sub-kategori 1: Linux & Administration -->
+                    <div class="p-5 rounded-2xl bg-warm-white border border-soft-border">
+                        <div class="flex items-center gap-2 font-bold text-dark-blue mb-3 text-base">
+                            <i class="fa-brands fa-linux text-royal-blue text-lg"></i>
+                            <h3>Linux & System Administration</h3>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-slate-gray">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-royal-blue mt-0.5"></i>
+                                <span><strong>Instalasi & Konfigurasi:</strong> Bantuan pengaturan lingkungan OS Linux (Ubuntu, Debian, CentOS, RHEL).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-royal-blue mt-0.5"></i>
+                                <span><strong>CLI & Command Line:</strong> Pembimbingan dasar eksekusi Perintah Terminal, izin akses (chmod/chown), dan manajemen repositori.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-royal-blue mt-0.5"></i>
+                                <span><strong>Shell Scripting:</strong> Pembuatan skrip Bash dasar untuk otomasi tugas praktikum sistem operasi.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-royal-blue mt-0.5"></i>
+                                <span><strong>Troubleshooting:</strong> Bantuan analisis kendala eror sistem, log service, dan manajemen paket aplikasi.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Sub-kategori 2: Programming & Web -->
+                    <div class="p-5 rounded-2xl bg-warm-white border border-soft-border">
+                        <div class="flex items-center gap-2 font-bold text-dark-blue mb-3 text-base">
+                            <i class="fa-solid fa-code text-royal-blue text-lg"></i>
+                            <h3>Programming & Web Development</h3>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-slate-gray">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-royal-blue mt-0.5"></i>
+                                <span><strong>Pengembangan Web:</strong> Pembuatan frontend/backend website menggunakan HTML, CSS, JavaScript, PHP, atau Python.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-royal-blue mt-0.5"></i>
+                                <span><strong>Manajemen Database:</strong> Penyusunan struktur basis data relasional (MySQL, PostgreSQL) dan kueri SQL.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-royal-blue mt-0.5"></i>
+                                <span><strong>Clean Code & Dokumentasi:</strong> Penulisan kode program yang rapi disertai penjelasan alur logika untuk bahan belajar.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-royal-blue mt-0.5"></i>
+                                <span><strong>Debugging Eror:</strong> Pelacakan dan perbaikan bug kode pada tugas kuliah pemrograman.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-soft-border">
+                    <span class="text-xs font-bold text-dark-blue mr-2 self-center">Teknologi Terkait:</span>
+                    <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-xs text-slate-gray rounded-md">Ubuntu / Debian</span>
+                    <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-xs text-slate-gray rounded-md">Bash Shell</span>
+                    <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-xs text-slate-gray rounded-md">HTML/CSS/JS</span>
+                    <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-xs text-slate-gray rounded-md">PHP / Laravel</span>
+                    <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-xs text-slate-gray rounded-md">Python</span>
+                    <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-xs text-slate-gray rounded-md">MySQL</span>
+                </div>
+            </div>
+
+            <!-- SECTION 3: OLAH DATA DAN ANALISIS STATISTIK (DIPERLUAS) -->
+            <div class="p-6 sm:p-10 rounded-3xl bg-white border border-soft-border shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-soft-border">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-2xl font-bold shrink-0">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <div>
+                            <span class="px-3 py-0.5 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold mb-1 inline-block">Analisis Data</span>
+                            <h2 class="text-2xl font-extrabold text-dark-blue">Olah Data & Analisis Statistik</h2>
+                        </div>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20konsultasi%20olah%20data%20statistik." target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-warm-yellow text-dark-blue font-bold text-sm hover:bg-yellow-400 transition-all inline-flex items-center gap-2 self-start md:self-auto">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Konsultasi Olah Data
+                    </a>
+                </div>
+
+                <p class="text-slate-gray text-base leading-relaxed mb-6">
+                    Pendampingan pemrosesan data statistik penelitian menggunakan berbagai perangkat lunak populer. Pemilihan software dan pengujian statistik disesuaikan secara khusus dengan tujuan penelitian, model konseptual, dan bentuk data Anda.
+                </p>
+
+                <!-- Pilihan Software (Badges) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+                    
+                    <div class="p-4 rounded-xl bg-warm-white border border-soft-border text-center">
+                        <div class="font-extrabold text-dark-blue text-base mb-1 text-royal-blue">SPSS</div>
+                        <p class="text-xs text-slate-gray">Uji validitas, reliabilitas, asumsi klasik, korelasi, & regresi linier.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-warm-white border border-soft-border text-center">
+                        <div class="font-extrabold text-dark-blue text-base mb-1 text-royal-blue">SmartPLS</div>
+                        <p class="text-xs text-slate-gray">Evaluasi Outer Model (pengukuran) & Inner Model (struktural) PLS-SEM.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-warm-white border border-soft-border text-center">
+                        <div class="font-extrabold text-dark-blue text-base mb-1 text-royal-blue">Jamovi</div>
+                        <p class="text-xs text-slate-gray">Analisis kuantitatif berbasis R modern, uji parametrik & non-parametrik.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-warm-white border border-soft-border text-center">
+                        <div class="font-extrabold text-dark-blue text-base mb-1 text-royal-blue">AMOS</div>
+                        <p class="text-xs text-slate-gray">Covariance-Based SEM (CB-SEM), pemodelan jalur, & uji kelayakan model.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-warm-white border border-soft-border text-center">
+                        <div class="font-extrabold text-dark-blue text-base mb-1 text-royal-blue">Ms. Excel</div>
+                        <p class="text-xs text-slate-gray">Pengolahan tabulasi data, formula kompleks, prapemrosesan, & grafik.</p>
+                    </div>
+
+                </div>
+
+                <div class="p-4 rounded-2xl bg-warm-white border border-soft-border/80 flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-royal-blue mt-1 shrink-0"></i>
+                    <p class="text-xs text-slate-gray leading-relaxed">
+                        <strong class="text-dark-blue">Catatan Pendampingan:</strong> Seluruh output olah data dilengkapi dengan penjelasan dan arahan cara membaca tabel hasil analisis agar Anda siap saat melakukan presentasi seminar atau sidang.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SECTION 4: KARYA TULIS ILMIAH & LAINNYA -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <!-- Layanan 1: Skripsi & Proposal (Featured Card) -->
-                <div class="md:col-span-2 lg:col-span-3 p-6 sm:p-8 md:p-10 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-                    <div class="flex flex-col lg:flex-row gap-8 items-start w-full">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-2xl bg-warm-yellow/20 text-royal-blue flex items-center justify-center text-3xl sm:text-4xl font-bold">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        
-                        <div class="flex-grow w-full">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-                                <div class="flex items-center gap-3">
-                                    <h3 class="text-2xl sm:text-3xl font-extrabold text-dark-blue">Skripsi & Proposal</h3>
-                                    <span class="px-3 py-1 rounded-full bg-warm-yellow text-dark-blue text-xs font-bold border border-warm-yellow">
-                                        <i class="fa-solid fa-crown mr-1"></i> Best Seller
-                                    </span>
-                                </div>
-                                <div class="self-start sm:self-auto bg-warm-white border border-soft-border px-4 py-2 rounded-xl text-dark-blue font-bold text-sm">
-                                    Mulai Rp 300.000 / BAB
-                                </div>
-                            </div>
-                            
-                            <p class="text-slate-gray leading-relaxed text-sm sm:text-base mb-6 max-w-3xl">
-                                Layanan pendampingan penuh atau parsial untuk Tugas Akhir. Kami membantu dari penyusunan judul, kerangka proposal, hingga BAB akhir dengan standar akademis tinggi.
-                            </p>
-                            
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-                                <ul class="space-y-2.5 text-slate-gray text-sm">
-                                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-royal-blue"></i> Bimbingan Penentuan Judul</li>
-                                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-royal-blue"></i> Pengerjaan Proposal & BAB 1-5</li>
-                                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-royal-blue"></i> Garansi Revisi Dosen Pembimbing</li>
-                                </ul>
-                                <ul class="space-y-2.5 text-slate-gray text-sm">
-                                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-royal-blue"></i> Sitasi Otomatis (Mendeley/Zotero)</li>
-                                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-royal-blue"></i> Jaminan Lolos Uji Turnitin</li>
-                                    <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-royal-blue"></i> Format Sesuai Pedoman Kampus</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="flex flex-wrap gap-2 mb-8">
-                                <span class="px-3 py-1 bg-warm-white border border-soft-border text-xs text-dark-blue font-semibold rounded-lg">Kuantitatif</span>
-                                <span class="px-3 py-1 bg-warm-white border border-soft-border text-xs text-dark-blue font-semibold rounded-lg">Kualitatif</span>
-                                <span class="px-3 py-1 bg-warm-white border border-soft-border text-xs text-dark-blue font-semibold rounded-lg">R&D</span>
-                                <span class="px-3 py-1 bg-warm-white border border-soft-border text-xs text-dark-blue font-semibold rounded-lg">Tugas Akhir (D3)</span>
-                            </div>
-                            
-                            <div>
-                                <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20konsultasi%20skripsi%20dan%20proposal." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-warm-yellow text-dark-blue font-bold text-sm hover:bg-yellow-400 transition-all shadow-sm hover:shadow active:scale-95">
-                                    <span>Konsultasi Skripsi Gratis</span>
-                                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Layanan 2: Programming & Web -->
-                <div class="flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all">
+                <!-- Layanan 4A: Karya Tulis Ilmiah -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between">
                     <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 rounded-2xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-xl">
-                                <i class="fa-solid fa-laptop-code"></i>
-                            </div>
-                            <span class="text-dark-blue font-bold text-xs bg-warm-white border border-soft-border px-3 py-1 rounded-lg">Mulai Rp 300rb</span>
+                        <div class="w-12 h-12 rounded-2xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-file-lines"></i>
                         </div>
-                        
-                        <h3 class="text-xl font-bold text-dark-blue mb-3">Programming & Web</h3>
-                        <p class="text-slate-gray text-sm leading-relaxed mb-6">Penyelesaian tugas coding, pembuatan website responsif, hingga aplikasi berbasis database.</p>
-                        
-                        <ul class="space-y-2.5 text-slate-gray text-sm mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Clean Code & Dokumentasi</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Setup Database (MySQL, dll)</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> File Source Code Lengkap</li>
-                        </ul>
-                        
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">HTML/CSS</span>
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">PHP</span>
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">Python</span>
-                        </div>
-                    </div>
-                    
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20order%20tugas%20Programming%20/%20Website." target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-dark-blue text-white font-bold text-sm hover:bg-slate-800 transition-all active:scale-95">
-                        Order Coding
-                    </a>
-                </div>
-
-                <!-- Layanan 3: Karya Tulis Ilmiah -->
-                <div class="flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 rounded-2xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-xl">
-                                <i class="fa-solid fa-file-lines"></i>
-                            </div>
-                            <span class="text-dark-blue font-bold text-xs bg-warm-white border border-soft-border px-3 py-1 rounded-lg">Mulai Rp 50rb</span>
-                        </div>
-                        
                         <h3 class="text-xl font-bold text-dark-blue mb-3">Karya Tulis Ilmiah</h3>
-                        <p class="text-slate-gray text-sm leading-relaxed mb-6">Pembuatan Makalah, Essay, Analisis Jurnal, dan Resume dengan riset literatur mendalam.</p>
-                        
-                        <ul class="space-y-2.5 text-slate-gray text-sm mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Riset Referensi Terbaru</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Bebas Plagiarisme</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Penulisan EYD & Rapi</li>
+                        <p class="text-slate-gray text-xs leading-relaxed mb-4">
+                            Pendampingan penyusunan karya tulis akademis non-skripsi berdasarkan sumber referensi ilmiah yang relevan dan terpercaya.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-gray mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue"></i> Makalah & Esai Akademik</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue"></i> Review & Analisis Jurnal</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue"></i> Resume & Rangkuman Materi</li>
                         </ul>
-                        
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">Makalah</span>
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">Essay</span>
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">Review Jurnal</span>
-                        </div>
                     </div>
-                    
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20order%20Makalah/Karya%20Tulis." target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-dark-blue text-white font-bold text-sm hover:bg-slate-800 transition-all active:scale-95">
-                        Order Tulisan
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20konsultasi%20Karya%20Tulis%20Ilmiah." target="_blank" rel="noopener noreferrer" class="w-full text-center px-4 py-2.5 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all">
+                        Konsultasi Karya Tulis
                     </a>
                 </div>
 
-                <!-- Layanan 4: Olah Data & Statistik -->
-                <div class="flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all">
+                <!-- Layanan 4B: Desain & Presentasi -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between">
                     <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 rounded-2xl bg-warm-yellow/20 text-royal-blue flex items-center justify-center text-xl font-bold">
-                                <i class="fa-solid fa-chart-pie"></i>
-                            </div>
-                            <span class="text-dark-blue font-bold text-xs bg-warm-white border border-soft-border px-3 py-1 rounded-lg">Mulai Rp 150rb</span>
+                        <div class="w-12 h-12 rounded-2xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-display"></i>
                         </div>
-                        
-                        <h3 class="text-xl font-bold text-dark-blue mb-3">Olah Data & Statistik</h3>
-                        <p class="text-slate-gray text-sm leading-relaxed mb-6">Analisis data penelitian menggunakan SPSS atau pengolahan formula kompleks di Microsoft Excel.</p>
-                        
-                        <ul class="space-y-2.5 text-slate-gray text-sm mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Uji Validitas & Reliabilitas</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Regresi & Analisis Deskriptif</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Termasuk Bab Interpretasi Data</li>
-                        </ul>
-                        
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">SPSS</span>
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">Ms. Excel</span>
-                        </div>
-                    </div>
-                    
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20order%20Olah%20Data%20SPSS/Excel." target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-dark-blue text-white font-bold text-sm hover:bg-slate-800 transition-all active:scale-95">
-                        Order Olah Data
-                    </a>
-                </div>
-
-                <!-- Layanan 5: Desain & Presentasi -->
-                <div class="flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 rounded-2xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-xl">
-                                <i class="fa-solid fa-palette"></i>
-                            </div>
-                            <span class="text-dark-blue font-bold text-xs bg-warm-white border border-soft-border px-3 py-1 rounded-lg">Mulai Rp 75rb</span>
-                        </div>
-                        
                         <h3 class="text-xl font-bold text-dark-blue mb-3">Desain & Presentasi</h3>
-                        <p class="text-slate-gray text-sm leading-relaxed mb-6">Pembuatan CV ATS Friendly, desain Canva, dan Slide PowerPoint estetik untuk sidang/presentasi.</p>
-                        
-                        <ul class="space-y-2.5 text-slate-gray text-sm mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Desain Custom & Modern</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Animasi Transisi (PPT)</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Format File Mentah (Editable)</li>
+                        <p class="text-slate-gray text-xs leading-relaxed mb-4">
+                            Penyusunan media presentasi dan dokumen pendukung studi yang komunikatif, terstruktur, serta siap dipresentasikan.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-gray mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue"></i> Slide PowerPoint (PPT) Sidang</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue"></i> Desain Visual Canva</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue"></i> Penataan CV ATS-Friendly</li>
                         </ul>
-                        
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">PPT</span>
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">CV ATS Friendly</span>
-                        </div>
                     </div>
-                    
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20order%20PowerPoint%20/%20CV%20ATS." target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-dark-blue text-white font-bold text-sm hover:bg-slate-800 transition-all active:scale-95">
-                        Order Desain
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20konsultasi%20Desain%20dan%20Presentasi." target="_blank" rel="noopener noreferrer" class="w-full text-center px-4 py-2.5 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all">
+                        Konsultasi Desain & PPT
                     </a>
                 </div>
 
-                <!-- Layanan 6: Tugas Praktikum & SKS -->
-                <div class="flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all">
+                <!-- Layanan 4C: Tugas Praktikum & Perkuliahan -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between">
                     <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 rounded-2xl bg-warm-yellow/20 text-royal-blue flex items-center justify-center text-xl font-bold">
-                                <i class="fa-solid fa-bolt"></i>
-                            </div>
-                            <span class="text-dark-blue font-bold text-xs bg-warm-white border border-soft-border px-3 py-1 rounded-lg">Harga Custom</span>
+                        <div class="w-12 h-12 rounded-2xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-book-bookmark"></i>
                         </div>
-                        
-                        <h3 class="text-xl font-bold text-dark-blue mb-3">Tugas Praktikum & SKS</h3>
-                        <p class="text-slate-gray text-sm leading-relaxed mb-6">Laporan praktikum, tugas harian, dan sistem kebut semalam (SKS) dengan deadline mepet[cite: 2].</p>
-                        
-                        <ul class="space-y-2.5 text-slate-gray text-sm mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Bisa Deadline &lt; 24 Jam</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Semua Jurusan Tersedia</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue text-xs"></i> Konsultasi Responsive</li>
+                        <h3 class="text-xl font-bold text-dark-blue mb-3">Praktikum & Tugas Kuliah</h3>
+                        <p class="text-slate-gray text-xs leading-relaxed mb-4">
+                            Pendampingan teknis pengerjaan tugas mingguan dan laporan praktikum sesuai dengan petunjuk serta modul dari dosen.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-gray mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue"></i> Bantuan Laporan Praktikum</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue"></i> Tugas Studi Kasus Perkuliahan</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-blue"></i> Pendampingan Konfirmasi Materi</li>
                         </ul>
-                        
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">Laporan</span>
-                            <span class="px-2.5 py-1 bg-warm-white border border-soft-border text-[11px] text-dark-blue font-medium rounded-md">Fast Track</span>
-                        </div>
                     </div>
-                    
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20order%20tugas%20darurat/SKS." target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center items-center gap-2 px-5 py-3 rounded-xl bg-dark-blue text-white font-bold text-sm hover:bg-slate-800 transition-all active:scale-95">
-                        Order Tugas Darurat
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20konsultasi%20Tugas%20Praktikum/Perkuliahan." target="_blank" rel="noopener noreferrer" class="w-full text-center px-4 py-2.5 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all">
+                        Konsultasi Praktikum
                     </a>
                 </div>
 
             </div>
+
         </section>
+
+        <!-- ================= CTA BANTUAN / REDIREKSI HARGA ================= -->
+        <section class="py-12 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto rounded-3xl bg-dark-blue p-8 sm:p-12 text-center relative overflow-hidden shadow-xl border border-soft-border">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3 relative z-10">
+                    Ingin Memeriksa Estimasi Biaya Pendampingan?
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base mb-8 max-w-2xl mx-auto relative z-10 leading-relaxed">
+                    Halaman katalog ini khusus menampilkan cakupan teknis layanan. Untuk melihat rincian acuan biaya dan skema pemesanan, silakan kunjungi halaman estimasi harga kami.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+                    <a href="harga.html" class="px-7 py-3.5 rounded-2xl bg-warm-yellow text-dark-blue font-bold text-sm hover:bg-yellow-400 shadow-md transition-all inline-flex items-center justify-center gap-2 active:scale-95">
+                        <span>Lihat Daftar Harga</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20tanya%20mengenai%20layanan." target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-2xl bg-white/10 border border-white/20 text-white font-bold text-sm hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2 active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Tanya Admin Langsung</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- ================= FOOTER ================= -->
@@ -417,7 +511,6 @@
 
                 hamburgerBtn.addEventListener('click', toggleMenu);
 
-                // Menutup menu jika mengklik tautan di dalamnya
                 const mobileNavLinks = mobileMenu.querySelectorAll('a');
                 mobileNavLinks.forEach(link => {
                     link.addEventListener('click', () => {
@@ -427,7 +520,6 @@
                     });
                 });
 
-                // Menutup menu dengan tombol Escape
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
                         toggleMenu();
