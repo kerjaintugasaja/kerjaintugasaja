@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id" class="light scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KerjainTugas.Aja | Estimasi Harga</title>
+    <title>KerjainTugas.Aja | Estimasi Harga Layanan</title>
+    <meta name="description" content="Informasi transparansi estimasi harga layanan pendampingan akademik, skripsi, olah data statistik, pemrograman, Linux, dan penulisan karya ilmiah.">
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Tailwind CSS CDN dengan Konfigurasi Warna Light Premium -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
-                fontFamily: {
-                    sans: ['Plus Jakarta Sans', 'sans-serif'],
+                extend: {
+                    colors: {
+                        'dark-blue': '#172338',
+                        'warm-white': '#FAF8F2',
+                        'warm-yellow': '#FFC629',
+                        'dark-yellow': '#D99A00',
+                        'royal-blue': '#3B82F6',
+                        'slate-gray': '#475569',
+                        'soft-border': '#E8E2D6',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
                 }
             }
         }
@@ -21,293 +37,629 @@
 
     <style>
         body {
-            background-color: #020617; 
-            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-            color: #f8fafc;
+            background-color: #FAF8F2;
+            color: #172338;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .logo-fallback {
+            display: none;
+        }
+        img:failed + .logo-fallback {
+            display: flex;
         }
     </style>
 </head>
-<body class="antialiased overflow-x-hidden selection:bg-blue-500 selection:text-white">
+<body class="antialiased overflow-x-hidden selection:bg-warm-yellow selection:text-dark-blue flex flex-col min-h-screen">
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-slate-950/80 backdrop-blur-md border-b border-white/10 shadow-lg">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <header class="fixed w-full z-50 top-0 transition-all duration-300 bg-dark-blue border-b border-white/10 shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between" aria-label="Navigasi Utama">
             
             <!-- Logo & Brand -->
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover:scale-105 transition-all">
-                    <img src="assets/img/logo.png" alt="KerjainTugas.Aja" class="w-full h-full object-contain">
+            <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-warm-yellow rounded-xl p-1" aria-label="KerjainTugas.Aja Beranda">
+                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center p-1.5 transition-transform group-hover:scale-105">
+                    <img src="assets/img/logo.png" alt="Logo KerjainTugas.Aja" class="w-full h-full object-contain" onError="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback hidden w-full h-full items-center justify-center text-warm-yellow font-bold text-lg">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
                 </div>
-                <span class="font-bold text-lg tracking-tight text-white hidden sm:block">KerjainTugas.Aja</span>
+                <span class="font-bold text-lg tracking-tight text-white">KerjainTugas.Aja</span>
             </a>
             
-            <!-- Menu Tengah (Desktop) -->
-            <ul class="hidden md:flex items-center gap-2 text-sm font-medium text-slate-300">
-                <li><a href="index.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">Dashboard</a></li>
-                <li><a href="layanan.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">Layanan</a></li>
-                <li><a href="harga.html" class="px-4 py-2 rounded-xl bg-blue-600 text-white shadow-md shadow-blue-600/30 transition-all">Harga</a></li>
-                <li><a href="testimoni.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">Testimoni</a></li>
-                <li><a href="faq.html" class="px-4 py-2 rounded-xl hover:bg-white/10 hover:text-white hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg transition-all active:scale-95">FAQ</a></li>
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
+                <li><a href="index.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">Dashboard</a></li>
+                <li><a href="layanan.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">Layanan</a></li>
+                <li><a href="harga.html" class="px-4 py-2 rounded-xl bg-warm-yellow text-dark-blue font-semibold shadow-sm transition-all" aria-current="page">Harga</a></li>
+                <li><a href="testimoni.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">Testimoni</a></li>
+                <li><a href="faq.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">FAQ</a></li>
             </ul>
 
-            <!-- CTA Kanan (Desktop) -->
+            <!-- CTA Konsultasi Desktop -->
             <div class="hidden md:flex items-center">
-                <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." target="_blank" class="inline-flex px-5 py-2.5 rounded-full bg-white text-slate-900 font-semibold text-sm hover:bg-blue-50 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all active:scale-95">
-                    Konsultasi
+                <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-warm-yellow text-dark-blue font-bold text-sm hover:bg-yellow-400 hover:shadow-md transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warm-yellow">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Konsultasi</span>
                 </a>
             </div>
 
             <!-- Tombol Hamburger (Mobile) -->
-            <button id="hamburgerBtn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 text-white focus:outline-none">
-                <i class="fa-solid fa-bars text-lg" id="hamburgerIcon"></i>
+            <button id="hamburgerBtn" type="button" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-warm-yellow transition-all" aria-controls="mobileMenu" aria-expanded="false" aria-label="Buka Menu Navigasi">
+                <i class="fa-solid fa-bars text-lg" id="hamburgerIcon" aria-hidden="true"></i>
             </button>
-        </div>
+        </nav>
 
-        <!-- Menu Dropdown (Mobile View - Fix WhatsApp Link) -->
-        <div id="mobileMenu" class="hidden md:hidden px-6 pt-4 pb-6 bg-slate-950/95 border-b border-slate-800 backdrop-blur-xl transition-all">
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden px-6 pt-4 pb-6 bg-dark-blue border-b border-white/10 transition-all">
             <ul class="flex flex-col gap-2 text-slate-300 font-medium">
-                <li><a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">Dashboard</a></li>
-                <li><a href="layanan.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">Layanan</a></li>
-                <li><a href="harga.html" class="block px-4 py-3 rounded-xl bg-blue-600/20 text-blue-400 font-semibold">Harga</a></li>
-                <li><a href="testimoni.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">Testimoni</a></li>
-                <li><a href="faq.html" class="block px-4 py-3 rounded-xl hover:bg-slate-900 hover:text-white transition-all">FAQ</a></li>
+                <li><a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">Dashboard</a></li>
+                <li><a href="layanan.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">Layanan</a></li>
+                <li><a href="harga.html" class="block px-4 py-3 rounded-xl bg-warm-yellow text-dark-blue font-bold" aria-current="page">Harga</a></li>
+                <li><a href="testimoni.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">Testimoni</a></li>
+                <li><a href="faq.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">FAQ</a></li>
                 <li class="pt-2">
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." class="w-full flex justify-center items-center gap-2 py-3 rounded-xl bg-blue-600 text-white font-semibold shadow-lg">
-                        <i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." class="w-full flex justify-center items-center gap-2 py-3 rounded-xl bg-warm-yellow text-dark-blue font-bold shadow-md hover:bg-yellow-400 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Konsultasi WhatsApp
                     </a>
                 </li>
             </ul>
         </div>
-    </nav>
-
-    <!-- ================= HEADER HARGA ================= -->
-    <header class="pt-40 pb-12 px-6 text-center max-w-4xl mx-auto relative">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
-        
-        <span class="px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-4 inline-block">
-            🏷️ Transparansi Biaya
-        </span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-            Estimasi Harga Ramah Kantong <br>
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">Tanpa Biaya Tersembunyi</span>
-        </h1>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-            Tarif fleksibel yang disesuaikan dengan tingkat kesulitan dan tenggat waktu (*deadline*) tugasmu. Konsultasi awal dijamin gratis!
-        </p>
     </header>
 
-    <!-- ================= PRICING CARDS / LIST ================= -->
-    <section class="pb-24 px-6 max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            <!-- 1. Skripsi & Proposal -->
-            <div class="p-8 rounded-[2rem] bg-gradient-to-br from-blue-950/40 to-slate-900/60 backdrop-blur-md border border-blue-500/30 hover:border-blue-400 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-                <div class="absolute top-0 right-0 mt-6 mr-6">
-                    <span class="px-3 py-1 rounded-md bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-500/30">
-                        <i class="fa-solid fa-star text-yellow-400"></i> Favorit
+    <main class="flex-grow pt-20">
+        
+        <!-- ================= HERO HARGA ================= -->
+        <section class="relative pt-12 pb-12 md:pt-16 md:pb-16 px-4 sm:px-6 bg-warm-white border-b border-soft-border">
+            <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+                <span class="text-dark-yellow font-extrabold text-sm tracking-wider uppercase mb-3 block">Transparansi Biaya</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-dark-blue leading-tight mb-4">
+                    Estimasi Harga Pendampingan <br class="hidden sm:block">
+                    <span class="relative inline-block text-dark-blue">
+                        Terjangkau & Transparan
+                        <span class="absolute bottom-1 left-0 w-full h-3 bg-warm-yellow/40 -z-10 rounded"></span>
                     </span>
-                </div>
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-6">
-                        <i class="fa-solid fa-graduation-cap"></i>
+                </h1>
+                <p class="text-base sm:text-lg text-slate-gray max-w-2xl leading-relaxed mb-6">
+                    Patokan harga awal yang disesuaikan secara rasional berdasarkan tingkat kesulitan, jumlah data/materi, dan tenggat waktu pengerjaan.
+                </p>
+                <div class="p-4 rounded-2xl bg-white border border-soft-border shadow-sm text-left max-w-2xl text-xs sm:text-sm text-slate-gray leading-relaxed flex items-start gap-3">
+                    <i class="fa-solid fa-circle-info text-royal-blue text-base mt-0.5 shrink-0"></i>
+                    <div>
+                        <strong class="text-dark-blue">Catatan Ketentuan Biaya:</strong> Semua tarif merupakan harga acuan awal. Biaya akhir akan dikonfirmasikan terlebih dahulu sesuai ruang lingkup pengerjaan yang disepakati bersama sebelum pengerjaan dimulai.
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">Skripsi & Proposal</h3>
-                    <p class="text-slate-400 text-sm mb-6">Pendampingan penuh dari judul, proposal, hingga BAB akhir.</p>
-                    
-                    <ul class="space-y-3 text-slate-300 text-sm mb-8">
-                        <li class="flex justify-between items-center pb-2 border-b border-slate-800">
-                            <span>Proposal / BAB Skripsi</span>
-                            <span class="font-bold text-blue-400">Mulai Rp 300.000</span>
-                        </li>
-                        <li class="flex justify-between items-center pb-2 border-b border-slate-800">
-                            <span>Olah Data SPSS</span>
-                            <span class="font-bold text-blue-400">Mulai Rp 250.000</span>
-                        </li>
-                    </ul>
                 </div>
-                <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20untuk%20Skripsi." target="_blank" class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-center transition-all shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp"></i> Konsultasi Skripsi
-                </a>
+            </div>
+        </section>
+
+        <!-- ================= PRICING GROUPS ================= -->
+        <section class="py-12 md:py-16 px-4 sm:px-6 max-w-7xl mx-auto space-y-12">
+
+            <!-- KELOMPOK A: AKADEMIK DAN PENULISAN -->
+            <div>
+                <div class="mb-6 pb-3 border-b border-soft-border flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-lg font-bold">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-dark-blue">Akademik dan Penulisan</h2>
+                        <p class="text-xs sm:text-sm text-slate-gray">Layanan pendampingan karya tulis, dokumen perkuliahan, dan bimbingan skripsi.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- 1. Skripsi / Proposal per BAB -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Tugas Akhir</span>
+                                <span class="text-xs font-bold text-dark-yellow">Skripsi</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Skripsi / Proposal per BAB</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Pendampingan penyusunan proposal penelitian, tinjauan pustaka, hingga bab pembahasan.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp200.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Skripsi%20/%20Proposal%20per%20BAB." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-yellow text-dark-blue font-bold text-xs hover:bg-yellow-400 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Diskusikan Kebutuhanmu
+                        </a>
+                    </div>
+
+                    <!-- 2. Makalah -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Karya Tulis</span>
+                                <span class="text-xs font-bold text-royal-blue">Makalah</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Makalah</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Penyusunan makalah perkuliahan terstruktur dengan pendataan referensi terpercaya.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp50.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Makalah." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 3. Essay / Review Jurnal -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Analisis Kritis</span>
+                                <span class="text-xs font-bold text-royal-blue">Review</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Essay / Review Jurnal</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Penyusunan esai akademis dan ulasan kritis artikel ilmiah nasional maupun internasional.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp50.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Essay%20/%20Review%20Jurnal." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 4. Resume / Ringkasan -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Rangkuman</span>
+                                <span class="text-xs font-bold text-royal-blue">Ringkasan</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Resume / Ringkasan</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Rangkuman poin-poin utama dari modul perkuliahan, buku teks, atau bab materi.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp25.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Resume%20/%20Ringkasan." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 5. Laporan Praktikum -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Tugas Mingguan</span>
+                                <span class="text-xs font-bold text-royal-blue">Praktikum</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Laporan Praktikum</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Penyusunan laporan laboratorium/praktikum sesuai modul petunjuk dan data pengamatan.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp50.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Laporan%20Praktikum." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 6. PPT / Presentasi -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Visual</span>
+                                <span class="text-xs font-bold text-royal-blue">Slide PPT</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">PPT / Presentasi</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Desain slide PowerPoint yang ringkas, bersih, dan komunikatif untuk tugas atau sidang.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp40.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20PPT%20/%20Presentasi." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                </div>
             </div>
 
-            <!-- 2. IT & Programming -->
-            <div class="p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl mb-6">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">IT & Programming</h3>
-                    <p class="text-slate-400 text-sm mb-6">Penyelesaian kode program, debugging, dan pembuatan website.</p>
-                    
-                    <ul class="space-y-3 text-slate-300 text-sm mb-8">
-                        <li class="flex justify-between items-center pb-2 border-b border-slate-800">
-                            <span>Coding / Pemrograman</span>
-                            <span class="font-bold text-cyan-400">Mulai Rp 300.000</span>
-                        </li>
-                        <li class="flex justify-between items-center pb-2 border-b border-slate-800">
-                            <span>Pembuatan Website</span>
-                            <span class="font-bold text-cyan-400">Mulai Rp 500.000</span>
-                        </li>
-                    </ul>
-                </div>
-                <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20tugas%20Programming/Website." target="_blank" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-cyan-600 text-white font-semibold text-center transition-all flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp"></i> Tanya Harga Coding
-                </a>
-            </div>
-
-            <!-- 3. Karya Tulis & Akademik -->
-            <div class="p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-purple-500/40 transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-6">
-                        <i class="fa-solid fa-file-lines"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Karya Tulis & Akademik</h3>
-                    <p class="text-slate-400 text-sm mb-6">Makalah, essay, jurnal, dan laporan praktikum terpercaya.</p>
-                    
-                    <ul class="space-y-3 text-slate-300 text-sm mb-8">
-                        <li class="flex justify-between items-center pb-2 border-b border-slate-800">
-                            <span>Resume / Ringkasan</span>
-                            <span class="font-bold text-purple-400">Mulai Rp 50.000</span>
-                        </li>
-                        <li class="flex justify-between items-center pb-2 border-b border-slate-800">
-                            <span>Makalah / PPT</span>
-                            <span class="font-bold text-purple-400">Mulai Rp 75.000</span>
-                        </li>
-                        <li class="flex justify-between items-center pb-2 border-b border-slate-800">
-                            <span>Essay / Review Jurnal</span>
-                            <span class="font-bold text-purple-400">Mulai Rp 100.000</span>
-                        </li>
-                        <li class="flex justify-between items-center pb-2 border-b border-slate-800">
-                            <span>Laporan Praktikum</span>
-                            <span class="font-bold text-purple-400">Mulai Rp 125.000</span>
-                        </li>
-                    </ul>
-                </div>
-                <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Makalah/Tugas%20Tulis." target="_blank" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-purple-600 text-white font-semibold text-center transition-all flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp"></i> Tanya Harga Makalah
-                </a>
-            </div>
-
-            <!-- 4. Desain, Excel & Lainnya -->
-            <div class="p-8 rounded-[2rem] bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-green-500/40 transition-all duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-green-500/20 text-green-400 flex items-center justify-center text-xl mb-6">
+            <!-- KELOMPOK B: PENGOLAHAN DAN ANALISIS DATA -->
+            <div>
+                <div class="mb-6 pb-3 border-b border-soft-border flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-lg font-bold">
                         <i class="fa-solid fa-chart-pie"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-2">Excel, Desain & Lainnya</h3>
-                    <p class="text-slate-400 text-sm mb-6">Otomatisasi Excel, CV ATS, dan desain grafis penunjang kuliah.</p>
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-dark-blue">Pengolahan dan Analisis Data</h2>
+                        <p class="text-xs sm:text-sm text-slate-gray">Layanan pemrosesan data statistik kuantitatif mengikut instrumen dan software pilihan.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     
-                    <ul class="space-y-3 text-slate-300 text-sm mb-8">
-                        <li class="flex justify-between items-center pb-2 border-b border-slate-800">
-                            <span>Ms. Excel / Spreadsheet</span>
-                            <span class="font-bold text-green-400">Mulai Rp 150.000</span>
-                        </li>
-                        <li class="flex justify-between items-center pb-2 border-b border-slate-800">
-                            <span>CV ATS Friendly</span>
-                            <span class="font-bold text-green-400">Mulai Rp 150.000</span>
-                        </li>
-                        <li class="flex justify-between items-center pb-2 border-b border-slate-800">
-                            <span>Analisis Jurnal / Ekonomi</span>
-                            <span class="font-bold text-green-400">Mulai Rp 125.000</span>
-                        </li>
-                    </ul>
+                    <!-- 7. Olah Data SPSS -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Statistik</span>
+                                <span class="text-xs font-bold text-royal-blue">SPSS</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Olah Data SPSS</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Uji validitas, reliabilitas, asumsi klasik, regresi, dan statistik deskriptif.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp150.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Olah%20Data%20SPSS." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 8. Olah Data Jamovi -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Statistik Modern</span>
+                                <span class="text-xs font-bold text-royal-blue">Jamovi</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Olah Data Jamovi</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Pengolahan statistik kuantitatif parametrik dan non-parametrik berbasis R.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp100.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Olah%20Data%20Jamovi." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 9. Olah Data SmartPLS -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">PLS-SEM</span>
+                                <span class="text-xs font-bold text-royal-blue">SmartPLS</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Olah Data SmartPLS</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Evaluasi model pengukuran (outer) dan model struktural (inner) berbasis PLS-SEM.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp150.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Olah%20Data%20SmartPLS." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 10. Olah Data AMOS / SEM -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">CB-SEM</span>
+                                <span class="text-xs font-bold text-royal-blue">AMOS</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Olah Data AMOS / SEM</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Pemodelan persamaan struktural berbasis kovarians dan pengujian Goodness of Fit.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp200.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Olah%20Data%20AMOS%20/%20SEM." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 11. Excel / Spreadsheet -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Tabulasi & Formula</span>
+                                <span class="text-xs font-bold text-royal-blue">Excel</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Excel / Spreadsheet</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Pembersihan data, penerapan rumus/formula kompleks, dan penyusunan tabel visual.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp75.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Excel%20/%20Spreadsheet." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 12. Analisis Jurnal / Ekonomi -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Studi Sektoral</span>
+                                <span class="text-xs font-bold text-royal-blue">Ekonomi</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Analisis Jurnal / Ekonomi</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Ulasan kasus studi kualitatif/kuantitatif dalam bidang ekonomi, bisnis, dan jurnal terkait.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp75.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Analisis%20Jurnal%20/%20Ekonomi." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
                 </div>
-                <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20untuk%20Excel/CV." target="_blank" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-green-600 text-white font-semibold text-center transition-all flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp"></i> Tanya Harga Lainnya
-                </a>
             </div>
 
-        </div>
+            <!-- KELOMPOK C: IT, LINUX, DAN PENGEMBANGAN -->
+            <div>
+                <div class="mb-6 pb-3 border-b border-soft-border flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-lg font-bold">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-dark-blue">IT, Linux, dan Pengembangan</h2>
+                        <p class="text-xs sm:text-sm text-slate-gray">Bantuan pemrograman, pengerjaan situs web, dan pendampingan administrasi Linux.</p>
+                    </div>
+                </div>
 
-        <!-- ================= CATATAN / INFO HARGA ================= -->
-        <div class="mt-12 p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800 backdrop-blur-md">
-            <h4 class="font-bold text-lg mb-4 text-white flex items-center gap-2">
-                <i class="fa-solid fa-circle-info text-blue-400"></i> Catatan & Ketentuan Layanan
-            </h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-400 text-sm">
-                <div class="flex items-start gap-3">
-                    <i class="fa-solid fa-circle-check text-green-400 mt-1"></i>
-                    <span>Estimasi harga disesuaikan dengan tingkat kesulitan dan tenggat waktu (deadline).</span>
-                </div>
-                <div class="flex items-start gap-3">
-                    <i class="fa-solid fa-circle-check text-green-400 mt-1"></i>
-                    <span>Konsultasi awal dan penentuan draf tugas <strong>100% GRATIS</strong>.</span>
-                </div>
-                <div class="flex items-start gap-3">
-                    <i class="fa-solid fa-circle-check text-green-400 mt-1"></i>
-                    <span>Harga transparan di awal, tidak ada biaya tersembunyi di tengah jalan.</span>
-                </div>
-                <div class="flex items-start gap-3">
-                    <i class="fa-solid fa-circle-check text-green-400 mt-1"></i>
-                    <span>Garansi revisi sesuai kesepakatan awal demi hasil yang maksimal.</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- 13. Coding / Programming -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Tugas Coding</span>
+                                <span class="text-xs font-bold text-royal-blue">Program</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Coding / Programming</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Penyelesaian logika program, skrip algoritma, dan tugas praktikum pemrograman.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp150.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Coding%20/%20Programming." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 14. Pembuatan Website -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Web Dev</span>
+                                <span class="text-xs font-bold text-royal-blue">Website</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Pembuatan Website</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Pengembangan situs web responsif berbasis HTML/CSS/JS, PHP, atau kerangka kerja web.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp350.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Pembuatan%20Website." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 15. Pendampingan Linux Dasar -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Sistem Operasi</span>
+                                <span class="text-xs font-bold text-royal-blue">Linux Dasar</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Pendampingan Linux Dasar</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Pembimbingan perintah terminal CLI dasar, manajemen direktori, dan izin akses file.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp50.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Pendampingan%20Linux%20Dasar." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 16. Troubleshooting Linux -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Analisis Eror</span>
+                                <span class="text-xs font-bold text-royal-blue">Troubleshoot</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Troubleshooting Linux</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Pelacakan dan perbaikan kendala eror sistem, konflik repositori, serta log service.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp75.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Troubleshooting%20Linux." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                    <!-- 17. Praktik / Konfigurasi Linux -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Admin Sistem</span>
+                                <span class="text-xs font-bold text-royal-blue">Konfigurasi</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">Praktik / Konfigurasi Linux</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Pengaturan server, penyiapan lingkungan web service, skrip bash otomasi, atau praktikum.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp150.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20Praktik%20/%20Konfigurasi%20Linux." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+
+            <!-- KELOMPOK D: KARIER DAN DOKUMEN PROFESIONAL -->
+            <div>
+                <div class="mb-6 pb-3 border-b border-soft-border flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-lg font-bold">
+                        <i class="fa-solid fa-address-card"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-dark-blue">Karier dan Dokumen Profesional</h2>
+                        <p class="text-xs sm:text-sm text-slate-gray">Layanan penataan berkas pendukung lamaran kerja dan portofolio lulusan.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- 18. CV ATS -->
+                    <div class="p-6 rounded-3xl bg-white border border-soft-border shadow-sm flex flex-col justify-between hover:border-royal-blue/40 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-warm-white border border-soft-border text-xs text-slate-gray font-semibold">Berkas Lamaran</span>
+                                <span class="text-xs font-bold text-royal-blue">CV ATS</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-blue mb-2">CV ATS</h3>
+                            <p class="text-slate-gray text-xs leading-relaxed mb-4">Penataan riwayat hidup dengan format standar ATS yang ramah sistem pemindaian perusahaan.</p>
+                            <div class="text-2xl font-extrabold text-dark-blue mb-6">
+                                <span class="text-xs font-normal text-slate-gray block">Estimasi Biaya:</span>
+                                Mulai dari Rp50.000
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20tanya%20harga%20CV%20ATS." target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 rounded-xl bg-warm-white border border-soft-border text-dark-blue font-bold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Tanyakan Harga
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= CTA PENUTUP ================= -->
+        <section class="py-12 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto rounded-3xl bg-dark-blue p-8 sm:p-12 text-center relative overflow-hidden shadow-xl border border-soft-border">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3 relative z-10">
+                    Ada Pertanyaan Mengenai Estimasi Biaya?
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base mb-8 max-w-2xl mx-auto relative z-10 leading-relaxed">
+                    Sampaikan detail tugas atau kendala studi Anda kepada tim kami untuk mendapatkan kepastian estimasi biaya secara rasional sebelum pengerjaan.
+                </p>
+                <div class="flex justify-center relative z-10">
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20mengenai%20harga." target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-2xl bg-warm-yellow text-dark-blue font-bold text-base hover:bg-yellow-400 shadow-md transition-all inline-flex items-center gap-3 active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Konsultasi via WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="border-t border-slate-800 bg-slate-950 pt-16 pb-8 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+    <footer class="bg-dark-blue border-t border-white/10 text-slate-300 pt-16 pb-8 px-4 sm:px-6 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            
+            <!-- Branding -->
             <div class="md:col-span-1">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-                        <img src="assets/img/logo.png" alt="KerjainTugas.Aja" class="w-full h-full object-contain">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center p-1.5">
+                        <img src="assets/img/logo.png" alt="Logo KerjainTugas.Aja" class="w-full h-full object-contain" onError="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="logo-fallback hidden w-full h-full items-center justify-center text-warm-yellow font-bold text-base">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
                     </div>
-                    <h2 class="font-bold text-xl text-white">KerjainTugas.Aja</h2>
+                    <span class="font-bold text-xl text-white tracking-tight">KerjainTugas.Aja</span>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
-                    Solusi terpercaya untuk membantu tugas mahasiswa. Dikerjakan profesional, tepat waktu, dan bergaransi revisi.
+                <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                    Layanan pendampingan akademik terpercaya untuk membantu penyelesaian tugas, karya tulis, dan bimbingan skripsi mahasiswa.
                 </p>
             </div>
             
+            <!-- Navigasi -->
             <div>
-                <h3 class="font-bold text-white mb-6">Menu Navigasi</h3>
-                <ul class="flex flex-col gap-3 text-slate-400 text-sm">
-                    <li><a href="index.html" class="hover:text-blue-400 transition-colors">Dashboard</a></li>
-                    <li><a href="layanan.html" class="hover:text-blue-400 transition-colors">Daftar Layanan</a></li>
-                    <li><a href="harga.html" class="hover:text-blue-400 transition-colors">Estimasi Harga</a></li>
-                    <li><a href="testimoni.html" class="hover:text-blue-400 transition-colors">Testimoni</a></li>
-                    <li><a href="faq.html" class="hover:text-blue-400 transition-colors">FAQ</a></li>
+                <h3 class="font-bold text-white text-base mb-4">Navigasi Halaman</h3>
+                <ul class="flex flex-col gap-2.5 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Dashboard</a></li>
+                    <li><a href="layanan.html" class="hover:text-white transition-colors">Daftar Layanan</a></li>
+                    <li><a href="harga.html" class="text-warm-yellow font-semibold hover:underline">Estimasi Harga</a></li>
+                    <li><a href="testimoni.html" class="hover:text-white transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
                 </ul>
             </div>
 
+            <!-- Kontak & Sosial Media -->
             <div>
-                <h3 class="font-bold text-white mb-6">Hubungi Kami</h3>
-                <div class="flex gap-4">
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-green-500 hover:text-white transition-all">
-                        <i class="fa-brands fa-whatsapp"></i>
+                <h3 class="font-bold text-white text-base mb-4">Hubungi Kami</h3>
+                <p class="text-slate-400 text-sm mb-4">Layanan konsultasi melalui platform resmi berikut:</p>
+                <div class="flex gap-3">
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-warm-yellow hover:text-dark-blue transition-all" aria-label="WhatsApp KerjainTugas.Aja">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
                     </a>
-                    <a href="https://www.instagram.com/kerjaintugas.aja" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-pink-500 hover:text-white transition-all">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.instagram.com/kerjaintugas.aja" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-warm-yellow hover:text-dark-blue transition-all" aria-label="Instagram KerjainTugas.Aja">
+                        <i class="fa-brands fa-instagram text-lg"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@kerjaintugas.aja" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-slate-700 hover:text-white transition-all">
-                        <i class="fa-brands fa-tiktok"></i>
+                    <a href="https://www.tiktok.com/@kerjaintugas.aja" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-warm-yellow hover:text-dark-blue transition-all" aria-label="TikTok KerjainTugas.Aja">
+                        <i class="fa-brands fa-tiktok text-lg"></i>
                     </a>
                 </div>
             </div>
         </div>
         
-        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-            <p>&copy; 2026 KerjainTugas.Aja. Semua hak cipta dilindungi.</p>
+        <!-- Hak Cipta -->
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 text-center text-slate-400 text-sm">
+            <p>&copy; 2026 KerjainTugas.Aja. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- ================= JAVASCRIPT UNTUK MOBILE MENU ================= -->
+    <!-- ================= JAVASCRIPT NAVIGASI MOBILE ================= -->
     <script>
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburgerIcon = document.getElementById('hamburgerIcon');
 
-        hamburgerBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                hamburgerIcon.classList.remove('fa-xmark');
-                hamburgerIcon.classList.add('fa-bars');
-            } else {
-                hamburgerIcon.classList.remove('fa-bars');
-                hamburgerIcon.classList.add('fa-xmark');
+            if (hamburgerBtn && mobileMenu && hamburgerIcon) {
+                const toggleMenu = () => {
+                    const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+                    hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    if (mobileMenu.classList.contains('hidden')) {
+                        hamburgerIcon.classList.remove('fa-xmark');
+                        hamburgerIcon.classList.add('fa-bars');
+                    } else {
+                        hamburgerIcon.classList.remove('fa-bars');
+                        hamburgerIcon.classList.add('fa-xmark');
+                    }
+                };
+
+                hamburgerBtn.addEventListener('click', toggleMenu);
+
+                const mobileNavLinks = mobileMenu.querySelectorAll('a');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            toggleMenu();
+                        }
+                    });
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
             }
         });
     </script>
