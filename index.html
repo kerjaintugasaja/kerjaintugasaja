@@ -1,515 +1,421 @@
-<!-- Google Fonts & Font Awesome Icons -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        darkMode: 'class',
-        theme: {
-            extend: {
-                fontFamily: {
-                    sans: ['Plus Jakarta Sans', 'sans-serif'],
-                },
-                colors: {
-                    navy: {
-                        DEFAULT: '#111827', // Deep Navy Main Background
-                        light: '#1F2937',   // Dark Surface / Card
-                        border: '#374151',  // Muted Border
-                        dark: '#0B0F19',    // Deep Surface Accent
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KerjainTugas.Aja | Dashboard Bantuan Tugas & Skripsi Mahasiswa</title>
+    <meta name="description" content="Layanan pendampingan akademik profesional untuk mahasiswa. Bimbingan skripsi, IT & pemrograman, karya tulis, dan olah data tepat waktu & bergaransi.">
+    
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN & Custom Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                     },
-                    amber: {
-                        gold: '#FBBF24',    // Golden Yellow Primary Accent
-                        hover: '#F59E0B',   // Darker Gold Hover State
-                        light: '#FEF3C7',   // Soft Gold Background Tint
-                    },
-                    slate: {
-                        text: '#F8FAFC',    // Soft White
-                        muted: '#94A3B8',   // Slate Gray
-                    },
-                    brand: {
-                        blue: '#2563EB',    // Blue Accent (Limited use)
+                    colors: {
+                        navy: {
+                            bg: '#0B1220',       /* Midnight Navy */
+                            surface: '#172338',  /* Navy Surface */
+                        },
+                        gold: {
+                            DEFAULT: '#E7B65C',  /* Midnight Gold */
+                            hover: '#F0C875',    /* Gold Hover */
+                        },
+                        cream: '#F5F2EA',        /* Warm Cream */
+                        slate: {
+                            subtle: '#A9B6C9',  /* Soft Slate */
+                            border: '#34445C',  /* Border Slate */
+                        },
+                        accent: {
+                            blue: '#2563EB',    /* Blue Accent */
+                        }
                     }
                 }
             }
         }
-    }
-</script>
+    </script>
 
-<style>
-    body {
-        background-color: #111827;
-        background-image: 
-            radial-gradient(circle at 50% 0%, rgba(251, 191, 36, 0.05), transparent 35%),
-            linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-        background-size: 100% 100%, 36px 36px, 36px 36px;
-        color: #F8FAFC;
-    }
-</style>
-
-
-<!-- ================= NAVBAR ================= -->
-<header class="fixed w-full z-50 top-0 transition-all duration-300 bg-navy/90 backdrop-blur-md border-b border-navy-border/80 shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+    <style>
+        body {
+            background-color: #0B1220;
+            color: #F5F2EA;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
         
-        <!-- Logo & Brand -->
-        <a href="index.html" class="flex items-center gap-3 group rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-gold p-1" aria-label="Halaman Utama KerjainTugas.Aja">
-            <div class="w-10 h-10 rounded-xl bg-navy-light border border-navy-border flex items-center justify-center p-1.5 shadow-sm group-hover:border-amber-gold/50 transition-colors">
-                <img src="assets/img/logo.png" alt="Logo KerjainTugas.Aja" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/1F2937/FBBF24?text=KTA';">
-            </div>
-            <span class="font-bold text-lg tracking-tight text-slate-text group-hover:text-amber-gold transition-colors">KerjainTugas.Aja</span>
-        </a>
-        
-        <!-- Menu Utama (Desktop) -->
-        <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-muted" aria-label="Navigasi Utama">
-            <a href="index.html" class="px-3.5 py-2 rounded-lg bg-amber-gold/10 text-amber-gold font-semibold border border-amber-gold/30 transition-all" aria-current="page">Dashboard</a>
-            <a href="layanan.html" class="px-3.5 py-2 rounded-lg hover:bg-navy-light hover:text-slate-text transition-all">Layanan</a>
-            <a href="harga.html" class="px-3.5 py-2 rounded-lg hover:bg-navy-light hover:text-slate-text transition-all">Harga</a>
-            <a href="testimoni.html" class="px-3.5 py-2 rounded-lg hover:bg-navy-light hover:text-slate-text transition-all">Testimoni</a>
-            <a href="faq.html" class="px-3.5 py-2 rounded-lg hover:bg-navy-light hover:text-slate-text transition-all">FAQ</a>
-        </nav>
-
-        <!-- CTA Kanan (Desktop) -->
-        <div class="hidden md:flex items-center">
-            <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20ingin%20konsultasi%20mengenai%20bantuan%20tugas." 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-gold hover:bg-amber-hover text-navy font-bold text-sm transition-all shadow-md hover:shadow-amber-gold/10 active:scale-95 focus:outline-none focus:ring-2 focus:ring-amber-gold">
-                <i class="fa-brands fa-whatsapp text-base"></i>
-                <span>Konsultasi Gratis</span>
-            </a>
-        </div>
-
-        <!-- Tombol Hamburger (Mobile) -->
-        <button id="hamburgerBtn" 
-                type="button"
-                class="md:hidden inline-flex items-center justify-center p-2.5 rounded-xl bg-navy-light border border-navy-border text-slate-muted hover:text-slate-text hover:bg-navy-border/50 focus:outline-none focus:ring-2 focus:ring-amber-gold"
-                aria-expanded="false" 
-                aria-controls="mobileMenu" 
-                aria-label="Buka menu navigasi">
-            <i class="fa-solid fa-bars text-xl" id="hamburgerIcon" aria-hidden="true"></i>
-        </button>
-    </div>
-
-    <!-- Menu Dropdown (Mobile View) -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-navy-border/80 bg-navy/95 backdrop-blur-xl transition-all duration-300">
-        <nav class="flex flex-col gap-1.5 px-4 pt-3 pb-6 text-slate-muted font-medium text-base" aria-label="Navigasi Mobile">
-            <a href="index.html" class="px-4 py-3 rounded-xl bg-amber-gold/10 text-amber-gold font-semibold border border-amber-gold/20 flex items-center justify-between" aria-current="page">
-                <span>Dashboard</span>
-                <i class="fa-solid fa-chevron-right text-xs"></i>
-            </a>
-            <a href="layanan.html" class="px-4 py-3 rounded-xl hover:bg-navy-light hover:text-slate-text transition-all flex items-center justify-between">
-                <span>Layanan</span>
-                <i class="fa-solid fa-chevron-right text-xs text-slate-muted"></i>
-            </a>
-            <a href="harga.html" class="px-4 py-3 rounded-xl hover:bg-navy-light hover:text-slate-text transition-all flex items-center justify-between">
-                <span>Estimasi Harga</span>
-                <i class="fa-solid fa-chevron-right text-xs text-slate-muted"></i>
-            </a>
-            <a href="testimoni.html" class="px-4 py-3 rounded-xl hover:bg-navy-light hover:text-slate-text transition-all flex items-center justify-between">
-                <span>Testimoni</span>
-                <i class="fa-solid fa-chevron-right text-xs text-slate-muted"></i>
-            </a>
-            <a href="faq.html" class="px-4 py-3 rounded-xl hover:bg-navy-light hover:text-slate-text transition-all flex items-center justify-between">
-                <span>Pertanyaan Sering Diajukan (FAQ)</span>
-                <i class="fa-solid fa-chevron-right text-xs text-slate-muted"></i>
-            </a>
-            <div class="pt-3 mt-1 border-t border-navy-border">
-                <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20ingin%20konsultasi%20mengenai%20bantuan%20tugas." 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="w-full flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-amber-gold hover:bg-amber-hover text-navy font-bold transition-colors shadow-lg">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Konsultasi via WhatsApp</span>
-                </a>
-            </div>
-        </nav>
-    </div>
-</header>
-
-<main class="flex-grow pt-20">
-    <!-- ================= HERO SECTION ================= -->
-    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 px-4 sm:px-6 max-w-5xl mx-auto text-center flex flex-col items-center justify-center">
-        
-        <!-- Badge Kepercayaan -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-gold/30 bg-amber-gold/10 text-amber-gold text-xs sm:text-sm font-medium mb-6">
-            <i class="fa-solid fa-user-check text-amber-gold"></i>
-            <span>Mitra Pendampingan Akademik &amp; Tugas Mahasiswa</span>
-        </div>
-        
-        <!-- Headline Utama -->
-        <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight sm:leading-tight mb-6 text-slate-text max-w-4xl">
-            Pendampingan Tugas &amp; Skripsi Profesional, <br class="hidden sm:inline"><span class="text-amber-gold">Selesai Tepat Waktu.</span>
-        </h1>
-        
-        <!-- Subheadline Spesifik & Realistis -->
-        <p class="text-base sm:text-lg md:text-xl text-slate-muted mb-10 max-w-2xl leading-relaxed">
-            Bantuan penyusunan karya tulis, pengolahan data statistik, pemrograman, hingga bimbingan skripsi secara rapi, terstruktur, dan terjaga kerahasiaannya.
-        </p>
-        
-        <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
-            <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20ingin%20konsultasi%20mengenai%20tugas%20saya." 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-gold hover:bg-amber-hover text-navy font-bold text-base transition-all duration-200 flex items-center justify-center gap-2.5 shadow-lg shadow-amber-gold/10 active:scale-95 focus:outline-none focus:ring-2 focus:ring-amber-gold">
-                <i class="fa-brands fa-whatsapp text-xl"></i>
-                <span>Konsultasi Kendala Tugas</span>
-            </a>
-            <a href="layanan.html" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-navy-light border border-navy-border hover:border-slate-muted/40 text-slate-text font-semibold text-base transition-all duration-200 flex items-center justify-center gap-2 active:scale-95 focus:outline-none focus:ring-2 focus:ring-navy-border">
-                <span>Lihat Seluruh Layanan</span>
-                <i class="fa-solid fa-arrow-right text-xs text-slate-muted"></i>
-            </a>
-        </div>
-
-        <!-- Ringkasan Keunggulan Ringkas -->
-        <div class="mt-14 pt-8 border-t border-navy-border/80 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 w-full max-w-3xl text-slate-muted text-xs sm:text-sm">
-            <div class="flex items-center justify-center gap-2">
-                <i class="fa-solid fa-lock text-amber-gold"></i>
-                <span>Kerahasiaan Terjaga</span>
-            </div>
-            <div class="flex items-center justify-center gap-2">
-                <i class="fa-solid fa-clock-rotate-left text-amber-gold"></i>
-                <span>Sesuai Batas Waktu</span>
-            </div>
-            <div class="flex items-center justify-center gap-2">
-                <i class="fa-solid fa-file-circle-check text-amber-gold"></i>
-                <span>Format Rapi &amp; Sesuai</span>
-            </div>
-            <div class="flex items-center justify-center gap-2">
-                <i class="fa-solid fa-comments text-amber-gold"></i>
-                <span>Komunikasi Responsif</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= BENTO GRID / LAYANAN UNGGULAN ================= -->
-    <section id="layanan-unggulan" class="py-16 px-4 sm:px-6 max-w-7xl mx-auto border-t border-navy-border/60">
-        <div class="mb-12 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div>
-                <span class="text-amber-gold text-xs font-bold uppercase tracking-wider">Katalog Layanan</span>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-1 text-slate-text">Solusi Pendampingan Akademik</h2>
-            </div>
-            <p class="text-slate-muted text-sm sm:text-base max-w-md">
-                Pilih kategori bantuan yang sesuai dengan kebutuhan tugas atau pengerjaan skripsi Anda.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <!-- Layanan 1: Skripsi (Bento Utama - Span 2) -->
-            <div class="md:col-span-2 p-6 sm:p-8 rounded-2xl bg-navy-light border border-navy-border hover:border-amber-gold/50 transition-all flex flex-col justify-between group">
-                <div>
-                    <div class="flex items-center justify-between gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-xl bg-amber-gold/10 border border-amber-gold/20 text-amber-gold flex items-center justify-center text-2xl group-hover:bg-amber-gold group-hover:text-navy transition-all">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        <span class="px-3 py-1 rounded-full bg-navy border border-navy-border text-amber-gold text-xs font-semibold">
-                            Bimbingan Intensif
-                        </span>
-                    </div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-3 text-slate-text">Pendampingan &amp; Bimbingan Skripsi</h3>
-                    <p class="text-slate-muted leading-relaxed text-sm sm:text-base mb-6">
-                        Bantuan terstruktur dari penentuan topik/judul, penyusunan proposal (BAB 1–3), pembahasan hasil (BAB 4–5), hingga persiapan sidang dan penyesuaian catatan revisi dosen pembimbing.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-navy-border/80 flex items-center justify-between">
-                    <span class="text-xs text-slate-muted">Konsultasi judul &amp; kerangka riset</span>
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20butuh%20pendampingan%20dan%20bimbingan%20skripsi." 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="inline-flex items-center gap-2 text-amber-gold hover:text-amber-hover font-semibold text-sm transition-colors">
-                        <span>Konsultasi Skripsi</span>
-                        <i class="fa-solid fa-chevron-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Layanan 2: IT & Pemrograman -->
-            <div class="p-6 sm:p-8 rounded-2xl bg-navy-light border border-navy-border hover:border-amber-gold/50 transition-all flex flex-col justify-between group">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-amber-gold/10 border border-amber-gold/20 text-amber-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-gold group-hover:text-navy transition-all">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold mb-3 text-slate-text">IT &amp; Pemrograman</h3>
-                    <p class="text-slate-muted text-sm leading-relaxed mb-6">
-                        Bantuan pembuatan dan perbaikan kode program website, aplikasi Android, basis data, serta analisis algoritma untuk praktikum atau tugas akhir bidang IT.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-navy-border/80 flex items-center justify-between">
-                    <span class="text-xs text-slate-muted">Web, App, DB, &amp; Bugfix</span>
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20ingin%20diskusi%20tugas%20pemrograman/IT." 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="inline-flex items-center gap-2 text-amber-gold hover:text-amber-hover font-semibold text-sm transition-colors">
-                        <span>Diskusi Kode</span>
-                        <i class="fa-solid fa-chevron-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Layanan 3: Karya Tulis & Presentasi -->
-            <div class="p-6 sm:p-8 rounded-2xl bg-navy-light border border-navy-border hover:border-amber-gold/50 transition-all flex flex-col justify-between group">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-amber-gold/10 border border-amber-gold/20 text-amber-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-gold group-hover:text-navy transition-all">
-                        <i class="fa-solid fa-file-lines"></i>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold mb-3 text-slate-text">Karya Tulis &amp; Presentasi</h3>
-                    <p class="text-slate-muted text-sm leading-relaxed mb-6">
-                        Penyusunan makalah, artikel ilmiah, esai, sintesis jurnal, hingga pembuatan slide PowerPoint bermutu tinggi dan komunikatif untuk keperluan presentasi.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-navy-border/80 flex items-center justify-between">
-                    <span class="text-xs text-slate-muted">Makalah, Esai, Slide PPT</span>
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20perlu%20bantuan%20karya%20tulis%20atau%20presentasi." 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="inline-flex items-center gap-2 text-amber-gold hover:text-amber-hover font-semibold text-sm transition-colors">
-                        <span>Pesan Bantuan</span>
-                        <i class="fa-solid fa-chevron-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Layanan 4: Olah Data & Tenggat Singkat (Span 2) -->
-            <div class="md:col-span-2 p-6 sm:p-8 rounded-2xl bg-navy-light border border-navy-border hover:border-amber-gold/50 transition-all flex flex-col justify-between group">
-                <div>
-                    <div class="flex items-center justify-between gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-xl bg-amber-gold/10 border border-amber-gold/20 text-amber-gold flex items-center justify-center text-2xl group-hover:bg-amber-gold group-hover:text-navy transition-all">
-                            <i class="fa-solid fa-chart-simple"></i>
-                        </div>
-                        <span class="px-3 py-1 rounded-full bg-navy border border-navy-border text-amber-gold text-xs font-semibold">
-                            Bantuan Cepat
-                        </span>
-                    </div>
-                    <h3 class="text-xl sm:text-2xl font-bold mb-3 text-slate-text">Olah Data &amp; Tugas Tenggat Singkat</h3>
-                    <p class="text-slate-muted leading-relaxed text-sm sm:text-base mb-6">
-                        Pengolahan data penelitian menggunakan SPSS, Excel, SmartPLS, atau EViews beserta interpretasinya. Kami juga memprioritaskan tugas-tugas darurat yang memiliki tenggat waktu sangat mendesak.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-navy-border/80 flex items-center justify-between">
-                    <span class="text-xs text-slate-muted">Statistik &amp; Pengerjaan Prioritas</span>
-                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20butuh%20bantuan%20olah%20data%20atau%20tugas%20tenggat%20mendesak." 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="inline-flex items-center gap-2 text-amber-gold hover:text-amber-hover font-semibold text-sm transition-colors">
-                        <span>Konsultasi Darurat</span>
-                        <i class="fa-solid fa-chevron-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ================= ALASAN MEMILIH KAMI ================= -->
-    <section class="py-16 px-4 sm:px-6 bg-navy-light/40 border-y border-navy-border/80">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-14 max-w-xl mx-auto">
-                <span class="text-amber-gold text-xs font-bold uppercase tracking-wider">Komitmen Pelayanan</span>
-                <h2 class="text-2xl sm:text-3xl font-bold text-slate-text mt-1 mb-3">Mengapa Memilih KerjainTugas.Aja</h2>
-                <p class="text-slate-muted text-sm sm:text-base">
-                    Prinsip kerja profesional untuk memberikan pengalaman bantuan akademik yang aman dan dapat diandalkan.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <div class="p-6 rounded-xl bg-navy-light border border-navy-border text-left">
-                    <div class="w-10 h-10 rounded-lg bg-amber-gold/10 text-amber-gold flex items-center justify-center text-lg mb-4">
-                        <i class="fa-solid fa-user-shield"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-text text-base mb-2">Komitmen Kerahasiaan</h3>
-                    <p class="text-slate-muted text-sm leading-relaxed">
-                        Identitas pemesan dan seluruh berkas tugas dijaga ketat agar privasi Anda tetap aman selama proses pendampingan.
-                    </p>
-                </div>
-
-                <div class="p-6 rounded-xl bg-navy-light border border-navy-border text-left">
-                    <div class="w-10 h-10 rounded-lg bg-amber-gold/10 text-amber-gold flex items-center justify-center text-lg mb-4">
-                        <i class="fa-solid fa-comments"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-text text-base mb-2">Komunikasi Komunikatif</h3>
-                    <p class="text-slate-muted text-sm leading-relaxed">
-                        Admin dan tim penanggung jawab merespon dengan ramah, komunikatif, serta transparan mengenai kemajuan pengerjaan.
-                    </p>
-                </div>
-
-                <div class="p-6 rounded-xl bg-navy-light border border-navy-border text-left">
-                    <div class="w-10 h-10 rounded-lg bg-amber-gold/10 text-amber-gold flex items-center justify-center text-lg mb-4">
-                        <i class="fa-solid fa-calendar-check"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-text text-base mb-2">Komitmen Ketepatan Waktu</h3>
-                    <p class="text-slate-muted text-sm leading-relaxed">
-                        Pengerjaan disesuaikan dengan kesepakatan jadwal awal agar Anda dapat mengumpulkan tugas sesuai batas waktu.
-                    </p>
-                </div>
-
-                <div class="p-6 rounded-xl bg-navy-light border border-navy-border text-left">
-                    <div class="w-10 h-10 rounded-lg bg-amber-gold/10 text-amber-gold flex items-center justify-center text-lg mb-4">
-                        <i class="fa-solid fa-receipt"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-text text-base mb-2">Tarif Edukatif &amp; Transparan</h3>
-                    <p class="text-slate-muted text-sm leading-relaxed">
-                        Penawaran biaya disesuaikan dengan tingkat kesulitan dan tingkat kerumitan tugas tanpa biaya tersembunyi.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= BANNER CTA PENUTUP ================= -->
-    <section class="py-16 px-4 sm:px-6 max-w-5xl mx-auto text-center">
-        <div class="p-8 sm:p-12 rounded-3xl bg-navy-light border border-navy-border relative overflow-hidden">
-            <h2 class="text-2xl sm:text-3xl font-bold text-slate-text mb-4">Butuh Bantuan Menyelesaikan Tugas Saat Ini?</h2>
-            <p class="text-slate-muted text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-                Konsultasikan kendala atau petunjuk tugas Anda kepada admin kami. Kami siap memberikan penawaran dan solusi pengerjaan yang tepat.
-            </p>
-            <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20ingin%20konsultasi%20mengenai%20tugas%20kuliah." 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-amber-gold hover:bg-amber-hover text-navy font-bold text-base transition-all shadow-lg shadow-amber-gold/10 active:scale-95 focus:outline-none focus:ring-2 focus:ring-amber-gold">
-                <i class="fa-brands fa-whatsapp text-xl"></i>
-                <span>Hubungi Admin WhatsApp</span>
-            </a>
-        </div>
-    </section>
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer class="border-t border-navy-border/80 bg-navy-dark pt-16 pb-12 px-4 sm:px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-        
-        <!-- Branding & Deskripsi -->
-        <div class="md:col-span-5">
-            <a href="index.html" class="flex items-center gap-3 mb-4 group">
-                <div class="w-9 h-9 rounded-lg bg-navy-light border border-navy-border flex items-center justify-center p-1">
-                    <img src="assets/img/logo.png" alt="Logo KerjainTugas.Aja" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/1F2937/FBBF24?text=KTA';">
-                </div>
-                <span class="font-bold text-lg text-slate-text">KerjainTugas.Aja</span>
-            </a>
-            <p class="text-slate-muted text-sm leading-relaxed max-w-sm mb-6">
-                Layanan pendampingan akademik, pengolahan data, pemrograman, serta pengerjaan karya tulis bagi mahasiswa secara terstruktur dan profesional.
-            </p>
-            <div class="flex items-center gap-3">
-                <a href="https://api.whatsapp.com/send?phone=6285179851446" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   aria-label="WhatsApp KerjainTugas.Aja" 
-                   class="w-9 h-9 rounded-lg bg-navy-light border border-navy-border flex items-center justify-center text-slate-muted hover:text-amber-gold hover:border-amber-gold/40 transition-colors">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                <a href="https://www.instagram.com/kerjaintugas.aja" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   aria-label="Instagram KerjainTugas.Aja" 
-                   class="w-9 h-9 rounded-lg bg-navy-light border border-navy-border flex items-center justify-center text-slate-muted hover:text-amber-gold hover:border-amber-gold/40 transition-colors">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.tiktok.com/@kerjaintugas.aja" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   aria-label="TikTok KerjainTugas.Aja" 
-                   class="w-9 h-9 rounded-lg bg-navy-light border border-navy-border flex items-center justify-center text-slate-muted hover:text-amber-gold hover:border-amber-gold/40 transition-colors">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Navigasi Cepat -->
-        <div class="md:col-span-3">
-            <h2 class="font-semibold text-slate-text text-sm tracking-wider uppercase mb-4">Navigasi Halaman</h2>
-            <ul class="flex flex-col gap-2.5 text-slate-muted text-sm">
-                <li><a href="index.html" class="hover:text-amber-gold transition-colors">Dashboard Utama</a></li>
-                <li><a href="layanan.html" class="hover:text-amber-gold transition-colors">Daftar Layanan</a></li>
-                <li><a href="harga.html" class="hover:text-amber-gold transition-colors">Estimasi Harga</a></li>
-                <li><a href="testimoni.html" class="hover:text-amber-gold transition-colors">Testimoni Mahasiswa</a></li>
-                <li><a href="faq.html" class="hover:text-amber-gold transition-colors">FAQ &amp; Informasi</a></li>
-            </ul>
-        </div>
-
-        <!-- Kontak & Informasi -->
-        <div class="md:col-span-4">
-            <h2 class="font-semibold text-slate-text text-sm tracking-wider uppercase mb-4">Layanan Pelanggan</h2>
-            <p class="text-slate-muted text-sm mb-3">
-                Konsultasi dan diskusi terkait rincian tugas dapat dilakukan melalui layanan admin WhatsApp kami.
-            </p>
-            <div class="inline-flex items-center gap-2 text-amber-gold text-sm font-semibold">
-                <i class="fa-brands fa-whatsapp text-base"></i>
-                <span>+62 851-7985-1446</span>
-            </div>
-        </div>
-
-    </div>
-    
-    <!-- Copyright -->
-    <div class="max-w-7xl mx-auto pt-8 border-t border-navy-border/60 flex flex-col sm:flex-row items-center justify-between text-slate-muted text-xs gap-4 text-center sm:text-left">
-        <p>&copy; 2026 KerjainTugas.Aja. Seluruh hak cipta dilindungi.</p>
-        <p class="text-slate-muted/70">Layanan Pendampingan Akademik Mahasiswa</p>
-    </div>
-</footer>
-
-<!-- ================= JAVASCRIPT LOGIC ================= -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const hamburgerIcon = document.getElementById('hamburgerIcon');
-
-        if (!hamburgerBtn || !mobileMenu || !hamburgerIcon) return;
-
-        function toggleMenu() {
-            const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-            const nextState = !isExpanded;
-
-            hamburgerBtn.setAttribute('aria-expanded', nextState.toString());
-            mobileMenu.classList.toggle('hidden');
-
-            if (nextState) {
-                hamburgerIcon.classList.remove('fa-bars');
-                hamburgerIcon.classList.add('fa-xmark');
-                hamburgerBtn.setAttribute('aria-label', 'Tutup menu navigasi');
-            } else {
-                hamburgerIcon.classList.remove('fa-xmark');
-                hamburgerIcon.classList.add('fa-bars');
-                hamburgerBtn.setAttribute('aria-label', 'Buka menu navigasi');
-            }
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(52, 68, 92, 0.15) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(52, 68, 92, 0.15) 1px, transparent 1px);
+            background-size: 36px 36px;
         }
 
-        // Event Listener Click Toggle
-        hamburgerBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleMenu();
-        });
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid #E7B65C;
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+<body class="antialiased bg-navy-bg text-cream selection:bg-gold selection:text-navy-bg overflow-x-hidden">
 
-        // Tutup menu saat klik link navigasi mobile
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (hamburgerBtn.getAttribute('aria-expanded') === 'true') {
-                    toggleMenu();
-                }
-            });
-        });
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed w-full z-50 top-0 transition-all duration-300 bg-navy-bg/90 backdrop-blur-md border-b border-slate-border">
+        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between" aria-label="Navigasi Utama">
+            
+            <!-- Logo & Brand -->
+            <a href="index.html" class="flex items-center gap-3 group focus:outline-none" aria-label="Halaman Utama KerjainTugas.Aja">
+                <div class="w-10 h-10 rounded-xl bg-navy-surface border border-slate-border flex items-center justify-center p-1.5 transition-transform group-hover:scale-105">
+                    <img src="assets/img/logo.png" alt="Logo KerjainTugas.Aja" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23E7B65C\'><path d=\'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\'/></svg>';">
+                </div>
+                <span class="font-bold text-lg tracking-tight text-cream group-hover:text-gold transition-colors">KerjainTugas.Aja</span>
+            </a>
+            
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-subtle">
+                <li>
+                    <a href="index.html" class="px-4 py-2 rounded-xl bg-navy-surface text-gold font-semibold border border-slate-border" aria-current="page">Dashboard</a>
+                </li>
+                <li>
+                    <a href="layanan.html" class="px-4 py-2 rounded-xl hover:text-cream hover:bg-navy-surface/50 transition-all">Layanan</a>
+                </li>
+                <li>
+                    <a href="harga.html" class="px-4 py-2 rounded-xl hover:text-cream hover:bg-navy-surface/50 transition-all">Harga</a>
+                </li>
+                <li>
+                    <a href="testimoni.html" class="px-4 py-2 rounded-xl hover:text-cream hover:bg-navy-surface/50 transition-all">Testimoni</a>
+                </li>
+                <li>
+                    <a href="faq.html" class="px-4 py-2 rounded-xl hover:text-cream hover:bg-navy-surface/50 transition-all">FAQ</a>
+                </li>
+            </ul>
 
-        // Tutup menu saat mengeklik di luar menu
-        document.addEventListener('click', (e) => {
-            const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-            if (isExpanded && !mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-                toggleMenu();
+            <!-- CTA Konsultasi Desktop -->
+            <div class="hidden md:flex items-center">
+                <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gold text-navy-bg font-bold text-sm hover:bg-gold-hover transition-all shadow-md active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    Konsultasi Gratis
+                </a>
+            </div>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburgerBtn" type="button" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-navy-surface border border-slate-border text-cream hover:text-gold focus:outline-none" aria-label="Buka Menu Navigasi" aria-expanded="false" aria-controls="mobileMenu">
+                <i class="fa-solid fa-bars text-lg" id="hamburgerIcon" aria-hidden="true"></i>
+            </button>
+        </nav>
+
+        <!-- Dropdown Menu Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden px-6 pt-3 pb-6 bg-navy-bg border-b border-slate-border shadow-2xl transition-all">
+            <ul class="flex flex-col gap-2 text-slate-subtle font-medium text-sm">
+                <li>
+                    <a href="index.html" class="block px-4 py-3 rounded-xl bg-navy-surface text-gold font-semibold border border-slate-border" aria-current="page">Dashboard</a>
+                </li>
+                <li>
+                    <a href="layanan.html" class="block px-4 py-3 rounded-xl hover:bg-navy-surface hover:text-cream transition-all">Layanan</a>
+                </li>
+                <li>
+                    <a href="harga.html" class="block px-4 py-3 rounded-xl hover:bg-navy-surface hover:text-cream transition-all">Harga</a>
+                </li>
+                <li>
+                    <a href="testimoni.html" class="block px-4 py-3 rounded-xl hover:bg-navy-surface hover:text-cream transition-all">Testimoni</a>
+                </li>
+                <li>
+                    <a href="faq.html" class="block px-4 py-3 rounded-xl hover:bg-navy-surface hover:text-cream transition-all">FAQ</a>
+                </li>
+                <li class="pt-2">
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." class="w-full flex justify-center items-center gap-2 py-3.5 rounded-xl bg-gold text-navy-bg font-bold shadow-md">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Konsultasi Via WhatsApp
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- ================= HERO SECTION ================= -->
+        <section class="relative pt-36 pb-20 px-6 max-w-5xl mx-auto min-h-[82vh] flex flex-col justify-center items-center text-center bg-grid-pattern">
+            
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] md:w-[600px] h-[320px] md:h-[600px] bg-gold/5 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"></div>
+
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate-border bg-navy-surface/80 text-gold text-xs sm:text-sm font-semibold mb-8 shadow-sm">
+                <i class="fa-solid fa-shield-halved text-xs"></i>
+                <span>Mitra Bimbingan Akademik Mahasiswa Indonesia</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-cream tracking-tight leading-tight mb-6 max-w-4xl">
+                Pendampingan Tugas & Skripsi <br class="hidden sm:block">
+                <span class="text-gold">Tepat Waktu & Terpercaya</span>
+            </h1>
+            
+            <p class="text-base sm:text-lg md:text-xl text-slate-subtle mb-10 max-w-2xl leading-relaxed">
+                Fokus pada hal terpenting dalam studimu. Kami hadir membantumu memahami materi, mengolah data, hingga menyelesaikan penulisan karya ilmiah dengan standar kualitas tinggi.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto z-10">
+                <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20order%20bantuan%20tugas." target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-xl bg-gold text-navy-bg font-bold text-base hover:bg-gold-hover transition-all duration-200 flex items-center justify-center gap-2 shadow-lg active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Pesan Layanan Sekarang
+                </a>
+                <a href="layanan.html" class="px-8 py-4 rounded-xl bg-navy-surface border border-slate-border text-cream font-semibold text-base hover:bg-slate-border/50 hover:text-gold transition-all duration-200 flex items-center justify-center gap-2 active:scale-95">
+                    Lihat Semua Layanan
+                </a>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-slate-border/50 grid grid-cols-2 md:grid-cols-3 gap-6 text-center w-full max-w-3xl">
+                <div>
+                    <span class="block text-xl font-bold text-cream">Transparan</span>
+                    <span class="text-xs text-slate-subtle">Estimasi harga sesuai kerumitan</span>
+                </div>
+                <div>
+                    <span class="block text-xl font-bold text-cream">Privasi Aman</span>
+                    <span class="text-xs text-slate-subtle">Kerahasiaan identitas terjaga</span>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <span class="block text-xl font-bold text-cream">Bergaransi</span>
+                    <span class="text-xs text-slate-subtle">Dukungan revisi sesuai arahan</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= BENTO GRID (LAYANAN UNGGULAN) ================= -->
+        <section id="layanan-unggulan" class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-border/40">
+            <div class="mb-14 text-center md:text-left">
+                <span class="text-gold font-semibold text-xs tracking-wider uppercase mb-2 block">Katalog Solusi Akademik</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-cream mb-3">Layanan Unggulan Kami</h2>
+                <p class="text-slate-subtle text-base max-w-xl">Dukungan teknis dan konsultasi komprehensif untuk membantu kelancaran studi akademik Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Skripsi & Tugas Akhir -->
+                <div class="md:col-span-2 group relative p-8 md:p-10 rounded-2xl bg-navy-surface border border-slate-border hover:border-gold/50 transition-all duration-300 flex flex-col justify-between shadow-md">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-xl bg-navy-bg border border-slate-border text-gold flex items-center justify-center text-2xl group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <span class="px-3.5 py-1 rounded-full bg-navy-bg text-gold text-xs font-semibold border border-slate-border">
+                                Recommended
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-cream mb-3 group-hover:text-gold transition-colors">Bimbingan & Pendampingan Skripsi</h3>
+                        <p class="text-slate-subtle leading-relaxed mb-6 max-w-2xl text-sm sm:text-base">
+                            Layanan pendampingan dari penentuan topik, penyusunan proposal (BAB 1–3), metodologi penelitian, analisis data, hingga persiapan sidang akhir secara terstruktur.
+                        </p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20konsultasi%20bimbingan%20skripsi." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:underline">
+                        Konsultasi Skripsi Sekarang <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- IT & Pemrograman -->
+                <div class="group relative p-8 rounded-2xl bg-navy-surface border border-slate-border hover:border-gold/50 transition-all duration-300 flex flex-col justify-between shadow-md">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-navy-bg border border-slate-border text-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream mb-3 group-hover:text-gold transition-colors">IT & Pemrograman</h3>
+                        <p class="text-slate-subtle leading-relaxed text-sm mb-6">
+                            Bantuan pembuatan aplikasi web, aplikasi mobile, basis data, dan perbaikan *bug* program untuk tugas pemrograman.
+                        </p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20order%20tugas%20coding/IT." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:underline">
+                        Konsultasi IT <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Karya Tulis & Presentasi -->
+                <div class="group relative p-8 rounded-2xl bg-navy-surface border border-slate-border hover:border-gold/50 transition-all duration-300 flex flex-col justify-between shadow-md">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-navy-bg border border-slate-border text-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream mb-3 group-hover:text-gold transition-colors">Karya Tulis & Presentasi</h3>
+                        <p class="text-slate-subtle leading-relaxed text-sm mb-6">
+                            Penyusunan makalah, esai akademik, *resume*, reviu jurnal, serta desain slide PowerPoint yang profesional dan rapi.
+                        </p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20order%20makalah/PPT." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:underline">
+                        Pesan Karya Tulis <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Olah Data & Tugas Urgent -->
+                <div class="md:col-span-2 group relative p-8 rounded-2xl bg-navy-surface border border-slate-border hover:border-gold/50 transition-all duration-300 flex flex-col justify-between shadow-md">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-navy-bg border border-slate-border text-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-cream mb-3 group-hover:text-gold transition-colors">Pengolahan Data & Penanganan Urgent</h3>
+                        <p class="text-slate-subtle leading-relaxed text-sm sm:text-base mb-6 max-w-xl">
+                            Analisis data statistik kuantitatif & kualitatif (SPSS, Excel, R) serta bantuan pengerjaan tugas akademik dengan batas waktu mendesak secara responsif.
+                        </p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin,%20saya%20mau%20konsultasi%20olah%20data/tugas%20mendesak." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gold font-bold text-sm hover:underline">
+                        Diskusi Tugas Mendesak <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ALASAN MEMILIH KAMI ================= -->
+        <section class="py-20 px-6 bg-navy-surface/40 border-t border-b border-slate-border/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-14 max-w-2xl mx-auto">
+                    <span class="text-gold font-semibold text-xs tracking-wider uppercase mb-2 block">Keunggulan Layanan</span>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-cream mb-3">Mengapa Menggunakan Layanan Kami?</h2>
+                    <p class="text-slate-subtle text-base">Prinsip kerja profesional yang mengutamakan kualitas hasil dan kenyamanan Anda.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-2xl bg-navy-surface border border-slate-border hover:border-gold/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-navy-bg border border-slate-border text-gold flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-cream mb-2">Kerahasiaan Privasi</h3>
+                        <p class="text-slate-subtle text-sm leading-relaxed">Identitas pengguna dan kerahasiaan berkas tugas dikelola secara aman tanpa dipublikasikan.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-navy-surface border border-slate-border hover:border-gold/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-navy-bg border border-slate-border text-gold flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-cream mb-2">Komunikasi Cepat</h3>
+                        <p class="text-slate-subtle text-sm leading-relaxed">Tim admin siap merespon pertanyaan dan konsultasi kebutuhan tugas Anda secara efisien.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-navy-surface border border-slate-border hover:border-gold/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-navy-bg border border-slate-border text-gold flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-cream mb-2">Komitmen Waktu</h3>
+                        <p class="text-slate-subtle text-sm leading-relaxed">Setiap pengerjaan difokuskan agar dapat diselesaikan sesuai kesepakatan tenggat waktu awal.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-navy-surface border border-slate-border hover:border-gold/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-navy-bg border border-slate-border text-gold flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-cream mb-2">Harga Transparan</h3>
+                        <p class="text-slate-subtle text-sm leading-relaxed">Biaya disesuaikan dengan tingkat kesulitan tugas tanpa ada biaya tersembunyi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CTA PENUTUP ================= -->
+        <section class="py-20 px-6 max-w-5xl mx-auto text-center">
+            <div class="p-10 md:p-14 rounded-3xl bg-navy-surface border border-slate-border relative overflow-hidden shadow-xl">
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-cream mb-4">Butuh Bantuan Selesaikan Tugas Kuliah?</h2>
+                    <p class="text-slate-subtle text-base mb-8 leading-relaxed">
+                        Konsultasikan kebutuhan tugas atau skripsimu dengan admin kami secara gratis. Dapatkan solusi pengerjaan yang tepat dan transparan.
+                    </p>
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446&text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gold text-navy-bg font-bold text-base hover:bg-gold-hover transition-all shadow-md active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        Hubungi Admin via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-slate-border bg-navy-bg pt-16 pb-8 px-6 text-sm">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            
+            <!-- Brand -->
+            <div>
+                <a href="index.html" class="flex items-center gap-3 mb-4 group focus:outline-none">
+                    <div class="w-9 h-9 rounded-xl bg-navy-surface border border-slate-border flex items-center justify-center p-1">
+                        <img src="assets/img/logo.png" alt="Logo KerjainTugas.Aja" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23E7B65C\'><path d=\'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\'/></svg>';">
+                    </div>
+                    <span class="font-bold text-lg text-cream">KerjainTugas.Aja</span>
+                </a>
+                <p class="text-slate-subtle leading-relaxed max-w-sm mb-4">
+                    Solusi pendampingan akademik mahasiswa profesional, tepat waktu, dan bergaransi.
+                </p>
+            </div>
+            
+            <!-- Navigasi -->
+            <div>
+                <h3 class="font-bold text-cream mb-4 tracking-wide">Navigasi Halaman</h3>
+                <ul class="flex flex-col gap-2.5 text-slate-subtle">
+                    <li><a href="index.html" class="hover:text-gold transition-colors">Dashboard</a></li>
+                    <li><a href="layanan.html" class="hover:text-gold transition-colors">Daftar Layanan</a></li>
+                    <li><a href="harga.html" class="hover:text-gold transition-colors">Estimasi Harga</a></li>
+                    <li><a href="testimoni.html" class="hover:text-gold transition-colors">Testimoni</a></li>
+                    <li><a href="faq.html" class="hover:text-gold transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Kontak & Sosial -->
+            <div>
+                <h3 class="font-bold text-cream mb-4 tracking-wide">Kontak Resmi</h3>
+                <div class="flex gap-3 mb-6">
+                    <a href="https://api.whatsapp.com/send?phone=6285179851446" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-navy-surface border border-slate-border flex items-center justify-center text-slate-subtle hover:text-gold hover:border-gold/50 transition-all" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                    <a href="https://www.instagram.com/kerjaintugas.aja" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-navy-surface border border-slate-border flex items-center justify-center text-slate-subtle hover:text-gold hover:border-gold/50 transition-all" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@kerjaintugas.aja" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-navy-surface border border-slate-border flex items-center justify-center text-slate-subtle hover:text-gold hover:border-gold/50 transition-all" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok text-base"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-border/50 text-center text-slate-subtle text-xs">
+            <p>&copy; 2026 KerjainTugas.Aja. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT UNTUK MOBILE MENU ================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburgerIcon = document.getElementById('hamburgerIcon');
+
+            if (hamburgerBtn && mobileMenu && hamburgerIcon) {
+                const toggleMenu = () => {
+                    const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+                    hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+
+                    if (mobileMenu.classList.contains('hidden')) {
+                        hamburgerIcon.classList.remove('fa-xmark');
+                        hamburgerIcon.classList.add('fa-bars');
+                    } else {
+                        hamburgerIcon.classList.remove('fa-bars');
+                        hamburgerIcon.classList.add('fa-xmark');
+                    }
+                };
+
+                hamburgerBtn.addEventListener('click', toggleMenu);
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            toggleMenu();
+                        }
+                    });
+                });
             }
         });
-
-        // Tutup menu saat menekan tombol Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && hamburgerBtn.getAttribute('aria-expanded') === 'true') {
-                toggleMenu();
-            }
-        });
-    });
-</script>
+    </script>
+</body>
+</html>
