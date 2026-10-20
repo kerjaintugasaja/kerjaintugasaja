@@ -1,92 +1,448 @@
+<!DOCTYPE html>
+<html lang="id" class="light scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KerjainTugas.Aja | Pengalaman Pelanggan & Bukti Layanan</title>
+    <meta name="description" content="Simak bukti nyata komunikasi dan pengalaman pelanggan dalam menggunakan layanan pendampingan tugas dan skripsi di KerjainTugas.Aja.">
 
-<!-- ================= GALERI BUKTI PELANGGAN ================= -->
-<section class="py-12 md:py-16 px-4 sm:px-6 max-w-7xl mx-auto">
-    <div class="mb-10 text-center md:text-left">
-        <span class="text-dark-yellow font-extrabold text-sm tracking-wider uppercase mb-2 block">
-            Dokumentasi WhatsApp
-        </span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-dark-blue mb-2">
-            Bukti Percakapan Asli
-        </h2>
-        <p class="text-slate-gray text-sm sm:text-base max-w-2xl">
-            Tangkapan layar interaksi dan konfirmasi pengerjaan bersama pelanggan yang telah memberikan izin publikasi.
-        </p>
-    </div>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- Grid responsif: 1 kolom HP, 2 tablet, 3 desktop -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-blue': '#172338',
+                        'warm-white': '#FAF8F2',
+                        'warm-yellow': '#FFC629',
+                        'dark-yellow': '#D99A00',
+                        'royal-blue': '#3B82F6',
+                        'slate-gray': '#475569',
+                        'soft-border': '#E8E2D6',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
-        <!-- Screenshot 1 -->
-        <div class="p-4 sm:p-5 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all flex flex-col items-center min-w-0">
-            <div class="w-full max-w-[320px] mx-auto bg-warm-white rounded-2xl overflow-hidden border border-soft-border/80 p-2 mb-4">
-                <img
-                    src="assets/img/testimoni1.jpeg"
-                    alt="Bukti percakapan pelanggan KerjainTugas.Aja 1"
-                    class="block w-full h-auto max-h-[520px] object-contain object-top rounded-xl"
-                    loading="lazy"
-                >
+    <style>
+        body {
+            background-color: #FAF8F2;
+            color: #172338;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .logo-fallback {
+            display: none;
+        }
+
+        /* Batas tampilan screenshot agar tidak memenuhi layar */
+        .testimonial-image-wrap {
+            width: 100%;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+        }
+
+        .testimonial-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 520px;
+            object-fit: contain;
+            object-position: top center;
+            border-radius: 0.75rem;
+        }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden selection:bg-warm-yellow selection:text-dark-blue flex flex-col min-h-screen">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed w-full z-50 top-0 transition-all duration-300 bg-dark-blue border-b border-white/10 shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between" aria-label="Navigasi Utama">
+
+            <!-- Logo & Brand -->
+            <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-warm-yellow rounded-xl p-1" aria-label="KerjainTugas.Aja Beranda">
+                <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center p-1.5 transition-transform group-hover:scale-105">
+                    <img src="assets/img/logo.png" alt="Logo KerjainTugas.Aja" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback hidden w-full h-full items-center justify-center text-warm-yellow font-bold text-lg">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-white">KerjainTugas.Aja</span>
+            </a>
+
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
+                <li><a href="index.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">Dashboard</a></li>
+                <li><a href="layanan.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">Layanan</a></li>
+                <li><a href="harga.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">Harga</a></li>
+                <li><a href="testimoni.html" class="px-4 py-2 rounded-xl bg-warm-yellow text-dark-blue font-semibold shadow-sm transition-all" aria-current="page">Testimoni</a></li>
+                <li><a href="faq.html" class="px-4 py-2 rounded-xl hover:text-white hover:bg-white/10 transition-all">FAQ</a></li>
+            </ul>
+
+            <!-- CTA Desktop -->
+            <div class="hidden md:flex items-center">
+                <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas."
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-warm-yellow text-dark-blue font-bold text-sm hover:bg-yellow-400 hover:shadow-md transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warm-yellow">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Konsultasi</span>
+                </a>
             </div>
-            <div class="w-full text-center">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold">
-                    <i class="fa-solid fa-check-double"></i>
-                    Dokumentasi Konsultasi #1
+
+            <!-- Tombol Hamburger -->
+            <button id="hamburgerBtn" type="button"
+                class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-warm-yellow transition-all"
+                aria-controls="mobileMenu" aria-expanded="false" aria-label="Buka Menu Navigasi">
+                <i class="fa-solid fa-bars text-lg" id="hamburgerIcon" aria-hidden="true"></i>
+            </button>
+        </nav>
+
+        <!-- Menu Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden px-6 pt-4 pb-6 bg-dark-blue border-b border-white/10 transition-all">
+            <ul class="flex flex-col gap-2 text-slate-300 font-medium">
+                <li><a href="index.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">Dashboard</a></li>
+                <li><a href="layanan.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">Layanan</a></li>
+                <li><a href="harga.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">Harga</a></li>
+                <li><a href="testimoni.html" class="block px-4 py-3 rounded-xl bg-warm-yellow text-dark-blue font-bold" aria-current="page">Testimoni</a></li>
+                <li><a href="faq.html" class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all">FAQ</a></li>
+                <li class="pt-2">
+                    <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas."
+                       class="w-full flex justify-center items-center gap-2 py-3 rounded-xl bg-warm-yellow text-dark-blue font-bold shadow-md hover:bg-yellow-400 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Konsultasi WhatsApp
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+
+        <!-- ================= HERO SECTION ================= -->
+        <section class="relative pt-12 pb-12 md:pt-16 md:pb-16 px-4 sm:px-6 bg-warm-white border-b border-soft-border">
+            <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+                <span class="text-dark-yellow font-extrabold text-sm tracking-wider uppercase mb-3 block">
+                    Bukti Autentik Konsultasi
                 </span>
+
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-dark-blue leading-tight mb-4">
+                    Pengalaman Pelanggan <br class="hidden sm:block">
+                    <span class="relative inline-block text-dark-blue">
+                        KerjainTugas.Aja
+                        <span class="absolute bottom-1 left-0 w-full h-3 bg-warm-yellow/40 -z-10 rounded"></span>
+                    </span>
+                </h1>
+
+                <p class="text-base sm:text-lg text-slate-gray max-w-2xl leading-relaxed">
+                    Kami terus membangun kepercayaan melalui komunikasi yang jelas, layanan sesuai kebutuhan, dan pengalaman pelanggan yang nyata.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= GALERI TESTIMONI ================= -->
+        <section class="py-12 md:py-16 px-4 sm:px-6 max-w-7xl mx-auto">
+
+            <div class="mb-10 text-center md:text-left">
+                <span class="text-dark-yellow font-extrabold text-sm tracking-wider uppercase mb-2 block">
+                    Dokumentasi WhatsApp
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-dark-blue mb-2">
+                    Bukti Percakapan Asli
+                </h2>
+                <p class="text-slate-gray text-sm sm:text-base max-w-2xl">
+                    Tangkapan layar interaksi dan konfirmasi pengerjaan bersama pelanggan yang telah memberikan izin publikasi.
+                </p>
+            </div>
+
+            <!--
+                Semua screenshot menggunakan grid dan ukuran wadah yang sama.
+                Mobile: 1 kolom
+                Tablet: 2 kolom
+                Desktop: 3 kolom
+            -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
+
+                <!-- Screenshot 1 -->
+                <article class="p-4 sm:p-5 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all flex flex-col items-center min-w-0">
+                    <div class="testimonial-image-wrap bg-warm-white rounded-2xl border border-soft-border/80 p-2 mb-4">
+                        <img src="assets/img/testimoni1.jpeg"
+                             alt="Bukti percakapan pelanggan KerjainTugas.Aja 1"
+                             class="testimonial-image"
+                             loading="lazy">
+                    </div>
+                    <div class="w-full text-center">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold">
+                            <i class="fa-solid fa-check-double"></i>
+                            Dokumentasi Konsultasi #1
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Screenshot 2 -->
+                <article class="p-4 sm:p-5 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all flex flex-col items-center min-w-0">
+                    <div class="testimonial-image-wrap bg-warm-white rounded-2xl border border-soft-border/80 p-2 mb-4">
+                        <img src="assets/img/testimoni2.jpeg"
+                             alt="Bukti percakapan pelanggan KerjainTugas.Aja 2"
+                             class="testimonial-image"
+                             loading="lazy">
+                    </div>
+                    <div class="w-full text-center">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold">
+                            <i class="fa-solid fa-check-double"></i>
+                            Dokumentasi Konsultasi #2
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Screenshot 3 -->
+                <article class="p-4 sm:p-5 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all flex flex-col items-center min-w-0">
+                    <div class="testimonial-image-wrap bg-warm-white rounded-2xl border border-soft-border/80 p-2 mb-4">
+                        <img src="assets/img/tetsimoni3.jpeg"
+                             alt="Bukti percakapan pelanggan KerjainTugas.Aja 3"
+                             class="testimonial-image"
+                             loading="lazy">
+                    </div>
+                    <div class="w-full text-center">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold">
+                            <i class="fa-solid fa-check-double"></i>
+                            Dokumentasi Konsultasi #3
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Screenshot 4 -->
+                <article class="p-4 sm:p-5 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all flex flex-col items-center min-w-0">
+                    <div class="testimonial-image-wrap bg-warm-white rounded-2xl border border-soft-border/80 p-2 mb-4">
+                        <img src="assets/img/testimoni4.jpeg"
+                             alt="Bukti percakapan pelanggan KerjainTugas.Aja 4"
+                             class="testimonial-image"
+                             loading="lazy">
+                    </div>
+                    <div class="w-full text-center">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold">
+                            <i class="fa-solid fa-check-double"></i>
+                            Dokumentasi Konsultasi #4
+                        </span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ================= PRINSIP LAYANAN ================= -->
+        <section class="py-12 md:py-16 px-4 sm:px-6 bg-white border-y border-soft-border">
+            <div class="max-w-7xl mx-auto">
+
+                <div class="text-center mb-12 max-w-2xl mx-auto">
+                    <span class="text-dark-yellow font-extrabold text-sm tracking-wider uppercase mb-2 block">
+                        Prinsip Kerja
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-dark-blue mb-3">
+                        Komitmen Operasional Kami
+                    </h2>
+                    <p class="text-slate-gray text-sm sm:text-base">
+                        Standar komunikasi dan tanggung jawab layanan yang kami jalankan dalam setiap proses pendampingan.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <div class="p-6 rounded-2xl bg-warm-white border border-soft-border">
+                        <div class="w-12 h-12 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="font-bold text-base text-dark-blue mb-2">Diskusi Kebutuhan</h3>
+                        <p class="text-slate-gray text-xs leading-relaxed">
+                            Komunikasi di awal mengenai petunjuk tugas, pedoman kampus, dan ekspektasi pengerjaan sebelum kesepakatan dibuat.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-warm-white border border-soft-border">
+                        <div class="w-12 h-12 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <h3 class="font-bold text-base text-dark-blue mb-2">Konfirmasi Jelas</h3>
+                        <p class="text-slate-gray text-xs leading-relaxed">
+                            Penyampaian rincian ruang lingkup kerja dan transparansi estimasi biaya sebelum pengerjaan dimulai.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-warm-white border border-soft-border">
+                        <div class="w-12 h-12 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="font-bold text-base text-dark-blue mb-2">Bantuan Teknis</h3>
+                        <p class="text-slate-gray text-xs leading-relaxed">
+                            Pendampingan untuk menjawab pertanyaan seputar materi atau kendala teknis sesuai ruang lingkup layanan.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-warm-white border border-soft-border">
+                        <div class="w-12 h-12 rounded-xl bg-royal-blue/10 text-royal-blue flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h3 class="font-bold text-base text-dark-blue mb-2">Penjelasan Hasil</h3>
+                        <p class="text-slate-gray text-xs leading-relaxed">
+                            Penjelasan hasil pendampingan dan alur pengerjaan sesuai kebutuhan yang telah disepakati.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CTA KONSULTASI ================= -->
+        <section class="py-12 md:py-16 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto rounded-3xl bg-dark-blue p-8 sm:p-12 text-center relative overflow-hidden shadow-xl border border-soft-border">
+
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3 relative z-10">
+                    Punya Kebutuhan yang Ingin Didiskusikan?
+                </h2>
+
+                <p class="text-slate-300 text-sm sm:text-base mb-8 max-w-2xl mx-auto relative z-10 leading-relaxed">
+                    Ceritakan kebutuhanmu kepada kami untuk mendapatkan informasi layanan dan estimasi biaya yang sesuai.
+                </p>
+
+                <div class="flex justify-center relative z-10">
+                    <a href="https://wa.me/6285179851446?text=Halo%20Admin%20KerjainTugas.Aja,%20saya%20mau%20konsultasi%20tugas."
+                       target="_blank" rel="noopener noreferrer"
+                       class="px-8 py-4 rounded-2xl bg-warm-yellow text-dark-blue font-bold text-base hover:bg-yellow-400 shadow-md transition-all inline-flex items-center gap-3 active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Konsultasi via WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-dark-blue border-t border-white/10 text-slate-300 pt-16 pb-8 px-4 sm:px-6 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+
+            <!-- Branding -->
+            <div class="md:col-span-1">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center p-1.5">
+                        <img src="assets/img/logo.png" alt="Logo KerjainTugas.Aja" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="logo-fallback hidden w-full h-full items-center justify-center text-warm-yellow font-bold text-base">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                    <span class="font-bold text-xl text-white tracking-tight">KerjainTugas.Aja</span>
+                </div>
+
+                <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                    Layanan pendampingan akademik untuk membantu mahasiswa memahami dan menyelesaikan kebutuhan tugas, karya tulis, serta analisis data.
+                </p>
+            </div>
+
+            <!-- Navigasi -->
+            <div>
+                <h3 class="font-bold text-white text-base mb-4">Navigasi Halaman</h3>
+                <ul class="flex flex-col gap-2.5 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Dashboard</a></li>
+                    <li><a href="layanan.html" class="hover:text-white transition-colors">Daftar Layanan</a></li>
+                    <li><a href="harga.html" class="hover:text-white transition-colors">Estimasi Harga</a></li>
+                    <li><a href="testimoni.html" class="text-warm-yellow font-semibold hover:underline" aria-current="page">Testimoni</a></li>
+                    <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Kontak & Sosial Media -->
+            <div>
+                <h3 class="font-bold text-white text-base mb-4">Hubungi Kami</h3>
+                <p class="text-slate-400 text-sm mb-4">
+                    Layanan konsultasi melalui platform resmi berikut:
+                </p>
+
+                <div class="flex gap-3">
+                    <a href="https://wa.me/6285179851446" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-warm-yellow hover:text-dark-blue transition-all"
+                       aria-label="WhatsApp KerjainTugas.Aja">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/kerjaintugas.aja" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-warm-yellow hover:text-dark-blue transition-all"
+                       aria-label="Instagram KerjainTugas.Aja">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@kerjaintugas.aja" target="_blank" rel="noopener noreferrer"
+                       class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-warm-yellow hover:text-dark-blue transition-all"
+                       aria-label="TikTok KerjainTugas.Aja">
+                        <i class="fa-brands fa-tiktok text-lg"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- Screenshot 2 -->
-        <div class="p-4 sm:p-5 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all flex flex-col items-center min-w-0">
-            <div class="w-full max-w-[320px] mx-auto bg-warm-white rounded-2xl overflow-hidden border border-soft-border/80 p-2 mb-4">
-                <img
-                    src="assets/img/testimoni2.jpeg"
-                    alt="Bukti percakapan pelanggan KerjainTugas.Aja 2"
-                    class="block w-full h-auto max-h-[520px] object-contain object-top rounded-xl"
-                    loading="lazy"
-                >
-            </div>
-            <div class="w-full text-center">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold">
-                    <i class="fa-solid fa-check-double"></i>
-                    Dokumentasi Konsultasi #2
-                </span>
-            </div>
+        <!-- Hak Cipta -->
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 text-center text-slate-400 text-sm">
+            <p>&copy; 2026 KerjainTugas.Aja. All rights reserved.</p>
         </div>
+    </footer>
 
-        <!-- Screenshot 3 -->
-        <div class="p-4 sm:p-5 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all flex flex-col items-center min-w-0">
-            <div class="w-full max-w-[320px] mx-auto bg-warm-white rounded-2xl overflow-hidden border border-soft-border/80 p-2 mb-4">
-                <img
-                    src="assets/img/testimoni3.jpeg"
-                    alt="Bukti percakapan pelanggan KerjainTugas.Aja 3"
-                    class="block w-full h-auto max-h-[520px] object-contain object-top rounded-xl"
-                    loading="lazy"
-                >
-            </div>
-            <div class="w-full text-center">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold">
-                    <i class="fa-solid fa-check-double"></i>
-                    Dokumentasi Konsultasi #3
-                </span>
-            </div>
-        </div>
+    <!-- ================= JAVASCRIPT NAVIGASI MOBILE ================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburgerIcon = document.getElementById('hamburgerIcon');
 
-        <!-- Screenshot 4 -->
-        <div class="p-4 sm:p-5 rounded-3xl bg-white border border-soft-border shadow-sm hover:shadow-md transition-all flex flex-col items-center min-w-0">
-            <div class="w-full max-w-[320px] mx-auto bg-warm-white rounded-2xl overflow-hidden border border-soft-border/80 p-2 mb-4">
-                <img
-                    src="assets/img/testimoni4.jpeg"
-                    alt="Bukti percakapan pelanggan KerjainTugas.Aja 4"
-                    class="block w-full h-auto max-h-[520px] object-contain object-top rounded-xl"
-                    loading="lazy"
-                >
-            </div>
-            <div class="w-full text-center">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold">
-                    <i class="fa-solid fa-check-double"></i>
-                    Dokumentasi Konsultasi #4
-                </span>
-            </div>
-        </div>
+            if (hamburgerBtn && mobileMenu && hamburgerIcon) {
+                const toggleMenu = () => {
+                    const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
 
-    </div>
-</section>
+                    hamburgerBtn.setAttribute('aria-expanded', String(!isExpanded));
+                    mobileMenu.classList.toggle('hidden');
+
+                    if (mobileMenu.classList.contains('hidden')) {
+                        hamburgerIcon.classList.remove('fa-xmark');
+                        hamburgerIcon.classList.add('fa-bars');
+                        hamburgerBtn.setAttribute('aria-label', 'Buka Menu Navigasi');
+                    } else {
+                        hamburgerIcon.classList.remove('fa-bars');
+                        hamburgerIcon.classList.add('fa-xmark');
+                        hamburgerBtn.setAttribute('aria-label', 'Tutup Menu Navigasi');
+                    }
+                };
+
+                hamburgerBtn.addEventListener('click', toggleMenu);
+
+                const mobileNavLinks = mobileMenu.querySelectorAll('a');
+
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            toggleMenu();
+                        }
+                    });
+                });
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
